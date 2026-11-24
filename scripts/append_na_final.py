@@ -1,0 +1,92 @@
+import sys, os
+sys.path.insert(0, os.path.abspath("."))
+import json
+
+from scripts.append_na_batch2 import countries
+
+na_final_14 = [
+    # 10. El Salvador
+    {
+        "id": "el-salvador", "name": "El Salvador", "officialName": "Republic of El Salvador",
+        "nativeName": "República de El Salvador / Kuskatan", "continent": "North America", "subregion": "Central America",
+        "status": "UN Member State", "iso2": "SV", "iso3": "SLV", "isoNumeric": "222", "flagEmoji": "🇸🇻",
+        "demonym": "Salvadoran", "capital": "San Salvador", "largestCity": "San Salvador",
+        "majorCities": ["San Salvador", "Santa Ana", "San Miguel", "Soyapango", "Santa Tecla", "Ahuachapán"],
+        "nationalDay": "September 15 (Independence Day)", "nationalAnthem": "Himno Nacional de El Salvador",
+        "motto": "Dios, Unión, Libertad (God, Union, Liberty)", "population2026": 6380000,
+        "areaKm2": 21041, "areaRank": 149, "populationRank": 112, "populationDensity": "303.2 / km² (densest in mainland Americas)",
+        "coordinates": {"lat": 13.7942, "lng": -88.8965}, "borders": ["Guatemala", "Honduras"], "coastline": "307 km (Pacific coast only)",
+        "landlocked": False, "highestPoint": "Cerro El Pital (2,730 m)", "lowestPoint": "Pacific Ocean (0 m)",
+        "longestRiver": "Lempa River (422 km)", "majorLakes": ["Lake Coatepeque (volcanic crater lake)", "Lake Ilopango", "Lake Güija"],
+        "majorMountains": ["Sierra Madre de Chiapas", "Santa Ana Volcano (Ilamatepec - 2,381 m)", "San Salvador Volcano"],
+        "climate": "Tropical with distinct wet season (May to October) and dry season (November to April); temperate in mountain highlands",
+        "naturalHazards": ["Frequent volcanic eruptions ('Land of Volcanoes')", "Severe earthquakes", "Pacific tropical storms"],
+        "environmentalIssues": ["Soil erosion and river basin rehabilitation", "Forest cover restoration", "Urban air management"],
+        "biodiversity": "Volcanic national parks (Cerro Verde, El Imposible), mangrove estuaries of Jiquilisco Bay, and Pacific sea turtle nesting beaches",
+        "timeZone": "UTC-06:00", "drivingSide": "right", "callingCode": "+503", "languages": ["Spanish", "Nawat (Pipil)"],
+        "currency": "United States Dollar (USD, $) / Bitcoin (BTC - legal tender)", "government": "Unitary presidential constitutional republic",
+        "headOfState": "President Nayib Bukele", "headOfGovernment": "President Nayib Bukele",
+        "legislature": "Legislative Assembly", "constitution": "1983", "mainPoliticalParties": ["Nuevas Ideas (supermajority)", "ARENA", "FMLN"],
+        "latestElections": "General election February 2024 (Nayib Bukele re-elected in landslide)",
+        "politicalSituation": "Dramatic transformation of domestic security through Territorial Control Plan, reduction of homicide rates to lowest in Latin America; pioneer in Bitcoin adoption.",
+        "foreignRelations": "Member of SICA, UN, OAS, CELAC; strong economic links with the US diaspora and expanding Asian trade partnerships.",
+        "military": "Armed Forces of El Salvador (Army, Navy, Air Force) and National Civil Police (PNC).",
+        "internationalOrgs": ["UN", "SICA", "OAS", "CELAC", "WTO", "IMF", "World Bank"], "adminDivisions": "14 departments (reorganized into 44 municipalities in 2024)",
+        "history": "Inhabited by the Pipil people (who called it Cuzcatlán / Place of Precious Jewels) and Lenca. Spanish conquest led by Pedro de Alvarado in 1524. Independence declared in 1821 from Spain. The 20th century saw the 1932 indigenous uprising (La Matanza) and the brutal 1980–1992 Civil War that ended with the UN-brokered Chapultepec Peace Accords. Adopted the US dollar in 2001. In 2019, Nayib Bukele was elected president, transforming national security and declaring Bitcoin legal tender in 2021.",
+        "recentEvents2020_2026": "Nayib Bukele won re-election in February 2024 with over 84% of votes; inaugurated National Library of El Salvador (BINAES); hosted Miss Universe 2023; expanded 'Surf City' coastal infrastructure.",
+        "historicalFigures": ["Juan Manuel Rodríguez", "Father José Matías Delgado", "Saint Óscar Romero (Archbishop and martyr, canonized 2018)", "Farabundo Martí", "Nayib Bukele"],
+        "ethnicGroups": ["Mestizo ~86.3%", "White ~12.7%", "Indigenous (Pipil, Lenca) ~1.0%"],
+        "religions": ["Roman Catholic ~43%", "Evangelical Protestant ~40%", "None / Atheist ~15%", "Others ~2%"],
+        "literacyRate": "90.0%", "lifeExpectancy": "74.8 years", "hdi": "0.674 (Medium)", "urbanization": "74.8%",
+        "education": "University of El Salvador (UES) and Universidad Centroamericana José Simeón Cañas (UCA); 'Enlaces con la Educación' student laptop distribution.",
+        "healthcare": "National integrated public hospital network (including Hospital El Salvador) administered by the Ministry of Health and ISSS.",
+        "socialCustoms": "Eating pupusas at local pupuserías, Sunday family visits to Lake Coatepeque, vibrant surf culture on the Pacific coast.",
+        "etiquette": "Warm handshakes, polite address using 'Don' and 'Doña', hospitable and resilient demeanor.",
+        "nationalIdentity": "Defined by pride in pupusas, volcanic dramatic landscapes, world-class surf breaks, and historic security renaissance.",
+        "gdpNominal": "$36 billion (approx. 2026)", "gdpPpp": "$78 billion (approx. 2026)", "gdpPerCapita": "$5,640",
+        "sectors": "Services 65%, Industry 25%, Agriculture 10%", "industries": ["Textiles and apparel manufacturing (maquila)", "Information technology and business process outsourcing", "Food and beverage processing", "Geothermal energy and Bitcoin mining", "Tourism and surf hospitality"],
+        "agriculture": ["Highland Arabica coffee (Pacamara variety)", "Sugarcane", "Corn", "Poultry and beef", "Fresh tuna and shrimp"],
+        "naturalResources": ["Geothermal energy reserves (volcanic)", "Hydropower", "Arable volcanic soils", "Pacific fisheries"],
+        "energy": "Over 75% clean energy: Geothermal (25%), Hydroelectric (30%), Solar and biomass (20%), Fuel thermal (25%)",
+        "exports": ["Apparel and textiles", "Electrical capacitors", "Plastics", "Cane sugar", "Specialty coffee (Bourbon, Pacamara)", "Manufactured paper"],
+        "imports": ["Refined petroleum", "Industrial machinery and raw fabrics", "Motor vehicles", "Foodstuffs and consumer electronics"],
+        "tradePartners": ["United States (largest partner)", "Guatemala", "Honduras", "Mexico", "China"],
+        "tourism": "Over 3.4 million international visitors flocking to 'Surf City' (El Tunco, El Zonte / Bitcoin Beach), Santa Ana Volcano hikes, Ruta de las Flores, and Joya de Cerén.",
+        "employment": "Formal employment expanding in tourism, tech services, and construction; substantial diaspora remittances support.",
+        "debtInflation": "Inflation low and controlled due to dollarization; public debt reprofiled under fiscal stabilization.",
+        "transport": "Carretera Panamericana (Pan-American Highway); coastal highway (Litoral) connecting surf hubs; modern Pacific railway projects.",
+        "airports": ["El Salvador International Airport Saint Óscar Arnulfo Romero y Galdámez (SAL in San Luis Talpa - major Avianca hub)"],
+        "ports": ["Port of Acajutla (primary commercial freight gateway)", "Port of La Unión"],
+        "internetUsage": "73.2%",
+        "cuisine": "Pupusas (thick handmade corn tortillas stuffed with cheese, chicharrón, and refried beans, served with curtido pickled cabbage and tomato salsa), Tamales pisques, Sopa de pata, Yuca frita con chicharrón, Empanadas de plátano, Horchata de morro.",
+        "festivals": ["Fiestas Agostinas (August patron saint festivals honoring El Salvador del Mundo)", "National Pupusa Day (second Sunday in November)", "Bolas de Fuego festival in Nejapa (September 15 fireballs)"],
+        "music": "Cumbia salvadoreña (Marito Rivera, Hermanos Flores), Marimba, Folkloric Pipil tunes, Rock en español.",
+        "dance": "El Carbonero, Danza de los Historiantes, Torito Pinto.",
+        "art": "Fernando Llort (creator of iconic colorful La Palma naive folk art style), pre-Columbian Pipil polychrome pottery.",
+        "architecture": "Joya de Cerén (UNESCO World Heritage Site: the 'Pompeii of the Americas', buried under Laguna Caldera ash ~600 CE); San Salvador Cathedral (crypt of Saint Óscar Romero); ultra-modern BINAES National Library.",
+        "literature": "Roque Dalton (legendary revolutionary poet: Poemas clandestinos), Salarrué (Cuentos de barro), Claudia Lars, Manlio Argueta.",
+        "cinema": "Documentaries on historical memory and modern transformation; thriving indie short-film community.",
+        "sports": "Football (Mágico González - legendary global football genius admired by Maradona; Estadio Cuscatlán), Surfing (ISA World Surfing Games host), Beach Soccer (world-ranked national team).",
+        "media": "La Prensa Gráfica, El Diario de Hoy, Canal 12, Canal 4, Canal 21, El Faro (digital).",
+        "clothing": "Traditional white cotton traje de campesino with blue sash; modern western casual wear.",
+        "holidays": ["September 15 (Independence Day)", "August 1–6 (Fiestas Agostinas)", "November 2 (All Souls' Day)", "Christmas"],
+        "crafts": "La Palma colorful painted woodcrafts, Ilobasco clay miniatures, San Sebastián woven cotton textiles.",
+        "worldHeritageSites": ["Joya de Cerén Archaeological Site (extraordinarily preserved pre-Columbian village buried by volcanic ash)"],
+        "unescoIntangible": ["Traditional craftsmanship of pupusas and La Palma folk art"],
+        "famousPeople": ["Saint Óscar Romero", "Mágico González", "Nayib Bukele", "Fernando Llort", "Roque Dalton", "Bryan Pérez (pro surfer)"],
+        "flagDescription": "Horizontal triband of cobalt blue, white, and cobalt blue, with the national coat of arms centered on the white band.",
+        "coatOfArmsDescription": "Equilateral triangle containing five volcanoes rising between two oceans, a red Phrygian cap of liberty on a staff radiating golden light, and rainbow, surrounded by the golden inscription 'REPÚBLICA DE EL SALVADOR EN LA AMÉRICA CENTRAL' and fourteen laurel clusters.",
+        "symbols": {"animal": "Torogoz (bird)", "bird": "Turquoise-browed motmot (Torogoz)", "flower": "Izote flower (Yucca elephantipes)", "tree": "Maquilishuat (Tabebuia rosea)"},
+        "landmarks": ["Joya de Cerén Archaeological Site", "Santa Ana Volcano (Ilamatepec)", "Lake Coatepeque", "Surf City (El Tunco & El Zonte)", "San Salvador Historic Downtown & BINAES Library", "Ruta de las Flores"],
+        "travelNotes": "Remarkable safety turnaround; world's premier year-round surfing waves; friendly people and famous pupusas.",
+        "shortSummary": "El Salvador is the vibrant 'Land of Volcanoes' on the Pacific rim, renowned for its dramatic security transformation, world-class surf breaks along 'Surf City', the preserved ancient village of Joya de Cerén, and delicious pupusas.",
+        "flagImage": "https://flagcdn.com/w320/sv.png", "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/SLV_orthographic.svg",
+        "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Coatepeque_Lake_El_Salvador.jpg",
+        "sources": ["CIA World Factbook", "United Nations", "World Bank", "IMF", "UNESCO", "Banco Central de Reserva de El Salvador"], "lastUpdated": "2026-11-24"
+    }
+]
+
+for c in na_final_14:
+    countries.append(c)
+
+print(f"Total NA count after El Salvador: {len(countries)}")

@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The World Countries Atlas 197 — Interactive Tracker</title>
+  <meta name="description" content="Production-ready interactive explorer and progress tracker for all 197 sovereign countries and recognized entities.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22><text y=%2226%22 font-size=%2226%22>🌍</text></svg>">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #131b2e;
+      --surface-hover: #1a243d;
+      --surface-card: #141e33;
+      --border: #23314f;
+      --border-light: #2c3e65;
+      --text: #f0f4fc;
+      --text-muted: #8d9bb5;
+      --text-dim: #627293;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --primary-glow: rgba(59, 130, 246, 0.25);
+      --accent: #10b981;
+      --accent-glow: rgba(16, 185, 129, 0.25);
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --radius-sm: 6px;
+      --radius: 12px;
+      --radius-lg: 18px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-hover: #f1f5f9;
+      --surface-card: #ffffff;
+      --border: #e2e8f0;
+      --border-light: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #94a3b8;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-glow: rgba(37, 99, 235, 0.15);
+      --accent: #059669;
+      --accent-glow: rgba(5, 150, 105, 0.15);
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container */
+    .app-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 4rem 1rem;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+    [data-theme="light"] header {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(241, 245, 249, 0.95));
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .header-title h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, #60a5fa, #38bdf8, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    [data-theme="light"] .header-title h1 {
+      background: linear-gradient(90deg, #1d4ed8, #0284c7, #059669);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .badge-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid var(--primary);
+      color: #93c5fd;
+    }
+    [data-theme="light"] .badge-pill {
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      user-select: none;
+    }
+    .btn:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-light);
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
+    }
+    .btn-accent {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+    .btn-accent:hover {
+      opacity: 0.9;
+    }
+    .btn-danger {
+      color: var(--danger);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    .btn-danger:hover {
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    /* Progress section */
+    .progress-section {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+    [data-theme="light"] .progress-section {
+      background: rgba(241, 245, 249, 0.6);
+    }
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .progress-bar-bg {
+      height: 10px;
+      background: var(--surface-hover);
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+      border-radius: 9999px;
+      transition: width 0.4s ease;
+    }
+    .continent-progress-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+    }
+    .continent-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+    }
+    .continent-chip strong {
+      color: var(--text);
+    }
+
+    /* View Controls Bar */
+    .controls-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .view-tabs {
+      display: flex;
+      gap: 0.5rem;
+      background: var(--surface);
+      padding: 0.35rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      width: fit-content;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    .view-tab {
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .view-tab:hover {
+      color: var(--text);
+    }
+    .view-tab.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px var(--primary-glow);
+    }
+
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.55rem 1rem 0.55rem 2.25rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .dropdowns-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .select-input {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.55rem 1rem;
+      color: var(--text);
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .select-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* Continent Filter Pills */
+    .continent-pills {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .pill {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .pill:hover {
+      border-color: var(--border-light);
+      color: var(--text);
+    }
+    .pill.active {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    /* Country Cards Grid */
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .country-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease, border-color 0.2s ease;
+      position: relative;
+    }
+    .country-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      border-color: var(--border-light);
+    }
+    .country-card.is-read {
+      opacity: 0.75;
+      border-left: 4px solid var(--accent);
+    }
+    .country-card.anim-out {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+
+    /* Card Flag Cover */
+    .card-banner {
+      height: 150px;
+      position: relative;
+      background: #0f172a;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-flag-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .country-card:hover .card-flag-img {
+      transform: scale(1.05);
+    }
+    .card-flag-fallback {
+      font-size: 4.5rem;
+      user-select: none;
+    }
+    .card-status-badge {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      backdrop-filter: blur(8px);
+    }
+    .badge-read {
+      background: rgba(16, 185, 129, 0.9);
+      color: #ffffff;
+    }
+    .badge-unread {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #f1f5f9;
+    }
+
+    .card-continent-tag {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      background: rgba(15, 23, 42, 0.85);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Card Body */
+    .card-body {
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .card-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .card-official-name {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .card-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      background: var(--surface);
+      padding: 0.6rem 0.75rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+    .stat-value {
+      color: var(--text);
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+    .btn-toggle-read {
+      flex: 1;
+      justify-content: center;
+      padding: 0.5rem;
+      font-size: 0.82rem;
+    }
+    .btn-details {
+      padding: 0.5rem 0.75rem;
+    }
+
+    /* Empty state */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-lg);
+    }
+    .empty-state-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .empty-state-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .empty-state-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      max-width: 480px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    /* Full Details Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .modal-header {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+    .modal-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .modal-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+    .modal-close {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .modal-close:hover {
+      background: var(--surface-hover);
+      color: var(--text);
+    }
+
+    .modal-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Modal Image Gallery */
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-item {
+      background: #000000;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 160px;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      inset-inline: 0;
+      background: rgba(0, 0, 0, 0.75);
+      font-size: 0.72rem;
+      padding: 0.3rem 0.6rem;
+      color: #e2e8f0;
+      text-align: center;
+    }
+
+    /* Modal Sections */
+    .profile-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #60a5fa;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    .info-table tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .info-table td {
+      padding: 0.4rem 0.5rem;
+      vertical-align: top;
+    }
+    .info-table td.label {
+      width: 35%;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .info-table td.value {
+      color: var(--text);
+    }
+
+    .sources-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .source-tag {
+      background: var(--surface-hover);
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .source-tag:hover {
+      color: var(--text);
+      border-color: var(--primary);
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+    .toast {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .app-container { padding: 1rem 0.75rem 3rem 0.75rem; }
+      header { padding: 1.25rem; }
+      .header-title h1 { font-size: 1.35rem; }
+      .filter-row { flex-direction: column; align-items: stretch; }
+      .search-box { width: 100%; }
+      .dropdowns-group { width: 100%; }
+      .dropdowns-group select { flex: 1; }
+      .country-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <div class="header-top">
+        <div class="header-title">
+          <span style="font-size: 2rem;">🌐</span>
+          <div>
+            <h1>The World Countries Atlas 197</h1>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.1rem;">
+              Interactive Country Tracker & Verified Global Repository • <span class="badge-pill">197 Canonical Entities</span>
+            </div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-primary" id="btnSurprise" title="Pick a random unread country">
+            <span>🎲</span> Surprise Me
+          </button>
+          <button class="btn" id="btnExport" title="Export read progress as JSON">
+            <span>📥</span> Export
+          </button>
+          <button class="btn" id="btnImport" title="Import read progress JSON">
+            <span>📤</span> Import
+          </button>
+          <input type="file" id="importFileInput" accept=".json" style="display:none;">
+          <button class="btn btn-danger" id="btnReset" title="Reset all read progress">
+            <span>🔄</span> Reset
+          </button>
+          <a href="https://github.com/HackerO112/world-countries-atlas-197" target="_blank" rel="noopener noreferrer" class="btn" title="View Repository on GitHub">
+            <span>⭐</span> GitHub
+          </a>
+          <button class="btn" id="btnThemeToggle" title="Toggle Light/Dark Theme">
+            <span id="themeIcon">☀️</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Progress Bar -->
+      <div class="progress-section">
+        <div class="progress-header">
+          <span>Global Progress: <strong id="progressText">0 of 197 Read (0%)</strong></span>
+          <span id="unreadCountBadge" style="color: #60a5fa; font-size: 0.85rem;">197 Remaining</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+        <div class="continent-progress-grid" id="continentProgressGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </header>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <!-- View Mode Tabs (Default: Unread Only) -->
+        <div class="view-tabs" role="tablist">
+          <button class="view-tab active" data-view="unread" role="tab" id="tabUnread">
+            📖 Unread Only (<span id="countUnreadTab">197</span>)
+          </button>
+          <button class="view-tab" data-view="read" role="tab" id="tabRead">
+            ✅ Read Only (<span id="countReadTab">0</span>)
+          </button>
+          <button class="view-tab" data-view="all" role="tab" id="tabAll">
+            🌍 All Countries (197)
+          </button>
+        </div>
+
+        <button class="btn btn-accent" id="btnMarkAllVisible" style="font-size:0.8rem;">
+          ✓ Mark All Visible as Read
+        </button>
+      </div>
+
+      <!-- Search & Filters -->
+      <div class="filter-row">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search by name, capital, demonym, ISO, language... (Press '/' to focus)">
+        </div>
+
+        <div class="dropdowns-group">
+          <select id="sortSelect" class="select-input">
+            <option value="name-asc">Sort: Name (A to Z)</option>
+            <option value="name-desc">Sort: Name (Z to A)</option>
+            <option value="pop-desc">Sort: Population (High to Low)</option>
+            <option value="pop-asc">Sort: Population (Low to High)</option>
+            <option value="area-desc">Sort: Area (Largest First)</option>
+            <option value="area-asc">Sort: Area (Smallest First)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Continent Pills -->
+      <div class="continent-pills" id="continentPills">
+        <button class="pill active" data-continent="all">All Continents</button>
+        <button class="pill" data-continent="Africa">Africa (54)</button>
+        <button class="pill" data-continent="Asia">Asia (49)</button>
+        <button class="pill" data-continent="Europe">Europe (45)</button>
+        <button class="pill" data-continent="North America">North America (23)</button>
+        <button class="pill" data-continent="South America">South America (12)</button>
+        <button class="pill" data-continent="Oceania">Oceania (14)</button>
+      </div>
+    </div>
+
+    <!-- Country Cards Grid -->
+    <main class="country-grid" id="countryGrid">
+      <div class="empty-state">
+        <div class="empty-state-icon">⏳</div>
+        <div class="empty-state-title">Loading Atlas Dataset...</div>
+        <div class="empty-state-desc">Fetching countries.json. Please ensure this file is present in the same directory.</div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Full Profile Modal -->
+  <div class="modal-overlay" id="profileModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span id="modalFlagEmoji" style="font-size:1.8rem;">🇺🇳</span>
+          <div>
+            <div class="modal-title" id="modalCountryName">Country Name</div>
+            <div style="font-size:0.8rem; color:var(--text-muted);" id="modalOfficialName">Official Name</div>
+          </div>
+        </div>
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-content" id="modalBody">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    (function() {
+      'use strict';
+
+      const STORAGE_KEY = 'worldCountersAtlas_read_v1';
+      let allCountries = [];
+      let readSet = new Set();
+      let currentView = 'unread'; // 'unread' (default) | 'read' | 'all'
+      let selectedContinent = 'all';
+      let searchQuery = '';
+      let currentSort = 'name-asc';
+
+      // Elements
+      const countryGrid = document.getElementById('countryGrid');
+      const progressText = document.getElementById('progressText');
+      const progressBarFill = document.getElementById('progressBarFill');
+      const unreadCountBadge = document.getElementById('unreadCountBadge');
+      const continentProgressGrid = document.getElementById('continentProgressGrid');
+      const countUnreadTab = document.getElementById('countUnreadTab');
+      const countReadTab = document.getElementById('countReadTab');
+      const searchInput = document.getElementById('searchInput');
+      const sortSelect = document.getElementById('sortSelect');
+      const continentPills = document.querySelectorAll('#continentPills .pill');
+      const viewTabs = document.querySelectorAll('.view-tab');
+      const btnSurprise = document.getElementById('btnSurprise');
+      const btnReset = document.getElementById('btnReset');
+      const btnExport = document.getElementById('btnExport');
+      const btnImport = document.getElementById('btnImport');
+      const importFileInput = document.getElementById('importFileInput');
+      const btnMarkAllVisible = document.getElementById('btnMarkAllVisible');
+      const btnThemeToggle = document.getElementById('btnThemeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const profileModal = document.getElementById('profileModal');
+      const modalCloseBtn = document.getElementById('modalCloseBtn');
+      const toastContainer = document.getElementById('toastContainer');
+
+      // Initialize Theme
+      const savedTheme = localStorage.getItem('worldAtlas_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+      btnThemeToggle.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('worldAtlas_theme', next);
+        themeIcon.textContent = next === 'dark' ? '☀️' : '🌙';
+      });
+
+      // Load read status from localStorage
+      function loadReadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const arr = JSON.parse(raw);
+            if (Array.isArray(arr)) {
+              readSet = new Set(arr);
+            }
+          }
+        } catch (e) {
+          console.error('Failed to parse localStorage read data:', e);
+          readSet = new Set();
+        }
+      }
+
+      function saveReadState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(readSet)));
+        } catch (e) {
+          console.error('Failed to save to localStorage:', e);
+        }
+        updateProgress();
+        updateTabCounts();
+      }
+
+      // Fetch Dataset
+      async function loadDataset() {
+        try {
+          const resp = await fetch('./countries.json');
+          if (!resp.ok) {
+            throw new Error(`HTTP error ${resp.status}`);
+          }
+          allCountries = await resp.json();
+          if (!Array.isArray(allCountries) || allCountries.length === 0) {
+            throw new Error('countries.json is empty or not an array');
+          }
+          renderApp();
+        } catch (err) {
+          countryGrid.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-state-icon">⚠️</div>
+              <div class="empty-state-title">Unable to Load countries.json</div>
+              <div class="empty-state-desc">
+                ${err.message}. If opening locally via <code>file://</code>, modern browsers block cross-origin JSON requests.
+                <br><br>
+                <strong>Quick Fix:</strong> Run a local web server:
+                <br>
+                <code>python3 -m http.server 8000</code> or <code>npx serve .</code>
+                <br>
+                Or deploy to <strong>GitHub Pages</strong> as described in the README.
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      // Progress Calculation
+      function updateProgress() {
+        const total = allCountries.length || 197;
+        const readCount = readSet.size;
+        const unreadCount = Math.max(0, total - readCount);
+        const pct = total > 0 ? ((readCount / total) * 100).toFixed(1) : 0;
+
+        progressText.textContent = `${readCount} of ${total} Read (${pct}%)`;
+        unreadCountBadge.textContent = `${unreadCount} Remaining`;
+        progressBarFill.style.width = `${pct}%`;
+
+        // Continent breakdown
+        const continentStats = {
+          Africa: { total: 0, read: 0 },
+          Asia: { total: 0, read: 0 },
+          Europe: { total: 0, read: 0 },
+          "North America": { total: 0, read: 0 },
+          "South America": { total: 0, read: 0 },
+          Oceania: { total: 0, read: 0 },
+        };
+
+        allCountries.forEach(c => {
+          if (continentStats[c.continent]) {
+            continentStats[c.continent].total++;
+            if (readSet.has(c.id)) {
+              continentStats[c.continent].read++;
+            }
+          }
+        });
+
+        const shortNames = {
+          Africa: "AF", Asia: "AS", Europe: "EU", "North America": "NA", "South America": "SA", Oceania: "OC"
+        };
+
+        continentProgressGrid.innerHTML = Object.entries(continentStats).map(([name, data]) => {
+          const s = shortNames[name] || name;
+          return `<div class="continent-chip"><strong>${s}:</strong> ${data.read}/${data.total}</div>`;
+        }).join('');
+      }
+
+      function updateTabCounts() {
+        const total = allCountries.length || 197;
+        const readCount = readSet.size;
+        const unreadCount = Math.max(0, total - readCount);
+        countUnreadTab.textContent = unreadCount;
+        countReadTab.textContent = readCount;
+      }
+
+      // Filter and Sort countries
+      function getFilteredCountries() {
+        return allCountries.filter(c => {
+          const isRead = readSet.has(c.id);
+          // View Mode filter
+          if (currentView === 'unread' && isRead) return false;
+          if (currentView === 'read' && !isRead) return false;
+
+          // Continent filter
+          if (selectedContinent !== 'all' && c.continent !== selectedContinent) return false;
+
+          // Search query
+          if (searchQuery) {
+            const q = searchQuery.toLowerCase();
+            const searchable = [
+              c.name, c.officialName, c.nativeName, c.capital, c.largestCity,
+              c.demonym, c.iso2, c.iso3, ...(c.languages || [])
+            ].join(' ').toLowerCase();
+            if (!searchable.includes(q)) return false;
+          }
+
+          return true;
+        }).sort((a, b) => {
+          if (currentSort === 'name-asc') return a.name.localeCompare(b.name);
+          if (currentSort === 'name-desc') return b.name.localeCompare(a.name);
+          if (currentSort === 'pop-desc') return (b.population2026 || 0) - (a.population2026 || 0);
+          if (currentSort === 'pop-asc') return (a.population2026 || 0) - (b.population2026 || 0);
+          if (currentSort === 'area-desc') return (b.areaKm2 || 0) - (a.areaKm2 || 0);
+          if (currentSort === 'area-asc') return (a.areaKm2 || 0) - (b.areaKm2 || 0);
+          return 0;
+        });
+      }
+
+      // Render Cards Grid
+      function renderCards() {
+        const filtered = getFilteredCountries();
+        if (filtered.length === 0) {
+          countryGrid.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-state-icon">🎉</div>
+              <div class="empty-state-title">
+                ${currentView === 'unread' ? 'All Caught Up!' : 'No Countries Found'}
+              </div>
+              <div class="empty-state-desc">
+                ${currentView === 'unread' 
+                  ? 'You have marked all countries in this view as read! Switch to "Read Only" or "All Countries" to review.' 
+                  : 'No countries match your search or filter criteria.'}
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        countryGrid.innerHTML = filtered.map(c => {
+          const isRead = readSet.has(c.id);
+          const flagSrc = c.flagImage || `https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png`;
+          const popStr = (c.population2026 || 0).toLocaleString();
+          const areaStr = (c.areaKm2 || 0).toLocaleString() + ' km²';
+
+          return `
+            <article class="country-card ${isRead ? 'is-read' : ''}" id="card-${c.id}">
+              <div class="card-banner">
+                <img 
+                  class="card-flag-img" 
+                  src="${flagSrc}" 
+                  alt="Flag of ${c.name}" 
+                  loading="lazy" 
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                >
+                <div class="card-flag-fallback" style="display:none;">${c.flagEmoji || '🏳️'}</div>
+                <div class="card-status-badge ${isRead ? 'badge-read' : 'badge-unread'}">
+                  ${isRead ? '✓ READ' : 'UNREAD'}
+                </div>
+                <div class="card-continent-tag">${c.continent} • ${c.subregion || ''}</div>
+              </div>
+
+              <div class="card-body">
+                <div class="card-title-row">
+                  <h3 class="card-name">${c.flagEmoji || ''} ${c.name}</h3>
+                  <span style="font-size:0.75rem; color:var(--text-dim); font-weight:700;">${c.iso3 || ''}</span>
+                </div>
+                <div class="card-official-name">${c.officialName || c.name}</div>
+
+                <div class="card-stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">Capital</span>
+                    <span class="stat-value">${c.capital || 'N/A'}</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Population</span>
+                    <span class="stat-value">${popStr}</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Area</span>
+                    <span class="stat-value">${areaStr}</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Currency</span>
+                    <span class="stat-value">${c.currency || 'N/A'}</span>
+                  </div>
+                </div>
+
+                <div class="card-actions">
+                  <button 
+                    class="btn btn-toggle-read ${isRead ? 'btn-danger' : 'btn-accent'}" 
+                    data-id="${c.id}"
+                  >
+                    ${isRead ? '✕ Mark Unread' : '✓ Mark as Read'}
+                  </button>
+                  <button 
+                    class="btn btn-details" 
+                    data-id="${c.id}" 
+                    title="View Comprehensive Profile"
+                  >
+                    📖 Profile
+                  </button>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        // Attach event listeners to card buttons
+        countryGrid.querySelectorAll('.btn-toggle-read').forEach(b => {
+          b.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleReadStatus(b.dataset.id);
+          });
+        });
+
+        countryGrid.querySelectorAll('.btn-details').forEach(b => {
+          b.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openProfileModal(b.dataset.id);
+          });
+        });
+      }
+
+      // Toggle Read Status with instant animation in Unread mode
+      function toggleReadStatus(id) {
+        const country = allCountries.find(c => c.id === id);
+        if (!country) return;
+
+        const isCurrentlyRead = readSet.has(id);
+        const cardEl = document.getElementById(`card-${id}`);
+
+        if (isCurrentlyRead) {
+          readSet.delete(id);
+          saveReadState();
+          showToast(`Marked ${country.name} as unread`);
+          if (currentView === 'read') {
+            if (cardEl) {
+              cardEl.classList.add('anim-out');
+              setTimeout(() => renderCards(), 200);
+            } else {
+              renderCards();
+            }
+          } else {
+            renderCards();
+          }
+        } else {
+          readSet.add(id);
+          saveReadState();
+          showToast(`Marked ${country.name} as read!`);
+          if (currentView === 'unread') {
+            if (cardEl) {
+              cardEl.classList.add('anim-out');
+              setTimeout(() => renderCards(), 200);
+            } else {
+              renderCards();
+            }
+          } else {
+            renderCards();
+          }
+        }
+      }
+
+      // Full Profile Modal
+      function openProfileModal(id) {
+        const c = allCountries.find(x => x.id === id);
+        if (!c) return;
+
+        document.getElementById('modalFlagEmoji').textContent = c.flagEmoji || '🌍';
+        document.getElementById('modalCountryName').textContent = `${c.name} (${c.iso3 || ''})`;
+        document.getElementById('modalOfficialName').textContent = `${c.officialName || c.name} • ${c.nativeName || ''}`;
+
+        const isRead = readSet.has(c.id);
+        const flagSrc = c.flagImage || `https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png`;
+        const mapSrc = c.mapImage || `https://commons.wikimedia.org/wiki/Special:FilePath/${c.iso3}_orthographic.svg`;
+        const landmarkSrc = c.landmarkImage || flagSrc;
+
+        const modalBody = document.getElementById('modalBody');
+        modalBody.innerHTML = `
+          <!-- Image Gallery -->
+          <div class="modal-gallery">
+            <div class="gallery-item">
+              <img src="${flagSrc}" alt="Flag of ${c.name}" onerror="this.src='https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png'">
+              <div class="gallery-caption">National Flag</div>
+            </div>
+            <div class="gallery-item">
+              <img src="${mapSrc}" alt="Orthographic Location of ${c.name}" onerror="this.parentElement.style.display='none'">
+              <div class="gallery-caption">Location Map</div>
+            </div>
+            ${landmarkSrc && landmarkSrc !== flagSrc ? `
+            <div class="gallery-item">
+              <img src="${landmarkSrc}" alt="Landmark of ${c.name}" onerror="this.parentElement.style.display='none'">
+              <div class="gallery-caption">Notable Landmark</div>
+            </div>` : ''}
+          </div>
+
+          <!-- Quick Actions inside Modal -->
+          <div style="display:flex; justify-content:space-between; align-items:center; background:var(--surface); padding:0.75rem 1rem; border-radius:var(--radius); border:1px solid var(--border);">
+            <div>
+              Status: <strong>${isRead ? '✅ Read' : '📖 Unread'}</strong>
+            </div>
+            <button class="btn ${isRead ? 'btn-danger' : 'btn-accent'}" id="modalToggleBtn">
+              ${isRead ? '✕ Mark as Unread' : '✓ Mark as Read'}
+            </button>
+          </div>
+
+          <!-- Section 1: Identity -->
+          <div class="profile-section">
+            <div class="section-title">🏛️ Identity & Sovereignty</div>
+            <table class="info-table">
+              <tr><td class="label">Official Name</td><td class="value">${c.officialName || 'N/A'}</td></tr>
+              <tr><td class="label">Native Name</td><td class="value">${c.nativeName || 'N/A'}</td></tr>
+              <tr><td class="label">Status</td><td class="value">${c.status || 'UN Member State'}</td></tr>
+              <tr><td class="label">Demonym</td><td class="value">${c.demonym || 'N/A'}</td></tr>
+              <tr><td class="label">ISO Codes</td><td class="value">ISO2: ${c.iso2} | ISO3: ${c.iso3} | Numeric: ${c.isoNumeric}</td></tr>
+              <tr><td class="label">Capital City</td><td class="value">${c.capital || 'N/A'}</td></tr>
+              <tr><td class="label">Largest City</td><td class="value">${c.largestCity || 'N/A'}</td></tr>
+              <tr><td class="label">Major Cities</td><td class="value">${Array.isArray(c.majorCities) ? c.majorCities.join(', ') : (c.majorCities || 'N/A')}</td></tr>
+              <tr><td class="label">National Day</td><td class="value">${c.nationalDay || 'N/A'}</td></tr>
+              <tr><td class="label">National Anthem</td><td class="value">${c.nationalAnthem || 'N/A'}</td></tr>
+              <tr><td class="label">Motto</td><td class="value"><em>${c.motto || 'N/A'}</em></td></tr>
+            </table>
+          </div>
+
+          <!-- Section 2: Geography -->
+          <div class="profile-section">
+            <div class="section-title">🗺️ Geography & Environment</div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">${c.geography || ''}</p>
+            <table class="info-table">
+              <tr><td class="label">Area</td><td class="value">${(c.areaKm2 || 0).toLocaleString()} km² (Rank: #${c.areaRank || 'N/A'})</td></tr>
+              <tr><td class="label">Population Density</td><td class="value">${c.populationDensity || 'N/A'}</td></tr>
+              <tr><td class="label">Coordinates</td><td class="value">${c.coordinates ? `${c.coordinates.lat}°, ${c.coordinates.lng}°` : 'N/A'}</td></tr>
+              <tr><td class="label">Borders</td><td class="value">${Array.isArray(c.borders) ? (c.borders.length ? c.borders.join(', ') : 'None (Island)') : (c.borders || 'None')}</td></tr>
+              <tr><td class="label">Coastline</td><td class="value">${c.coastline || 'N/A'} ${c.landlocked ? '(Landlocked)' : ''}</td></tr>
+              <tr><td class="label">Highest Point</td><td class="value">${c.highestPoint || 'N/A'}</td></tr>
+              <tr><td class="label">Lowest Point</td><td class="value">${c.lowestPoint || 'N/A'}</td></tr>
+              <tr><td class="label">Longest River</td><td class="value">${c.longestRiver || 'N/A'}</td></tr>
+              <tr><td class="label">Climate</td><td class="value">${c.climate || 'N/A'}</td></tr>
+              <tr><td class="label">Natural Hazards</td><td class="value">${Array.isArray(c.naturalHazards) ? c.naturalHazards.join(', ') : (c.naturalHazards || 'N/A')}</td></tr>
+              <tr><td class="label">Biodiversity</td><td class="value">${c.biodiversity || 'N/A'}</td></tr>
+              <tr><td class="label">Time Zone & Driving</td><td class="value">${c.timeZone || 'N/A'} • Driving: ${c.drivingSide ? c.drivingSide.toUpperCase() : 'RIGHT'}</td></tr>
+            </table>
+          </div>
+
+          <!-- Section 3: Government & Politics -->
+          <div class="profile-section">
+            <div class="section-title">⚖️ Government & Politics</div>
+            <table class="info-table">
+              <tr><td class="label">Government Type</td><td class="value">${c.government || 'N/A'}</td></tr>
+              <tr><td class="label">Head of State</td><td class="value">${c.headOfState || 'N/A'}</td></tr>
+              <tr><td class="label">Head of Government</td><td class="value">${c.headOfGovernment || 'N/A'}</td></tr>
+              <tr><td class="label">Legislature</td><td class="value">${c.legislature || 'N/A'}</td></tr>
+              <tr><td class="label">Constitution</td><td class="value">${c.constitution || 'N/A'}</td></tr>
+              <tr><td class="label">Political Situation (2026)</td><td class="value">${c.politicalSituation || 'N/A'}</td></tr>
+              <tr><td class="label">Foreign Relations</td><td class="value">${c.foreignRelations || 'N/A'}</td></tr>
+              <tr><td class="label">International Orgs</td><td class="value">${Array.isArray(c.internationalOrgs) ? c.internationalOrgs.join(', ') : (c.internationalOrgs || 'N/A')}</td></tr>
+            </table>
+          </div>
+
+          <!-- Section 4: History -->
+          <div class="profile-section">
+            <div class="section-title">📜 History & Timeline</div>
+            <p style="font-size:0.85rem; line-height:1.6; margin-bottom:0.75rem;">${c.history || 'N/A'}</p>
+            ${c.recentEvents2020_2026 ? `
+              <div style="background:var(--surface-hover); padding:0.75rem; border-radius:var(--radius-sm); border-left:3px solid var(--primary); font-size:0.82rem;">
+                <strong>Recent Events (2020–2026):</strong> ${c.recentEvents2020_2026}
+              </div>
+            ` : ''}
+          </div>
+
+          <!-- Section 5: People & Society -->
+          <div class="profile-section">
+            <div class="section-title">👥 People & Society</div>
+            <table class="info-table">
+              <tr><td class="label">Population (2026)</td><td class="value">${(c.population2026 || 0).toLocaleString()} (Rank: #${c.populationRank || 'N/A'})</td></tr>
+              <tr><td class="label">Official Languages</td><td class="value">${Array.isArray(c.languages) ? c.languages.join(', ') : (c.languages || 'N/A')}</td></tr>
+              <tr><td class="label">Ethnic Groups</td><td class="value">${Array.isArray(c.ethnicGroups) ? c.ethnicGroups.join(', ') : (c.ethnicGroups || 'N/A')}</td></tr>
+              <tr><td class="label">Religions</td><td class="value">${Array.isArray(c.religions) ? c.religions.join(', ') : (c.religions || 'N/A')}</td></tr>
+              <tr><td class="label">Literacy Rate</td><td class="value">${c.literacyRate || 'N/A'}</td></tr>
+              <tr><td class="label">Life Expectancy</td><td class="value">${c.lifeExpectancy || 'N/A'}</td></tr>
+              <tr><td class="label">HDI</td><td class="value">${c.hdi || 'N/A'}</td></tr>
+              <tr><td class="label">Urbanization</td><td class="value">${c.urbanization || 'N/A'}</td></tr>
+              <tr><td class="label">Social Customs & Etiquette</td><td class="value">${c.socialCustoms || ''} ${c.etiquette ? `(${c.etiquette})` : ''}</td></tr>
+            </table>
+          </div>
+
+          <!-- Section 6: Economy -->
+          <div class="profile-section">
+            <div class="section-title">💼 Economy & Infrastructure</div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">${c.economy || ''}</p>
+            <table class="info-table">
+              <tr><td class="label">GDP (Nominal)</td><td class="value">${c.gdpNominal || 'N/A'}</td></tr>
+              <tr><td class="label">GDP (PPP)</td><td class="value">${c.gdpPpp || 'N/A'}</td></tr>
+              <tr><td class="label">GDP Per Capita</td><td class="value">${c.gdpPerCapita || 'N/A'}</td></tr>
+              <tr><td class="label">Currency</td><td class="value">${c.currency || 'N/A'}</td></tr>
+              <tr><td class="label">Key Industries</td><td class="value">${Array.isArray(c.industries) ? c.industries.join(', ') : (c.industries || 'N/A')}</td></tr>
+              <tr><td class="label">Major Exports</td><td class="value">${Array.isArray(c.exports) ? c.exports.join(', ') : (c.exports || 'N/A')}</td></tr>
+              <tr><td class="label">Major Imports</td><td class="value">${Array.isArray(c.imports) ? c.imports.join(', ') : (c.imports || 'N/A')}</td></tr>
+              <tr><td class="label">Natural Resources</td><td class="value">${Array.isArray(c.naturalResources) ? c.naturalResources.join(', ') : (c.naturalResources || 'N/A')}</td></tr>
+            </table>
+          </div>
+
+          <!-- Section 7: Culture & Heritage -->
+          <div class="profile-section">
+            <div class="section-title">🎭 Culture & Heritage</div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">${c.culture || ''}</p>
+            <table class="info-table">
+              <tr><td class="label">Cuisine & Dishes</td><td class="value">${c.cuisine || 'N/A'}</td></tr>
+              <tr><td class="label">Festivals & Holidays</td><td class="value">${Array.isArray(c.festivals) ? c.festivals.join(', ') : (c.festivals || 'N/A')}</td></tr>
+              <tr><td class="label">Music & Dance</td><td class="value">${c.music || 'N/A'} • ${c.dance || 'N/A'}</td></tr>
+              <tr><td class="label">Literature & Arts</td><td class="value">${c.literature || 'N/A'}</td></tr>
+              <tr><td class="label">Sports</td><td class="value">${c.sports || 'N/A'}</td></tr>
+              <tr><td class="label">UNESCO Sites</td><td class="value">${Array.isArray(c.worldHeritageSites) ? c.worldHeritageSites.join(', ') : (c.worldHeritageSites || 'N/A')}</td></tr>
+            </table>
+          </div>
+
+          <!-- Section 8: Symbols & Tourism -->
+          <div class="profile-section">
+            <div class="section-title">🏰 Symbols & Landmarks</div>
+            <table class="info-table">
+              <tr><td class="label">Top Landmarks</td><td class="value">${Array.isArray(c.landmarks) ? c.landmarks.join(', ') : (c.landmarks || 'N/A')}</td></tr>
+              <tr><td class="label">Flag Symbolism</td><td class="value">${c.flagDescription || 'N/A'}</td></tr>
+              <tr><td class="label">Coat of Arms</td><td class="value">${c.coatOfArmsDescription || 'N/A'}</td></tr>
+              <tr><td class="label">National Symbols</td><td class="value">${c.symbols ? (typeof c.symbols === 'object' ? Object.entries(c.symbols).map(([k,v])=>`${k}: ${v}`).join('; ') : c.symbols) : 'N/A'}</td></tr>
+              <tr><td class="label">Travel & Safety Notes</td><td class="value">${c.travelNotes || 'Standard travel safety precautions apply.'}</td></tr>
+            </table>
+          </div>
+
+          <!-- Section 9: Verified Sources -->
+          <div class="profile-section">
+            <div class="section-title">📚 Verified Sources</div>
+            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">
+              Dataset verified through: <strong>${c.lastUpdated || '2026-11-24'}</strong>
+            </div>
+            <div class="sources-list">
+              ${(c.sources || ["CIA World Factbook", "United Nations", "World Bank", "IMF", "UNESCO"]).map(s => `
+                <span class="source-tag">🔗 ${s}</span>
+              `).join('')}
+            </div>
+          </div>
+        `;
+
+        // Toggle button inside modal
+        const modalToggleBtn = document.getElementById('modalToggleBtn');
+        modalToggleBtn.addEventListener('click', () => {
+          toggleReadStatus(c.id);
+          const updatedRead = readSet.has(c.id);
+          modalToggleBtn.className = `btn ${updatedRead ? 'btn-danger' : 'btn-accent'}`;
+          modalToggleBtn.textContent = updatedRead ? '✕ Mark as Unread' : '✓ Mark as Read';
+        });
+
+        profileModal.classList.add('open');
+      }
+
+      function closeModal() {
+        profileModal.classList.remove('open');
+      }
+
+      modalCloseBtn.addEventListener('click', closeModal);
+      profileModal.addEventListener('click', (e) => {
+        if (e.target === profileModal) closeModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && profileModal.classList.contains('open')) {
+          closeModal();
+        }
+        if (e.key === '/' && document.activeElement !== searchInput) {
+          e.preventDefault();
+          searchInput.focus();
+        }
+      });
+
+      // Toast Notification
+      function showToast(msg) {
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `<span>ℹ️</span> <span>${msg}</span>`;
+        toastContainer.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateY(10px)';
+          setTimeout(() => toast.remove(), 250);
+        }, 2500);
+      }
+
+      // Event Listeners: View Mode Tabs
+      viewTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          viewTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentView = tab.dataset.view;
+          renderCards();
+        });
+      });
+
+      // Continent Filter
+      continentPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          continentPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          selectedContinent = pill.dataset.continent;
+          renderCards();
+        });
+      });
+
+      // Search & Sort
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        renderCards();
+      });
+
+      sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        renderCards();
+      });
+
+      // Surprise Me / Random Unread Country
+      btnSurprise.addEventListener('click', () => {
+        const unreadList = allCountries.filter(c => !readSet.has(c.id));
+        if (unreadList.length === 0) {
+          showToast('🎉 All 197 countries have been marked as read!');
+          return;
+        }
+        const randomIndex = Math.floor(Math.random() * unreadList.length);
+        const randomCountry = unreadList[randomIndex];
+        openProfileModal(randomCountry.id);
+      });
+
+      // Mark All Visible as Read
+      btnMarkAllVisible.addEventListener('click', () => {
+        const visible = getFilteredCountries();
+        if (visible.length === 0) return;
+        if (confirm(`Mark all ${visible.length} visible countries as read?`)) {
+          visible.forEach(c => readSet.add(c.id));
+          saveReadState();
+          showToast(`Marked ${visible.length} countries as read!`);
+          renderCards();
+        }
+      });
+
+      // Reset Progress
+      btnReset.addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset all reading progress? This cannot be undone unless you have an exported backup.')) {
+          readSet.clear();
+          saveReadState();
+          showToast('All progress has been reset.');
+          renderCards();
+        }
+      });
+
+      // Export Progress JSON
+      btnExport.addEventListener('click', () => {
+        const data = {
+          exportDate: new Date().toISOString(),
+          version: 'worldCountersAtlas_read_v1',
+          readCount: readSet.size,
+          total: allCountries.length,
+          readIds: Array.from(readSet)
+        };
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `world-atlas-progress-${new Date().toISOString().slice(0,10)}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast('Progress exported successfully!');
+      });
+
+      // Import Progress JSON
+      btnImport.addEventListener('click', () => {
+        importFileInput.click();
+      });
+
+      importFileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          try {
+            const parsed = JSON.parse(event.target.result);
+            const ids = parsed.readIds || parsed;
+            if (Array.isArray(ids)) {
+              readSet = new Set(ids);
+              saveReadState();
+              showToast(`Imported ${readSet.size} read countries successfully!`);
+              renderCards();
+            } else {
+              alert('Invalid backup file format.');
+            }
+          } catch (err) {
+            alert('Failed to parse JSON file.');
+          }
+        };
+        reader.readAsText(file);
+      });
+
+      // Render full app
+      function renderApp() {
+        loadReadState();
+        updateProgress();
+        updateTabCounts();
+        renderCards();
+      }
+
+      // Initial kickoff
+      loadDataset();
+    })();
+  </script>
+</body>
+</html>

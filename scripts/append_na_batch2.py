@@ -1,0 +1,92 @@
+import sys, os
+sys.path.insert(0, os.path.abspath("."))
+import json
+
+from scripts.finish_na import countries
+
+more_na = [
+    # 9. Dominican Republic
+    {
+        "id": "dominican-republic", "name": "Dominican Republic", "officialName": "Dominican Republic",
+        "nativeName": "República Dominicana", "continent": "North America", "subregion": "Caribbean",
+        "status": "UN Member State", "iso2": "DO", "iso3": "DOM", "isoNumeric": "214", "flagEmoji": "🇩🇴",
+        "demonym": "Dominican", "capital": "Santo Domingo", "largestCity": "Santo Domingo",
+        "majorCities": ["Santo Domingo", "Santiago de los Caballeros", "San Cristóbal", "La Vega", "San Pedro de Macorís", "Punta Cana"],
+        "nationalDay": "February 27 (Independence Day)", "nationalAnthem": "Himno Nacional de la República Dominicana",
+        "motto": "Dios, Patria, Libertad (God, Fatherland, Liberty)", "population2026": 11450000,
+        "areaKm2": 48671, "areaRank": 131, "populationRank": 84, "populationDensity": "235.2 / km²",
+        "coordinates": {"lat": 18.7357, "lng": -70.1627}, "borders": ["Haiti"], "coastline": "1,288 km",
+        "landlocked": False, "highestPoint": "Pico Duarte (3,098 m - highest peak in the Caribbean)", "lowestPoint": "Lake Enriquillo (-46 m - lowest point in the Caribbean)",
+        "longestRiver": "Yaque del Norte (298 km)", "majorLakes": ["Lake Enriquillo (hypersaline lake with American crocodiles)"],
+        "majorMountains": ["Cordillera Central", "Pico Duarte", "Sierra de Bahoruco"], "climate": "Tropical maritime with moderate temperature variation",
+        "naturalHazards": ["Hurricanes and tropical storms", "Periodic coastal flooding", "Earthquakes (Enriquillo-Plantain Garden fault zone)"],
+        "environmentalIssues": ["Deforestation along border regions", "Soil erosion and coral reef protection"],
+        "biodiversity": "Home to Caribbean high peaks, Jaragua National Park, humpback whale nursery in Samaná Bay, and endemic Hispaniolan solenodon",
+        "timeZone": "UTC-04:00", "drivingSide": "right", "callingCode": "+1-809, +1-829, +1-849", "languages": ["Spanish"],
+        "currency": "Dominican Peso (DOP, RD$)", "government": "Unitary presidential constitutional republic",
+        "headOfState": "President Luis Abinader", "headOfGovernment": "President Luis Abinader",
+        "legislature": "Congress of the Republic (Senate and Chamber of Deputies)", "constitution": "1966 (frequently amended; modernized 2015/2024)",
+        "mainPoliticalParties": ["Partido Revolucionario Moderno (PRM)", "Partido de la Liberación Dominicana (PLD)", "Fuerza del Pueblo (FP)"],
+        "latestElections": "General election May 2024 (Luis Abinader re-elected in first round)",
+        "politicalSituation": "Strong macroeconomic growth (fastest-growing economy in Latin America over recent decades); port modernization; anti-corruption initiatives.",
+        "foreignRelations": "Member of CAFTA-DR, UN, OAS, SICA, CELAC; strong economic partnership with the United States.",
+        "military": "Military Forces of the Dominican Republic (Army, Navy, Air Force) and National Police.",
+        "internationalOrgs": ["UN", "OAS", "CAFTA-DR", "SICA", "CELAC", "WTO", "IMF", "World Bank"], "adminDivisions": "31 provinces and 1 National District (Santo Domingo)",
+        "history": "Inhabited by the Taíno people (who called the island Quisqueya). Columbus established La Isabela in 1493; Santo Domingo founded in 1496 became the first permanent European settlement and university in the Americas. Gained independence from Spain in 1821, was occupied by Haiti, and fought the Dominican War of Independence under Juan Pablo Duarte in 1844. Survived the Trujillo dictatorship (1930–1961) to emerge as one of Latin America's strongest democratic and economic performers.",
+        "recentEvents2020_2026": "President Luis Abinader re-elected in May 2024; surpassed 10 million annual tourist arrivals; completed Santo Domingo Metro expansion and Monorail in Santiago.",
+        "historicalFigures": ["Juan Pablo Duarte (Founding Father)", "Francisco del Rosario Sánchez", "Matías Ramón Mella", "The Mirabal Sisters (Las Mariposas)", "Juan Bosch"],
+        "ethnicGroups": ["Mixed / Mulatto ~70.4%", "Black ~15.8%", "White ~13.5%", "Others ~0.3%"],
+        "religions": ["Roman Catholic ~48%", "Evangelical Protestant ~21%", "None / Atheist ~28%", "Others ~3%"],
+        "literacyRate": "94.2%", "lifeExpectancy": "74.5 years", "hdi": "0.767 (High)", "urbanization": "83.2%",
+        "education": "Universidad Autónoma de Santo Domingo (UASD - founded 1538, oldest university in the Americas) and INTEC.",
+        "healthcare": "National Health Insurance (SeNaSa) achieves near-universal population health insurance enrollment.",
+        "socialCustoms": "Playing dominoes in open-air colmados, dancing Bachata and Merengue in public plazas, passionate baseball discussions.",
+        "etiquette": "Warm handshakes, polite formal greetings ('Buenos días'), family-oriented hospitality.",
+        "nationalIdentity": "Defined by the cradle of colonial Americas history, Merengue and Bachata rhythms, and immense Major League Baseball pride.",
+        "gdpNominal": "$125 billion (approx. 2026)", "gdpPpp": "$280 billion (approx. 2026)", "gdpPerCapita": "$10,900",
+        "sectors": "Services & Tourism 60%, Industry & Free Zones 28%, Agriculture 6%, Mining 6%", "industries": ["Free trade zone manufacturing (medical devices, electronics)", "Tourism and luxury resort hospitality (Punta Cana)", "Gold and ferronickel mining (Pueblo Viejo gold mine - one of world's largest)", "Construction and real estate", "Beverage and cigar manufacturing"],
+        "agriculture": ["Sugarcane", "Cacao (world's top organic cacao exporter)", "Coffee", "Bananas", "Tobacco (world's #1 premium cigar exporter)", "Avocados"],
+        "naturalResources": ["Gold and silver (Pueblo Viejo)", "Ferronickel", "Bauxite", "Pristine white sand beaches", "Amber and Larimar (blue gemstone unique to Dominican Republic)"],
+        "energy": "Natural gas (39%), Coal (30%), Solar and wind (17%), Hydro (10%), Fuel oil (4%)",
+        "exports": ["Medical and surgical instruments", "Gold", "Cigars and tobacco", "Electrical equipment", "Organic cacao", "Bananas", "Textiles"],
+        "imports": ["Petroleum and natural gas", "Industrial raw materials", "Motor vehicles", "Foodstuffs and grains"],
+        "tradePartners": ["United States (largest partner, >50% of trade)", "Haiti", "Switzerland (gold refining)", "China", "India"],
+        "tourism": "Over 10.5 million international travelers visiting Punta Cana, Cap Cana, Puerto Plata, Samaná Peninsula, and the Colonial City of Santo Domingo.",
+        "employment": "Unemployment approx. 5.1%; robust formal job creation in free zones, tourism, and construction.",
+        "debtInflation": "Inflation anchored within Central Bank target (4% ± 1%); investment-grade path supported by sovereign stability.",
+        "transport": "Santo Domingo Metro and Cable Car (Teleférico); Santiago Monorail; modern Autovía del Este highway network.",
+        "airports": ["Punta Cana International (PUJ - busiest airport in the Caribbean)", "Las Américas International (SDQ in Santo Domingo)", "Cibao International (STI in Santiago)"],
+        "ports": ["Caucedo Port (world-class transshipment hub)", "Port of Haina", "Amber Cove (Puerto Plata cruise terminal)"],
+        "internetUsage": "85.2%",
+        "cuisine": "La Bandera Dominicana (national lunch: white rice, red beans, stewed meat, and fried sweet plantains), Mangú (mashed green plantains with salami, fried cheese, and eggs / Los Tres Golpes), Sancocho (seven-meat hearty stew), Mofongo, Chicharrón, Mamajuana herbal spiced rum.",
+        "festivals": ["Carnaval Dominicano (featuring Diablo Cojuelo masks in La Vega and Santo Domingo)", "Festival del Merengue", "Presidente Festival of Latin Music"],
+        "music": "Merengue (UNESCO Intangible Cultural Heritage), Bachata (UNESCO Intangible Cultural Heritage), Dembow dominicano, Latin trap.",
+        "dance": "Merengue, Bachata (danced worldwide, created in Dominican barrios), Son dominicano.",
+        "art": "Cándido Bidó, Guillo Pérez, colorful Taíno-inspired naive paintings, amber and larimar jewelry.",
+        "architecture": "Ciudad Colonial de Santo Domingo (first cathedral, first hospital, first paved street in the Americas); modern Caribbean resort architecture.",
+        "literature": "Juan Bosch, Julia Alvarez (In the Time of the Butterflies), Junot Díaz (The Brief Wondrous Life of Oscar Wao - Pulitzer Prize winner).",
+        "cinema": "Vibrant local film industry supported by national film law (DGCINE) and Pinewood Dominican Republic Studios.",
+        "sports": "Baseball (the national religion; Dominican Republic produces more MLB superstars than any foreign nation: Pedro Martínez, David Ortiz, Albert Pujols, Vladimir Guerrero, Juan Soto), Basketball, Volleyball (Las Reinas del Caribe).",
+        "media": "Listín Diario, Diario Libre, El Caribe, CDN, Color Visión, Telemicro.",
+        "clothing": "Guayabera shirts and linen clothing; colorful Diablo Cojuelo satin carnival costumes.",
+        "holidays": ["February 27 (Independence Day)", "January 21 (Our Lady of Altagracia)", "January 26 (Duarte Day)", "August 16 (Restoration Day)"],
+        "crafts": "Larimar and amber jewelry, faceless Limé ceramic dolls (Muñecas Limé), hand-rolled cigars, carved mahogany rocking chairs.",
+        "worldHeritageSites": ["Colonial City of Santo Domingo (first European settlement in the Americas, designated 1990)"],
+        "unescoIntangible": ["Music and dance of the Dominican Merengue", "Music and dance of Dominican Bachata", "Cultural space of the Brotherhood of the Holy Spirit of the Congos of Villa Mella"],
+        "famousPeople": ["David Ortiz", "Pedro Martínez", "Juan Luis Guerra", "Oscar de la Renta", "Juan Soto", "Julia Alvarez", "Luis Abinader"],
+        "flagDescription": "A centered white cross extends to the edges and divides the flag into four rectangles: blue (top hoist and bottom fly) and red (bottom hoist and top fly), with the national coat of arms centered on the cross.",
+        "coatOfArmsDescription": "Features a shield showing an open Bible opened to John 8:32 ('Y la verdad os hará libres') beneath a golden cross and six spears, flanked by laurel and palm branches, topped by the blue motto banner 'DIOS, PATRIA, LIBERTAD'.",
+        "symbols": {"animal": "Hispaniolan solenodon", "bird": "Palmchat (Cigua palmera)", "flower": "Bayahibe rose (Leuenbergeria quisqueyana)", "tree": "West Indian mahogany (Caoba)"},
+        "landmarks": ["Colonial City of Santo Domingo & Cathedral of Santa María la Menor", "Punta Cana Beaches & Cap Cana", "Pico Duarte", "Samaná Bay (Humpback Whale Sanctuary)", "Lake Enriquillo", "Altos de Chavón (La Romana)"],
+        "travelNotes": "The Caribbean's #1 tourist destination; outstanding highway connectivity, luxury all-inclusive resorts, and historic colonial charm.",
+        "shortSummary": "The Dominican Republic is the Caribbean's economic and tourism powerhouse, celebrated as the historic cradle of European settlement in the Americas, the homeland of Merengue and Bachata, and a legendary exporter of baseball icons and fine cigars.",
+        "flagImage": "https://flagcdn.com/w320/do.png", "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/DOM_orthographic.svg",
+        "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedral_of_Santa_Mar%C3%ADa_la_Menor_Santo_Domingo.jpg",
+        "sources": ["CIA World Factbook", "United Nations", "World Bank", "IMF", "UNESCO", "Oficina Nacional de Estadística (ONE RD)"], "lastUpdated": "2026-11-24"
+    }
+]
+
+for c in more_na:
+    countries.append(c)
+
+print(f"Total NA count now: {len(countries)}")

@@ -1,0 +1,3151 @@
+[
+  {
+    "id": "argentina",
+    "name": "Argentina",
+    "officialName": "Argentine Republic",
+    "nativeName": "República Argentina",
+    "continent": "South America",
+    "subregion": "Southern Cone",
+    "status": "UN Member State",
+    "iso2": "AR",
+    "iso3": "ARG",
+    "isoNumeric": "032",
+    "flagEmoji": "🇦🇷",
+    "demonym": "Argentine",
+    "capital": "Buenos Aires",
+    "largestCity": "Buenos Aires",
+    "majorCities": [
+      "Buenos Aires",
+      "Córdoba",
+      "Rosario",
+      "Mendoza",
+      "La Plata"
+    ],
+    "nationalDay": "May 25 (May Revolution), July 9 (Independence Day)",
+    "nationalAnthem": "Himno Nacional Argentino",
+    "motto": "En unión y libertad",
+    "population2026": 46600000,
+    "areaKm2": 2780400,
+    "areaRank": 8,
+    "populationRank": 32,
+    "populationDensity": "16.8 / km²",
+    "coordinates": {
+      "lat": -38.4161,
+      "lng": -63.6167
+    },
+    "borders": [
+      "Bolivia",
+      "Brazil",
+      "Chile",
+      "Paraguay",
+      "Uruguay"
+    ],
+    "coastline": "4,989 km",
+    "landlocked": false,
+    "highestPoint": "Aconcagua (6,961 m)",
+    "lowestPoint": "Laguna del Carbón (-105 m)",
+    "longestRiver": "Paraná River (4,880 km)",
+    "majorLakes": [
+      "Lake Argentino",
+      "Lake Nahuel Huapi"
+    ],
+    "majorMountains": [
+      "Andes Range",
+      "Aconcagua",
+      "Monte Pissis"
+    ],
+    "climate": "Subtropical in north, temperate in Pampas, subpolar in Patagonia",
+    "naturalHazards": [
+      "Andean earthquakes",
+      "Volcanic activity",
+      "Lowland flooding"
+    ],
+    "environmentalIssues": [
+      "Gran Chaco deforestation",
+      "Soil erosion",
+      "Urban basin pollution"
+    ],
+    "biodiversity": "Spans Yungas cloud forests, Patagonian steppe, and fertile Pampas grasslands",
+    "timeZone": "UTC-03:00",
+    "drivingSide": "right",
+    "callingCode": "+54",
+    "languages": [
+      "Spanish"
+    ],
+    "currency": "Argentine Peso (ARS, $)",
+    "government": "Federal presidential constitutional republic",
+    "headOfState": "President Javier Milei",
+    "headOfGovernment": "President Javier Milei",
+    "legislature": "National Congress (Senate and Chamber of Deputies)",
+    "constitution": "1853 (reformed 1994)",
+    "mainPoliticalParties": [
+      "La Libertad Avanza",
+      "Unión por la Patria",
+      "Juntos por el Cambio"
+    ],
+    "latestElections": "General elections 2023; legislative midterms 2025",
+    "politicalSituation": "Sweeping structural deregulation, state fiscal restructuring, and inflation containment under President Javier Milei.",
+    "foreignRelations": "Member of G20, UN, OAS, Mercosur; extensive diplomatic ties across the Americas and Europe.",
+    "military": "Armed Forces of the Argentine Republic (Army, Navy, Air Force).",
+    "internationalOrgs": [
+      "UN",
+      "G20",
+      "OAS",
+      "Mercosur",
+      "WTO",
+      "IMF",
+      "World Bank"
+    ],
+    "adminDivisions": "23 provinces and 1 autonomous city (Buenos Aires)",
+    "history": "Inhabited by Diaguita, Guaraní, and Mapuche indigenous cultures prior to 16th-century Spanish conquest. Declared independence in 1816 led by José de San Martín. Experienced massive European immigration in the late 19th and early 20th centuries. Defined in the mid-20th century by Peronism and alternating civilian-military governance until democracy was firmly reestablished in 1983.",
+    "recentEvents2020_2026": "Won the 2022 FIFA World Cup; President Javier Milei elected in December 2023 enacted deregulation packages and fiscal surplus programs through 2026.",
+    "historicalFigures": [
+      "José de San Martín",
+      "Juan Domingo Perón",
+      "Eva Perón",
+      "Jorge Luis Borges",
+      "Diego Maradona",
+      "Lionel Messi"
+    ],
+    "ethnicGroups": [
+      "European descent ~85%",
+      "Mestizo ~11%",
+      "Indigenous ~2.4%"
+    ],
+    "religions": [
+      "Roman Catholic ~62%",
+      "Evangelical ~15%",
+      "Agnostic/Atheist ~19%",
+      "Others ~4%"
+    ],
+    "literacyRate": "99.0%",
+    "lifeExpectancy": "77.5 years",
+    "hdi": "0.849 (Very High)",
+    "urbanization": "92.3%",
+    "education": "Tuition-free public university education (University of Buenos Aires) and universal basic schooling.",
+    "healthcare": "Universal public healthcare network alongside union-based Obras Sociales and private coverage.",
+    "socialCustoms": "Yerba mate sharing circles, Sunday family asados, passionate football discussions.",
+    "etiquette": "Warm cheek kiss greeting, engaging conversation, punctuality slightly flexible for dinners.",
+    "nationalIdentity": "Cosmopolitan European cultural roots blended with vibrant Latin American soul and gaucho traditions.",
+    "gdpNominal": "$640 billion (approx. 2026)",
+    "gdpPpp": "$1.32 trillion (approx. 2026)",
+    "gdpPerCapita": "$13,750",
+    "sectors": "Services 54%, Industry 28%, Agriculture 10%, Mining 8%",
+    "industries": [
+      "Food processing",
+      "Automotive manufacturing",
+      "Biotechnology",
+      "Software & tech services",
+      "Lithium"
+    ],
+    "agriculture": [
+      "Soybeans and meal",
+      "Corn",
+      "Wheat",
+      "Beef",
+      "Wine grapes",
+      "Sunflower seeds"
+    ],
+    "naturalResources": [
+      "Vaca Muerta shale gas and oil",
+      "Lithium (Puna plateau)",
+      "Copper",
+      "Fertile arable soils"
+    ],
+    "energy": "Natural gas (53%), Hydroelectric (24%), Nuclear (6%), Wind and solar (14%)",
+    "exports": [
+      "Soy products",
+      "Corn",
+      "Motor vehicles",
+      "Petroleum & gas",
+      "Wheat",
+      "Lithium"
+    ],
+    "imports": [
+      "Industrial machinery",
+      "Chemical products",
+      "Motor vehicle parts",
+      "Consumer electronics"
+    ],
+    "tradePartners": [
+      "Brazil",
+      "China",
+      "United States",
+      "Chile",
+      "India"
+    ],
+    "tourism": "Over 7 million annual visitors to Iguazú Falls, Buenos Aires, Mendoza wine valleys, and Patagonian glaciers.",
+    "employment": "Unemployment approx. 7.2%; strong tech and knowledge export sector.",
+    "debtInflation": "Undergoing aggressive disinflation and sovereign fiscal restructuring.",
+    "transport": "Extensive highway network, commuter rail in Buenos Aires, major domestic air corridors.",
+    "airports": [
+      "Ministro Pistarini International Airport (EZE)",
+      "Aeroparque Jorge Newbery (AEP)"
+    ],
+    "ports": [
+      "Port of Buenos Aires",
+      "Port of Rosario",
+      "Bahía Blanca"
+    ],
+    "internetUsage": "88.2%",
+    "cuisine": "Asado barbecue, Empanadas, Milanesa Napolitana, Dulce de leche, Alfajores, Malbec wine.",
+    "festivals": [
+      "Fiesta Nacional de la Vendimia (Mendoza)",
+      "Cosquín Folk Festival",
+      "Buenos Aires Tango World Championship"
+    ],
+    "music": "Tango, Rock Nacional, Chamamé, Folklore.",
+    "dance": "Tango, Chacarera, Malambo.",
+    "art": "Fine art tradition with Antonio Berni, Benito Quinquela Martín, modern murals.",
+    "architecture": "Beaux-Arts and French Neoclassical in Buenos Aires; Spanish colonial in Salta and Córdoba.",
+    "literature": "Nobel-caliber literary lineage: Jorge Luis Borges, Julio Cortázar, Ernesto Sabato.",
+    "cinema": "Two Academy Awards for Best Foreign Language Film (The Official Story, The Secret in Their Eyes).",
+    "sports": "Football (3-time World Champions: 1978, 1986, 2022), Rugby (Pumas), Basketball, Polo, Pato.",
+    "media": "Clarín, La Nación, Infobae, Telefe, TN.",
+    "clothing": "Traditional Gaucho bombacha and poncho; European high street fashion in urban areas.",
+    "holidays": [
+      "May 25 (May Revolution)",
+      "July 9 (Independence Day)",
+      "June 20 (Flag Day)"
+    ],
+    "crafts": "Carved silver mate gourds, tooled leatherwork, woven vicuña/llama textiles.",
+    "worldHeritageSites": [
+      "Los Glaciares",
+      "Iguazu National Park",
+      "Cueva de las Manos",
+      "Jesuit Block and Estancias of Córdoba"
+    ],
+    "unescoIntangible": [
+      "Tango",
+      "Filete Porteño painting",
+      "Chamamé"
+    ],
+    "famousPeople": [
+      "Lionel Messi",
+      "Diego Maradona",
+      "Jorge Luis Borges",
+      "Pope Francis",
+      "Che Guevara",
+      "Eva Perón"
+    ],
+    "flagDescription": "Three equal horizontal bands of celestial blue and white, with the golden Sun of May bearing a human face in the center.",
+    "coatOfArmsDescription": "Oval divided into light blue top and white base with clasped hands holding a staff crowned by a red Phrygian cap of liberty, encircled by laurel wreaths.",
+    "symbols": {
+      "animal": "Rufous hornero",
+      "flower": "Ceibo flower",
+      "tree": "Ceibo",
+      "sport": "Pato"
+    },
+    "landmarks": [
+      "Iguazú Falls",
+      "Perito Moreno Glacier",
+      "Teatro Colón",
+      "Caminito in La Boca",
+      "Mount Aconcagua"
+    ],
+    "travelNotes": "Safe for international tourists; exercise routine urban vigilance in busy transit areas.",
+    "shortSummary": "Argentina is South America's second-largest nation, boasting dramatic geography from the Patagonian ice fields to subtropical Iguazú Falls, complemented by a world-renowned cultural heritage in tango, literature, and football.",
+    "flagImage": "https://flagcdn.com/w320/ar.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/ARG_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Iguazu_Falls_Dec_2005.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "UNESCO",
+      "INDEC Argentina"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "bolivia",
+    "name": "Bolivia",
+    "officialName": "Plurinational State of Bolivia",
+    "nativeName": "Estado Plurinacional de Bolivia",
+    "continent": "South America",
+    "subregion": "Andean Community",
+    "status": "UN Member State",
+    "iso2": "BO",
+    "iso3": "BOL",
+    "isoNumeric": "068",
+    "flagEmoji": "🇧🇴",
+    "demonym": "Bolivian",
+    "capital": "Sucre (constitutional), La Paz (seat of government)",
+    "largestCity": "Santa Cruz de la Sierra",
+    "majorCities": [
+      "Santa Cruz de la Sierra",
+      "El Alto",
+      "La Paz",
+      "Cochabamba",
+      "Sucre"
+    ],
+    "nationalDay": "August 6 (Independence Day)",
+    "nationalAnthem": "Himno Nacional de Bolivia",
+    "motto": "La unión es la fuerza",
+    "population2026": 12600000,
+    "areaKm2": 1098581,
+    "areaRank": 27,
+    "populationRank": 80,
+    "populationDensity": "11.5 / km²",
+    "coordinates": {
+      "lat": -16.2902,
+      "lng": -63.5887
+    },
+    "borders": [
+      "Argentina",
+      "Brazil",
+      "Chile",
+      "Paraguay",
+      "Peru"
+    ],
+    "coastline": "0 km (landlocked)",
+    "landlocked": true,
+    "highestPoint": "Nevado Sajama (6,542 m)",
+    "lowestPoint": "Rio Paraguay (-90 m)",
+    "longestRiver": "Mamoré River (1,931 km)",
+    "majorLakes": [
+      "Lake Titicaca",
+      "Lake Poopó"
+    ],
+    "majorMountains": [
+      "Cordillera Real",
+      "Nevado Sajama",
+      "Illimani"
+    ],
+    "climate": "Highland cold arid on Altiplano, temperate in valleys, tropical in Amazon basin",
+    "naturalHazards": [
+      "Andean earthquakes",
+      "Flooding in lowlands",
+      "Highland droughts"
+    ],
+    "environmentalIssues": [
+      "Amazon deforestation",
+      "Soil erosion",
+      "Mining runoff"
+    ],
+    "biodiversity": "Megadiverse encompassing high Andes, Amazon rainforest, and Gran Chaco",
+    "timeZone": "UTC-04:00",
+    "drivingSide": "right",
+    "callingCode": "+591",
+    "languages": [
+      "Spanish",
+      "Quechua",
+      "Aymara",
+      "Guaraní"
+    ],
+    "currency": "Boliviano (BOB, Bs.)",
+    "government": "Unitary presidential constitutional plurinational republic",
+    "headOfState": "President Luis Arce",
+    "headOfGovernment": "President Luis Arce",
+    "legislature": "Plurinational Legislative Assembly",
+    "constitution": "2009 (Plurinational Constitution)",
+    "mainPoliticalParties": [
+      "Movimiento al Socialismo (MAS)",
+      "Comunidad Ciudadana (CC)",
+      "Creemos"
+    ],
+    "latestElections": "General elections 2020; general elections 2025",
+    "politicalSituation": "Advancing state-backed lithium industrialization partnerships and economic stabilization.",
+    "foreignRelations": "Full member of Mercosur, UN, OAS, CELAC, CAN.",
+    "military": "Armed Forces of Bolivia (Army, Navy, Air Force).",
+    "internationalOrgs": [
+      "UN",
+      "Mercosur",
+      "OAS",
+      "CAN",
+      "CELAC",
+      "WTO",
+      "IMF"
+    ],
+    "adminDivisions": "9 departments",
+    "history": "Home to the monumental Tiwanaku civilization before Inca incorporation. Spanish rule centered on the colossal silver extraction of Potosí. Bolivia gained independence in 1825 under Simón Bolívar and Sucre. The 20th century witnessed major territorial wars and nationalization movements. The 2006 election of Evo Morales led to the 2009 Plurinational Constitution emphasizing indigenous rights and sovereignty over natural resources.",
+    "recentEvents2020_2026": "Completed full accession to Mercosur; inaugurated commercial facilities for direct lithium extraction in the Salar de Uyuni; expanded national highway corridors.",
+    "historicalFigures": [
+      "Simón Bolívar",
+      "Antonio José de Sucre",
+      "Túpac Katari",
+      "Bartolina Sisa",
+      "Evo Morales"
+    ],
+    "ethnicGroups": [
+      "Indigenous (Quechua, Aymara) ~48%",
+      "Mestizo ~40%",
+      "White ~10%",
+      "Afro-Bolivian ~2%"
+    ],
+    "religions": [
+      "Roman Catholic ~73%",
+      "Protestant/Evangelical ~18%",
+      "Indigenous traditions ~5%"
+    ],
+    "literacyRate": "94.5%",
+    "lifeExpectancy": "72.1 years",
+    "hdi": "0.698 (Medium)",
+    "urbanization": "70.8%",
+    "education": "Universal primary and secondary education; renowned public universities like UMSA and USFX.",
+    "healthcare": "Universal Single Health System (SUS) provides free primary care coverage.",
+    "socialCustoms": "Offerings to Pachamama (Mother Earth), Challa blessing rites, coca leaf chewing in cultural contexts.",
+    "etiquette": "Courteous address with titles, polite handshakes, respect for elders.",
+    "nationalIdentity": "Strong indigenous Andean and Amazonian identity celebrated through vibrant folkloric traditions.",
+    "gdpNominal": "$52 billion (approx. 2026)",
+    "gdpPpp": "$140 billion (approx. 2026)",
+    "gdpPerCapita": "$4,100",
+    "sectors": "Services 50%, Industry 32%, Agriculture 18%",
+    "industries": [
+      "Mining and metallurgy",
+      "Natural gas extraction",
+      "Food processing",
+      "Lithium development"
+    ],
+    "agriculture": [
+      "Soybeans",
+      "Quinoa",
+      "Corn",
+      "Sugarcane",
+      "Coffee"
+    ],
+    "naturalResources": [
+      "Lithium (world's largest reserves)",
+      "Natural gas",
+      "Tin",
+      "Zinc",
+      "Silver",
+      "Iron ore"
+    ],
+    "energy": "Natural gas (68%), Hydroelectric (24%), Solar and biomass (8%)",
+    "exports": [
+      "Gold",
+      "Natural gas",
+      "Zinc ores",
+      "Soybean meal",
+      "Tin",
+      "Silver"
+    ],
+    "imports": [
+      "Refined petroleum",
+      "Vehicles",
+      "Machinery",
+      "Plastics"
+    ],
+    "tradePartners": [
+      "Brazil",
+      "Argentina",
+      "India",
+      "China",
+      "Colombia"
+    ],
+    "tourism": "Famed for Salar de Uyuni, Lake Titicaca, Tiwanaku ruins, and Potosí colonial silver mines.",
+    "employment": "Unemployment approx. 4.8%; high informal economy participation.",
+    "debtInflation": "Controlled inflation supported by currency stability and strategic food subsidies.",
+    "transport": "Extensive Mi Teleférico urban cable-car network across La Paz-El Alto, interdepartmental bus transit.",
+    "airports": [
+      "Viru Viru International Airport (VVI)",
+      "El Alto International Airport (LPB)"
+    ],
+    "ports": [
+      "Riverine port access via Puerto Busch on the Paraguay-Paraná Waterway to Atlantic."
+    ],
+    "internetUsage": "67.5%",
+    "cuisine": "Salteñas, Silpancho, Pique Macho, Sopa de Maní, Majadito, Singani grape spirit.",
+    "festivals": [
+      "Carnaval de Oruro",
+      "Gran Poder (La Paz)",
+      "Fiesta de Urkupiña"
+    ],
+    "music": "Andean panpipe music (sikuri), Charango melodies, Saya afroboliviana.",
+    "dance": "Diablada, Morenada, Caporales, Tinkus.",
+    "art": "Andean Baroque painting, colorful woven textiles from Jalq'a, modern indigenous murals.",
+    "architecture": "Baroque mestizo colonial architecture; iconic Neo-Andean 'Cholets' in El Alto.",
+    "literature": "Nataniel Aguirre, Alcides Arguedas, Edmundo Paz Soldán.",
+    "cinema": "Ukamau cinematic movement led by Jorge Sanjinés.",
+    "sports": "Football (Estadio Hernando Siles), Racquetball (world-ranked players).",
+    "media": "El Deber, La Razón, Los Tiempos, Bolivia TV.",
+    "clothing": "Traditional Cholita pollera skirts and bowler hats; modern Western attire in business hubs.",
+    "holidays": [
+      "August 6 (Independence Day)",
+      "January 22 (Plurinational State Day)",
+      "Carnaval de Oruro"
+    ],
+    "crafts": "Fine alpaca and llama wool shawls, hand-carved charangos, silver filigree.",
+    "worldHeritageSites": [
+      "City of Potosí",
+      "Jesuit Missions of Chiquitos",
+      "Tiwanaku",
+      "Noel Kempff Mercado"
+    ],
+    "unescoIntangible": [
+      "Carnival of Oruro",
+      "Ichapekene Piesta",
+      "Pujllay and Ayarichi"
+    ],
+    "famousPeople": [
+      "Evo Morales",
+      "Freddy Mamani",
+      "Simón Bolívar",
+      "Jaime Escalante",
+      "Marcelo Martins"
+    ],
+    "flagDescription": "Horizontal tricolor of red (bravery), yellow (mineral riches), and green (natural fertility), with the coat of arms centered on state flags. The multi-colored Wiphala is recognized as a co-official symbol.",
+    "coatOfArmsDescription": "Oval shield with ten golden stars, featuring Mount Potosí, an alpaca, a sheaf of wheat, and a breadfruit tree under an Andean condor.",
+    "symbols": {
+      "animal": "Andean condor / Llama",
+      "flower": "Kantuta and Patujú",
+      "bird": "Andean condor"
+    },
+    "landmarks": [
+      "Salar de Uyuni",
+      "Lake Titicaca & Isla del Sol",
+      "Tiwanaku Ruins",
+      "Cerro Rico (Potosí)",
+      "Mi Teleférico"
+    ],
+    "travelNotes": "High-altitude acclimation recommended for travelers to La Paz and the Altiplano.",
+    "shortSummary": "Bolivia combines the high-altitude wonders of the Altiplano and Salar de Uyuni with tropical Amazonian biodiversity, celebrated for its rich indigenous culture and innovative urban cable cars.",
+    "flagImage": "https://flagcdn.com/w320/bo.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/BOL_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Salar_de_Uyuni_Bolivia.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "UNESCO",
+      "INE Bolivia"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "brazil",
+    "name": "Brazil",
+    "officialName": "Federative Republic of Brazil",
+    "nativeName": "República Federativa do Brasil",
+    "continent": "South America",
+    "subregion": "Eastern South America",
+    "status": "UN Member State",
+    "iso2": "BR",
+    "iso3": "BRA",
+    "isoNumeric": "076",
+    "flagEmoji": "🇧🇷",
+    "demonym": "Brazilian",
+    "capital": "Brasília",
+    "largestCity": "São Paulo",
+    "majorCities": [
+      "São Paulo",
+      "Rio de Janeiro",
+      "Brasília",
+      "Salvador",
+      "Belo Horizonte",
+      "Fortaleza",
+      "Curitiba"
+    ],
+    "nationalDay": "September 7 (Independence Day)",
+    "nationalAnthem": "Hino Nacional Brasileiro",
+    "motto": "Ordem e Progresso (Order and Progress)",
+    "population2026": 218500000,
+    "areaKm2": 8515767,
+    "areaRank": 5,
+    "populationRank": 7,
+    "populationDensity": "25.7 / km²",
+    "coordinates": {
+      "lat": -14.235,
+      "lng": -51.9253
+    },
+    "borders": [
+      "Argentina",
+      "Bolivia",
+      "Colombia",
+      "Guyana",
+      "Paraguay",
+      "Peru",
+      "Suriname",
+      "Uruguay",
+      "Venezuela",
+      "French Guiana (France)"
+    ],
+    "coastline": "7,491 km",
+    "landlocked": false,
+    "highestPoint": "Pico da Neblina (2,995 m)",
+    "lowestPoint": "Atlantic Ocean (0 m)",
+    "longestRiver": "Amazon River (6,400+ km)",
+    "majorLakes": [
+      "Lagoa dos Patos",
+      "Lagoa Mirim"
+    ],
+    "majorMountains": [
+      "Serra do Mar",
+      "Serra da Mantiqueira",
+      "Pico da Neblina"
+    ],
+    "climate": "Mostly tropical; semi-arid in northeast, temperate in southern highlands",
+    "naturalHazards": [
+      "Seasonal droughts in northeast",
+      "Floods and landslides in coastal mountains"
+    ],
+    "environmentalIssues": [
+      "Amazon deforestation enforcement",
+      "Cerrado conservation",
+      "Urban sanitation"
+    ],
+    "biodiversity": "Highest biological diversity on Earth, hosting Amazon Rainforest, Atlantic Forest, and Pantanal",
+    "timeZone": "UTC-05:00 to UTC-02:00 (Brasília: UTC-03:00)",
+    "drivingSide": "right",
+    "callingCode": "+55",
+    "languages": [
+      "Portuguese"
+    ],
+    "currency": "Brazilian Real (BRL, R$)",
+    "government": "Federal presidential constitutional republic",
+    "headOfState": "President Luiz Inácio Lula da Silva",
+    "headOfGovernment": "President Luiz Inácio Lula da Silva",
+    "legislature": "National Congress (Federal Senate and Chamber of Deputies)",
+    "constitution": "1988 (Citizen Constitution)",
+    "mainPoliticalParties": [
+      "Partido dos Trabalhadores (PT)",
+      "Partido Liberal (PL)",
+      "União Brasil",
+      "MDB",
+      "PSD"
+    ],
+    "latestElections": "General elections 2022; municipal elections 2024; general elections 2026",
+    "politicalSituation": "Presidency of the G20 in 2024 and BRICS; host of COP30 climate summit in Belém (2025); focus on ecological transition and re-industrialization.",
+    "foreignRelations": "Founding member of BRICS, G20, Mercosur, UN, OAS; global leader in multilateral diplomacy.",
+    "military": "Brazilian Armed Forces (Army, Navy, Air Force); largest armed forces in Latin America.",
+    "internationalOrgs": [
+      "UN",
+      "G20",
+      "BRICS",
+      "Mercosur",
+      "OAS",
+      "WTO",
+      "WHO",
+      "IMF",
+      "World Bank"
+    ],
+    "adminDivisions": "26 states and 1 Federal District (Brasília)",
+    "history": "Inhabited by diverse indigenous nations prior to Portuguese arrival in 1500 led by Pedro Álvares Cabral. Served as seat of Portuguese Empire in 1808. Declared independence in 1822 under Dom Pedro I. Abolished slavery in 1888 and became a republic in 1889. The 20th century saw rapid industrial growth, military governance (1964–1985), and subsequent robust democratic consolidation.",
+    "recentEvents2020_2026": "Chaired G20 Leaders' Summit in Rio de Janeiro (2024); launched Global Alliance Against Hunger and Poverty; hosted UNFCCC COP30 in Belém in 2025; passed landmark national tax reform.",
+    "historicalFigures": [
+      "Dom Pedro I",
+      "Dom Pedro II",
+      "Princess Isabel",
+      "Getúlio Vargas",
+      "Juscelino Kubitschek",
+      "Pelé",
+      "Oscar Niemeyer"
+    ],
+    "ethnicGroups": [
+      "Pardo (multiracial) ~45.3%",
+      "White ~43.5%",
+      "Black ~10.2%",
+      "Indigenous ~0.8%",
+      "Asian ~0.6%"
+    ],
+    "religions": [
+      "Roman Catholic ~50%",
+      "Evangelical Protestant ~31%",
+      "No religion ~10%",
+      "Spiritist ~2%",
+      "Afro-Brazilian ~2%"
+    ],
+    "literacyRate": "94.3%",
+    "lifeExpectancy": "76.4 years",
+    "hdi": "0.760 (High)",
+    "urbanization": "87.8%",
+    "education": "Leading Latin American universities (USP, UNICAMP, UFRJ); universal compulsory basic schooling.",
+    "healthcare": "Sistema Único de Saúde (SUS) is one of the world's largest universal public health systems.",
+    "socialCustoms": "Warm expressive greetings, communal churrasco gatherings, deep music and beach lifestyle.",
+    "etiquette": "Sociable body language, relationship-driven business etiquette, respectful interaction.",
+    "nationalIdentity": "Celebrated for cultural syncretism, football glory, vibrant samba rhythms, and ecological majesty.",
+    "gdpNominal": "$2.35 trillion (approx. 2026)",
+    "gdpPpp": "$4.55 trillion (approx. 2026)",
+    "gdpPerCapita": "$10,750",
+    "sectors": "Services 63%, Industry 21%, Agriculture 7%, Mining & Energy 9%",
+    "industries": [
+      "Agribusiness",
+      "Aerospace (Embraer)",
+      "Automotive manufacturing",
+      "Petroleum refining (Petrobras)",
+      "Mining (Vale)",
+      "Steel"
+    ],
+    "agriculture": [
+      "Soybeans (#1 globally)",
+      "Coffee (#1)",
+      "Sugarcane and ethanol (#1)",
+      "Beef and poultry (#1 exporter)",
+      "Orange juice",
+      "Corn"
+    ],
+    "naturalResources": [
+      "Iron ore (Carajás)",
+      "Pre-salt deepwater petroleum",
+      "Niobium (90%+ world reserves)",
+      "Bauxite",
+      "Hydropower"
+    ],
+    "energy": "Hydroelectric (64%), Wind and solar (20%), Biomass (9%), Gas and oil (7%) — 85%+ renewable power",
+    "exports": [
+      "Soybeans",
+      "Crude petroleum",
+      "Iron ore",
+      "Beef and poultry",
+      "Corn",
+      "Raw sugar",
+      "Embraer commercial aircraft"
+    ],
+    "imports": [
+      "Fertilizers",
+      "Refined petroleum",
+      "Electronic components",
+      "Automotive components",
+      "Pharmaceuticals"
+    ],
+    "tradePartners": [
+      "China (largest partner)",
+      "United States",
+      "Argentina",
+      "European Union",
+      "India"
+    ],
+    "tourism": "Over 6.5 million international travelers visiting Rio de Janeiro, Iguazu Falls, Salvador, the Amazon, and Pantanal.",
+    "employment": "Unemployment approx. 6.8%; robust formal labor market.",
+    "debtInflation": "Controlled inflation within Central Bank target; solid foreign exchange reserves.",
+    "transport": "Extensive highway grid, world-class aviation network connecting remote interior cities, expanding freight railways.",
+    "airports": [
+      "São Paulo/Guarulhos International Airport (GRU)",
+      "Rio de Janeiro/Galeão (GIG)",
+      "Brasília International (BSB)"
+    ],
+    "ports": [
+      "Port of Santos (largest in Latin America)",
+      "Port of Paranaguá",
+      "Port of Itaqui",
+      "Port of Tubarão"
+    ],
+    "internetUsage": "84.0%",
+    "cuisine": "Feijoada, Pão de queijo, Moqueca seafood stew, Churrasco barbecue, Açaí bowls, Brigadeiros, Caipirinha.",
+    "festivals": [
+      "Carnaval (Rio, Salvador, Recife/Olinda)",
+      "Festa Junina",
+      "Festival de Parintins (Boi Bumbá)"
+    ],
+    "music": "Samba, Bossa Nova, MPB, Forró, Funk Carioca, Sertanejo, Choro.",
+    "dance": "Samba, Capoeira, Forró, Frevo, Carimbó.",
+    "art": "Modernism (Semana de 22), Tarsila do Amaral, Cândido Portinari, Vik Muniz, Eduardo Kobra.",
+    "architecture": "Masterpieces of Oscar Niemeyer in Brasília, Roberto Burle Marx landscapes, colonial Pelourinho in Salvador.",
+    "literature": "Machado de Assis, Jorge Amado, Clarice Lispector, Guimarães Rosa, Paulo Coelho.",
+    "cinema": "City of God, Central Station, Cinema Novo of Glauber Rocha, Bacurau.",
+    "sports": "Football (5-time FIFA World Champions), Volleyball, Formula 1, Mixed Martial Arts (Jiu-Jitsu), Surfing.",
+    "media": "TV Globo, Folha de S.Paulo, O Estado de S. Paulo, Valor Econômico.",
+    "clothing": "Vibrant beachwear, traditional Baiana white lace dresses, Gaucho attire in Rio Grande do Sul.",
+    "holidays": [
+      "September 7 (Independence Day)",
+      "Carnaval (movable)",
+      "October 12 (Aparecida)",
+      "November 15 (Republic Day)"
+    ],
+    "crafts": "Marajó ceramics, bilro lace work, golden grass (capim dourado) crafts from Jalapão.",
+    "worldHeritageSites": [
+      "Brasília",
+      "Historic Centre of Salvador de Bahia",
+      "Iguaçu National Park",
+      "Pantanal Conservation Area",
+      "Central Amazon"
+    ],
+    "unescoIntangible": [
+      "Samba de Roda",
+      "Capoeira circle",
+      "Frevo",
+      "Bumba-meu-boi of Maranhão"
+    ],
+    "famousPeople": [
+      "Pelé",
+      "Ayrton Senna",
+      "Luiz Inácio Lula da Silva",
+      "Oscar Niemeyer",
+      "Tom Jobim",
+      "Gisele Bündchen",
+      "Neymar Jr."
+    ],
+    "flagDescription": "Green field with a yellow rhombus enclosing a blue celestial globe with 27 white stars representing states and the federal district, crossed by a white band reading 'ORDEM E PROGRESSO'.",
+    "coatOfArmsDescription": "Centered starburst surrounded by coffee and tobacco branches, displaying the Southern Cross constellation on a round azure shield.",
+    "symbols": {
+      "animal": "Jaguar",
+      "bird": "Rufous-bellied thrush",
+      "tree": "Pau-Brasil",
+      "flower": "Ipê-amarelo"
+    },
+    "landmarks": [
+      "Christ the Redeemer (Corcovado)",
+      "Sugarloaf Mountain",
+      "Iguaçu Falls",
+      "Amazon Rainforest & River",
+      "Brasília Cathedral"
+    ],
+    "travelNotes": "Warm and hospitable destination; exercise standard urban precautions in busy metropolitan districts.",
+    "shortSummary": "Brazil is South America's economic and geographical powerhouse, celebrated worldwide for the Amazon basin, the carnival spirit of Rio and Salvador, modernist architecture, and unparalleled football dominance.",
+    "flagImage": "https://flagcdn.com/w320/br.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/BRA_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Christ_the_Redeemer_-_Rio_de_Janeiro%2C_Brazil.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "UNESCO",
+      "IBGE Brasil"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "chile",
+    "name": "Chile",
+    "officialName": "Republic of Chile",
+    "nativeName": "República de Chile",
+    "continent": "South America",
+    "subregion": "Southern Cone",
+    "status": "UN Member State",
+    "iso2": "CL",
+    "iso3": "CHL",
+    "isoNumeric": "152",
+    "flagEmoji": "🇨🇱",
+    "demonym": "Chilean",
+    "capital": "Santiago",
+    "largestCity": "Santiago",
+    "majorCities": [
+      "Santiago",
+      "Valparaíso",
+      "Concepción",
+      "La Serena",
+      "Antofagasta",
+      "Puerto Montt"
+    ],
+    "nationalDay": "September 18 (Independence Day / Fiestas Patrias)",
+    "nationalAnthem": "Himno Nacional de Chile",
+    "motto": "Por la razón o la fuerza",
+    "population2026": 19900000,
+    "areaKm2": 756102,
+    "areaRank": 37,
+    "populationRank": 65,
+    "populationDensity": "26.3 / km²",
+    "coordinates": {
+      "lat": -35.6751,
+      "lng": -71.543
+    },
+    "borders": [
+      "Argentina",
+      "Bolivia",
+      "Peru"
+    ],
+    "coastline": "6,435 km",
+    "landlocked": false,
+    "highestPoint": "Nevado Ojos del Salado (6,893 m)",
+    "lowestPoint": "Pacific Ocean (0 m)",
+    "longestRiver": "Loa River (440 km)",
+    "majorLakes": [
+      "Lake General Carrera",
+      "Lake Llanquihue"
+    ],
+    "majorMountains": [
+      "Andes Mountains",
+      "Ojos del Salado",
+      "Torres del Paine"
+    ],
+    "climate": "Arid in northern Atacama Desert, Mediterranean in central valley, oceanic in southern Patagonia",
+    "naturalHazards": [
+      "Major earthquakes and tsunamis (Ring of Fire)",
+      "Volcanic eruptions"
+    ],
+    "environmentalIssues": [
+      "Glacial retreat",
+      "Air quality in Santiago valley",
+      "Water scarcity in north"
+    ],
+    "biodiversity": "Isolated high-endemism ecosystems, Valdivian temperate rainforests, subpolar Patagonian fjords",
+    "timeZone": "UTC-03:00 (continental), UTC-05:00 (Easter Island)",
+    "drivingSide": "right",
+    "callingCode": "+56",
+    "languages": [
+      "Spanish"
+    ],
+    "currency": "Chilean Peso (CLP, $)",
+    "government": "Unitary presidential constitutional republic",
+    "headOfState": "President Gabriel Boric",
+    "headOfGovernment": "President Gabriel Boric",
+    "legislature": "National Congress (Senate and Chamber of Deputies)",
+    "constitution": "1980 (amended repeatedly)",
+    "mainPoliticalParties": [
+      "Frente Amplio",
+      "Partido Comunista",
+      "Renovación Nacional",
+      "UDI",
+      "Partido Republicano"
+    ],
+    "latestElections": "Presidential elections 2021; constitutional council 2023; general elections 2025",
+    "politicalSituation": "Institutional consolidation focused on pension reform, green hydrogen and lithium development strategies.",
+    "foreignRelations": "Member of OECD, Pacific Alliance, UN, OAS, APEC, CPTPP; global pioneer in free trade pacts.",
+    "military": "Chilean Armed Forces (Army, Navy, Air Force) and Carabineros.",
+    "internationalOrgs": [
+      "UN",
+      "OECD",
+      "APEC",
+      "Pacific Alliance",
+      "OAS",
+      "WTO",
+      "IMF",
+      "World Bank"
+    ],
+    "adminDivisions": "16 administrative regions",
+    "history": "Inhabited by the resilient Mapuche people who resisted Inca and early Spanish expansion. Won independence in 1818 led by Bernardo O'Higgins. Victory in the War of the Pacific (1879–1884) secured mineral-rich northern territories. After the 1973 coup and military regime, Chile restored democracy in 1990, establishing Latin America's highest HDI and strong institutional stability.",
+    "recentEvents2020_2026": "Launched the National Lithium Strategy establishing public-private development partnerships; expanded global leadership in green hydrogen export infrastructure; celebrated centenary of Gabriela Mistral's poetry.",
+    "historicalFigures": [
+      "Bernardo O'Higgins",
+      "José Miguel Carrera",
+      "Arturo Prat",
+      "Pablo Neruda",
+      "Gabriela Mistral",
+      "Salvador Allende",
+      "Violeta Parra"
+    ],
+    "ethnicGroups": [
+      "White and non-indigenous ~87%",
+      "Mapuche indigenous ~10%",
+      "Aymara and other indigenous ~3%"
+    ],
+    "religions": [
+      "Roman Catholic ~54%",
+      "Evangelical/Protestant ~16%",
+      "None/Atheist ~28%",
+      "Others ~2%"
+    ],
+    "literacyRate": "97.0%",
+    "lifeExpectancy": "80.4 years",
+    "hdi": "0.860 (Very High - highest in South America)",
+    "urbanization": "88.0%",
+    "education": "High-ranking university system led by Pontificia Universidad Católica and Universidad de Chile; gratuidad policy subsidizing tuition for lower-income students.",
+    "healthcare": "FONASA (public health fund) and ISAPRE (private insurance) dual model with high life expectancy outcomes.",
+    "socialCustoms": "Celebration of Fiestas Patrias with cueca dancing, sharing empanadas and terremoto cocktails in fondas.",
+    "etiquette": "Polite and formal initially, strong value on punctuality in professional matters, respectful handshake.",
+    "nationalIdentity": "Defined by pride in geographic resilience, poetry Nobel laureates, mountain-and-sea landscapes, and institutional stability.",
+    "gdpNominal": "$360 billion (approx. 2026)",
+    "gdpPpp": "$630 billion (approx. 2026)",
+    "gdpPerCapita": "$18,100",
+    "sectors": "Services 60%, Industry 32%, Agriculture & Fishing 8%",
+    "industries": [
+      "Copper mining (world's #1 producer)",
+      "Lithium extraction and refining",
+      "Winemaking",
+      "Salmon aquaculture (#2 producer globally)",
+      "Forestry and pulp"
+    ],
+    "agriculture": [
+      "Fresh grapes and wine",
+      "Cherries",
+      "Apples",
+      "Berries",
+      "Salmon farming",
+      "Avocados"
+    ],
+    "naturalResources": [
+      "Copper (28% of world production)",
+      "Lithium (Atacama salt flat)",
+      "Molybdenum",
+      "Iodine",
+      "Solar and wind energy potential"
+    ],
+    "energy": "Rapid energy transition: Solar and wind (38%), Hydroelectric (27%), Coal/Gas (32%), Geothermal (3%)",
+    "exports": [
+      "Refined and unrefined copper",
+      "Lithium carbonate",
+      "Agricultural fresh fruit (cherries, table grapes)",
+      "Wood pulp",
+      "Salmon",
+      "Wine"
+    ],
+    "imports": [
+      "Refined petroleum",
+      "Motor vehicles",
+      "Telecommunications gear",
+      "Industrial machinery"
+    ],
+    "tradePartners": [
+      "China (largest buyer)",
+      "United States",
+      "Japan",
+      "South Korea",
+      "Brazil"
+    ],
+    "tourism": "Over 5 million international visitors visiting San Pedro de Atacama, Torres del Paine National Park, Easter Island (Rapa Nui), and Casablanca wine valley.",
+    "employment": "Unemployment approx. 8.4%; strong engineering, financial technology, and mining professions.",
+    "debtInflation": "Inflation normalized around 3% target by autonomous Central Bank; low public debt to GDP ratio.",
+    "transport": "Santiago Metro (one of Latin America's cleanest and most modern transit networks), Ruta 5 pan-American highway.",
+    "airports": [
+      "Arturo Merino Benítez International Airport (SCL) in Santiago"
+    ],
+    "ports": [
+      "Port of San Antonio",
+      "Port of Valparaíso",
+      "Port of Mejillones"
+    ],
+    "internetUsage": "92.3%",
+    "cuisine": "Empanadas de pino, Pastel de choclo, Cazuela, Curanto in Chiloé, Ceviche, Completo italiano, Carménère wine.",
+    "festivals": [
+      "Fiestas Patrias (Dieciocho)",
+      "Festival Internacional de la Canción de Viña del Mar",
+      "Tapati Rapa Nui"
+    ],
+    "music": "Nueva Canción Chilena (Violeta Parra, Víctor Jara), Chilean Rock (Los Jaivas, Los Prisioneros), modern indie pop.",
+    "dance": "Cueca (national dance), Sau-sau on Easter Island.",
+    "art": "Roberto Matta (surrealist pioneer), Claudio Bravo (hyperrealism), vibrant Valparaíso open-air murals.",
+    "architecture": "UNESCO-listed funiculars and colorful hillside architecture in Valparaíso, modern seismic skyscraper design (Gran Torre Santiago).",
+    "literature": "Two Nobel Prize in Literature winners: Gabriela Mistral (1945) and Pablo Neruda (1971); Isabel Allende.",
+    "cinema": "Academy Award winner A Fantastic Woman (Una mujer fantástica) and nominated No.",
+    "sports": "Football (Copa América champions 2015, 2016), Tennis (Olympic Gold medalists González and Massú), Rodeo chileno.",
+    "media": "El Mercurio, La Tercera, TVN, Canal 13, Mega.",
+    "clothing": "Huasos wearing chamanto cloaks and chupalla straw hats; modern contemporary clothing in cities.",
+    "holidays": [
+      "September 18 (Fiestas Patrias)",
+      "September 19 (Day of the Glories of the Army)",
+      "May 21 (Navy Day)"
+    ],
+    "crafts": "Pomaire clay pottery, Rapa Nui woodcarving, Mapuche silver jewelry (trapelacucha) and wool textiles.",
+    "worldHeritageSites": [
+      "Rapa Nui National Park (Easter Island)",
+      "Historic Quarter of the Seaport City of Valparaíso",
+      "Humberstone and Santa Laura Saltpeter Works",
+      "Sewell Mining Town",
+      "Churches of Chiloé"
+    ],
+    "unescoIntangible": [
+      "Baile Chino",
+      "Pottery of Quinchamalí and Santa Cruz de Cuca"
+    ],
+    "famousPeople": [
+      "Pablo Neruda",
+      "Gabriela Mistral",
+      "Bernardo O'Higgins",
+      "Pedro Pascal",
+      "Isabel Allende",
+      "Alexis Sánchez"
+    ],
+    "flagDescription": "Two equal horizontal bands of white (top) and red, with a blue square equal in height to the white band in the canton bearing a white five-pointed star.",
+    "coatOfArmsDescription": "Divided into blue top and red bottom, supported by a huemul deer and an Andean condor wearing naval crowns, beneath three plumes of blue, white, and red feathers.",
+    "symbols": {
+      "animal": "Huemul deer",
+      "bird": "Andean condor",
+      "flower": "Copihue (Chilean bellflower)",
+      "tree": "Araucaria (Monkey puzzle tree)"
+    },
+    "landmarks": [
+      "Torres del Paine",
+      "Moai statues of Easter Island",
+      "Atacama Desert (Valley of the Moon)",
+      "Gran Torre Santiago",
+      "Valparaíso Hills"
+    ],
+    "travelNotes": "Extremely safe and politically stable destination; modern highway, medical, and emergency infrastructure.",
+    "shortSummary": "Chile spans 4,300 kilometers along the Pacific rim, featuring the dramatic landscapes of the Atacama Desert, Andean peaks, fertile wine valleys, and Patagonian fjords, complemented by Latin America's highest Human Development Index.",
+    "flagImage": "https://flagcdn.com/w320/cl.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/CHL_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Torres_del_Paine_from_campamento_Torres.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "UNESCO",
+      "INE Chile"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "colombia",
+    "name": "Colombia",
+    "officialName": "Republic of Colombia",
+    "nativeName": "República de Colombia",
+    "continent": "South America",
+    "subregion": "Northwestern South America",
+    "status": "UN Member State",
+    "iso2": "CO",
+    "iso3": "COL",
+    "isoNumeric": "170",
+    "flagEmoji": "🇨🇴",
+    "demonym": "Colombian",
+    "capital": "Bogotá",
+    "largestCity": "Bogotá",
+    "majorCities": [
+      "Bogotá",
+      "Medellín",
+      "Cali",
+      "Barranquilla",
+      "Cartagena",
+      "Bucaramanga"
+    ],
+    "nationalDay": "July 20 (Independence Day)",
+    "nationalAnthem": "Himno Nacional de la República de Colombia",
+    "motto": "Libertad y orden (Liberty and Order)",
+    "population2026": 53200000,
+    "areaKm2": 1141748,
+    "areaRank": 25,
+    "populationRank": 28,
+    "populationDensity": "46.6 / km²",
+    "coordinates": {
+      "lat": 4.5709,
+      "lng": -74.2973
+    },
+    "borders": [
+      "Brazil",
+      "Ecuador",
+      "Panama",
+      "Peru",
+      "Venezuela"
+    ],
+    "coastline": "3,208 km (Caribbean and Pacific)",
+    "landlocked": false,
+    "highestPoint": "Pico Cristóbal Colón (5,775 m)",
+    "lowestPoint": "Pacific Ocean (0 m)",
+    "longestRiver": "Magdalena River (1,528 km)",
+    "majorLakes": [
+      "Lake Tota",
+      "Lake Guatavita"
+    ],
+    "majorMountains": [
+      "Andes (Cordillera Oriental, Central, Occidental)",
+      "Sierra Nevada de Santa Marta"
+    ],
+    "climate": "Tropical and isothermal; varies by altitude from warm tierra caliente to frosty páramo",
+    "naturalHazards": [
+      "Andean earthquakes",
+      "Volcanic eruptions (Nevado del Ruiz)",
+      "Landslides"
+    ],
+    "environmentalIssues": [
+      "Deforestation in Amazon and Pacific basins",
+      "Illegal alluvial gold mining"
+    ],
+    "biodiversity": "Second-most biodiverse country in the world; first in bird, orchid, and butterfly species",
+    "timeZone": "UTC-05:00",
+    "drivingSide": "right",
+    "callingCode": "+57",
+    "languages": [
+      "Spanish",
+      "68 recognized indigenous and creole languages"
+    ],
+    "currency": "Colombian Peso (COP, $)",
+    "government": "Unitary presidential constitutional republic",
+    "headOfState": "President Gustavo Petro",
+    "headOfGovernment": "President Gustavo Petro",
+    "legislature": "Congress of the Republic (Senate and Chamber of Representatives)",
+    "constitution": "1991",
+    "mainPoliticalParties": [
+      "Pacto Histórico",
+      "Partido Liberal",
+      "Partido Conservador",
+      "Centro Democrático",
+      "Alianza Verde"
+    ],
+    "latestElections": "Presidential elections 2022; regional elections 2023; general elections 2026",
+    "politicalSituation": "Implementing the 'Total Peace' policy, agrarian land reform, and accelerated transition toward renewable energy.",
+    "foreignRelations": "Member of OECD, UN, OAS, Pacific Alliance, Andean Community; strong global diplomatic profile.",
+    "military": "Military Forces of Colombia (Army, Navy, Air Force) and National Police.",
+    "internationalOrgs": [
+      "UN",
+      "OECD",
+      "OAS",
+      "Pacific Alliance",
+      "CAN",
+      "WTO",
+      "IMF",
+      "World Bank"
+    ],
+    "adminDivisions": "32 departments and 1 Capital District (Bogotá)",
+    "history": "Inhabited by sophisticated pre-Columbian cultures including the Muisca, Quimbaya, and Tayrona. Spanish established the Viceroyalty of New Granada centered at Santa Fe de Bogotá. Won independence in 1819 led by Simón Bolívar at the Battle of Boyacá, forming Gran Colombia. Experienced the 20th-century internal conflict that concluded with the historic 2016 peace accord with the FARC.",
+    "recentEvents2020_2026": "Hosted the UN Biodiversity Conference (COP16) in Cali in late 2024; expanded solar and wind concessions in La Guajira; implemented social and pension system reforms through 2026.",
+    "historicalFigures": [
+      "Simón Bolívar",
+      "Francisco de Paula Santander",
+      "Policarpa Salavarrieta",
+      "Gabriel García Márquez",
+      "Fernando Botero"
+    ],
+    "ethnicGroups": [
+      "Mestizo and White ~87.6%",
+      "Afro-Colombian ~9.3%",
+      "Indigenous ~4.4%"
+    ],
+    "religions": [
+      "Roman Catholic ~70%",
+      "Protestant/Evangelical ~17%",
+      "Unaffiliated ~11%",
+      "Others ~2%"
+    ],
+    "literacyRate": "95.6%",
+    "lifeExpectancy": "77.3 years",
+    "hdi": "0.758 (High)",
+    "urbanization": "82.2%",
+    "education": "Leading universities include Universidad de los Andes, Universidad Nacional de Colombia, and Javeriana.",
+    "healthcare": "National universal health insurance system (EPS) achieving near-universal population enrollment.",
+    "socialCustoms": "Vibrant dancing culture, daily coffee drinking ritual (tinto), elaborate floral festivals.",
+    "etiquette": "Polite and formal verbal greetings ('Usted'), warm hospitality, respectful interpersonal tone.",
+    "nationalIdentity": "Defined by extraordinary biodiversity, coffee culture, magical realism literature, and musical diversity.",
+    "gdpNominal": "$410 billion (approx. 2026)",
+    "gdpPpp": "$1.08 trillion (approx. 2026)",
+    "gdpPerCapita": "$7,700",
+    "sectors": "Services 58%, Industry 25%, Agriculture 10%, Mining & Energy 7%",
+    "industries": [
+      "Petroleum and coal",
+      "Coffee processing",
+      "Cut flowers and textiles",
+      "Chemicals and plastics",
+      "Financial services",
+      "Software"
+    ],
+    "agriculture": [
+      "Highland Arabica coffee (world's top mild washed)",
+      "Cut flowers (#2 exporter globally)",
+      "Bananas",
+      "Palm oil",
+      "Cacao"
+    ],
+    "naturalResources": [
+      "Petroleum",
+      "Coal (El Cerrejón)",
+      "Emeralds (world's premier producer)",
+      "Nickel",
+      "Gold",
+      "Hydropower"
+    ],
+    "energy": "Hydroelectric (70%), Thermal gas/coal (24%), Solar and wind (6%)",
+    "exports": [
+      "Crude petroleum",
+      "Coal",
+      "Coffee",
+      "Cut flowers",
+      "Gold",
+      "Refined petroleum",
+      "Bananas"
+    ],
+    "imports": [
+      "Refined fuels",
+      "Telecommunications hardware",
+      "Industrial machinery",
+      "Motor vehicles",
+      "Chemicals"
+    ],
+    "tradePartners": [
+      "United States (largest partner)",
+      "China",
+      "Panama",
+      "Ecuador",
+      "Brazil",
+      "Mexico"
+    ],
+    "tourism": "Over 5.8 million international arrivals visiting Cartagena, Medellín, the Coffee Cultural Landscape, and Tayrona National Park.",
+    "employment": "Unemployment approx. 9.0%; dynamic entrepreneurial and digital remote workforce.",
+    "debtInflation": "Inflation returning toward the 3% target corridor; stable central bank policy framework.",
+    "transport": "TransMilenio BRT in Bogotá, Medellín Metro and Metrocable system, expanding 4G/5G highway tunnels.",
+    "airports": [
+      "El Dorado International Airport (BOG - Latin America's #1 cargo airport)",
+      "José María Córdova (MDE)"
+    ],
+    "ports": [
+      "Port of Cartagena (major Caribbean transshipment hub)",
+      "Buenaventura (Pacific)",
+      "Barranquilla"
+    ],
+    "internetUsage": "75.7%",
+    "cuisine": "Bandeja Paisa, Ajiaco soup, Sancocho, Arepas, Empanadas, Lechona tolimense, freshly brewed Arabica coffee.",
+    "festivals": [
+      "Carnaval de Barranquilla",
+      "Feria de las Flores (Medellín)",
+      "Feria de Cali",
+      "Hay Festival Cartagena"
+    ],
+    "music": "Cumbia, Vallenato, Salsa, Bambuco, modern Latin urban pop and reggaeton.",
+    "dance": "Cumbia, Salsa caleña, Mapalé, Joropo.",
+    "art": "Iconic volumetric sculptures and paintings of Fernando Botero; pre-Columbian gold craftsmanship.",
+    "architecture": "Spanish colonial walled fortress in Cartagena, Villa de Leyva, modern brick architecture of Rogelio Salmona.",
+    "literature": "Gabriel García Márquez (Nobel Prize in Literature 1982, One Hundred Years of Solitude).",
+    "cinema": "Cannes Camera d'Or winner Land and Shade (La tierra y la sombra), Embrace of the Serpent.",
+    "sports": "Cycling (Tour de France champions Egan Bernal, Nairo Quintana), Football, Roller speed skating (multi-world champions), Baseball.",
+    "media": "El Tiempo, El Espectador, Caracol Televisión, RCN Televisión, Semana.",
+    "clothing": "Sombrero Vueltiao (national symbol), Ruana woolen poncho in Boyacá, colorful Wayuu mochilas.",
+    "holidays": [
+      "July 20 (Independence Day)",
+      "August 7 (Battle of Boyacá)",
+      "Carnaval de Barranquilla",
+      "Día de las Velitas"
+    ],
+    "crafts": "Wayuu woven bags (mochilas), Chiva ceramic models, Werregue basketry, filigree gold jewelry.",
+    "worldHeritageSites": [
+      "Port, Fortresses and Group of Monuments, Cartagena",
+      "Coffee Cultural Landscape of Colombia",
+      "Historic Centre of Santa Cruz de Mompox",
+      "San Agustín Archaeological Park",
+      "Chiribiquete National Park"
+    ],
+    "unescoIntangible": [
+      "Carnival of Barranquilla",
+      "Vallenato traditional music",
+      "Carnival of Blacks and Whites",
+      "Wayuu norm system"
+    ],
+    "famousPeople": [
+      "Gabriel García Márquez",
+      "Fernando Botero",
+      "Shakira",
+      "Karol G",
+      "Juanes",
+      "Egan Bernal",
+      "Radamel Falcao"
+    ],
+    "flagDescription": "Horizontal tricolor of yellow (half the width, symbolizing gold and national wealth), blue (sovereignty and ocean coasts), and red (blood spilled for freedom).",
+    "coatOfArmsDescription": "Shield featuring a pomegranate of New Granada, cornucopias, Phrygian cap of liberty on a spear, and the Isthmus of Panama between two oceans, crowned by an Andean condor with laurel wreath.",
+    "symbols": {
+      "animal": "Jaguar",
+      "bird": "Andean condor",
+      "flower": "Cattleya trianae (Christmas orchid)",
+      "tree": "Quindío wax palm"
+    },
+    "landmarks": [
+      "Cartagena Walled City",
+      "Monserrate Sanctuary (Bogotá)",
+      "Tayrona National Natural Park",
+      "Coffee Cultural Landscape (Salento & Cocora Valley)",
+      "Zipaquirá Salt Cathedral"
+    ],
+    "travelNotes": "Major tourist renaissance; vibrant, welcoming population; standard travel precautions in large city downtowns.",
+    "shortSummary": "Colombia bridges Central and South America with Caribbean and Pacific coastlines, towering Andean ranges, lush coffee valleys, and Amazonian jungles, celebrated for its unmatched biodiversity, Nobel literature, and warm hospitality.",
+    "flagImage": "https://flagcdn.com/w320/co.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/COL_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Cartagena_de_indias_skyline.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "UNESCO",
+      "DANE Colombia"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "ecuador",
+    "name": "Ecuador",
+    "officialName": "Republic of Ecuador",
+    "nativeName": "República del Ecuador / Ikwayur",
+    "continent": "South America",
+    "subregion": "Andean Community",
+    "status": "UN Member State",
+    "iso2": "EC",
+    "iso3": "ECU",
+    "isoNumeric": "218",
+    "flagEmoji": "🇪🇨",
+    "demonym": "Ecuadorian",
+    "capital": "Quito",
+    "largestCity": "Guayaquil",
+    "majorCities": [
+      "Guayaquil",
+      "Quito",
+      "Cuenca",
+      "Santo Domingo",
+      "Machala",
+      "Manta"
+    ],
+    "nationalDay": "August 10 (First Cry of Independence)",
+    "nationalAnthem": "¡Salve, Oh Patria!",
+    "motto": "Dios, patria y libertad",
+    "population2026": 18400000,
+    "areaKm2": 283561,
+    "areaRank": 73,
+    "populationRank": 69,
+    "populationDensity": "64.9 / km²",
+    "coordinates": {
+      "lat": -1.8312,
+      "lng": -78.1834
+    },
+    "borders": [
+      "Colombia",
+      "Peru"
+    ],
+    "coastline": "2,237 km",
+    "landlocked": false,
+    "highestPoint": "Mount Chimborazo (6,263 m - closest point on Earth's surface to the sun)",
+    "lowestPoint": "Pacific Ocean (0 m)",
+    "longestRiver": "Napo River (1,075 km)",
+    "majorLakes": [
+      "Lake San Pablo",
+      "Quilotoa Crater Lake"
+    ],
+    "majorMountains": [
+      "Avenue of Volcanoes",
+      "Mount Chimborazo",
+      "Cotopaxi Volcano (5,897 m)"
+    ],
+    "climate": "Tropical along coast and Amazon basin; temperate and alpine in Andean highlands; unique microclimates on Galápagos Islands",
+    "naturalHazards": [
+      "Active volcanic eruptions (Cotopaxi, Tungurahua)",
+      "Earthquakes",
+      "El Niño coastal flooding"
+    ],
+    "environmentalIssues": [
+      "Amazon oil extraction remediation",
+      "Galápagos invasive species management",
+      "Soil erosion"
+    ],
+    "biodiversity": "Megadiverse hotspot with the highest biodiversity concentration per square kilometer on Earth, including the Galápagos Islands",
+    "timeZone": "UTC-05:00 (continental), UTC-06:00 (Galápagos)",
+    "drivingSide": "right",
+    "callingCode": "+593",
+    "languages": [
+      "Spanish",
+      "Kichwa",
+      "Shuar"
+    ],
+    "currency": "United States Dollar (USD, $)",
+    "government": "Unitary presidential constitutional republic",
+    "headOfState": "President Daniel Noboa",
+    "headOfGovernment": "President Daniel Noboa",
+    "legislature": "National Assembly",
+    "constitution": "2008 (Montecristi Constitution - first to grant constitutional Rights of Nature)",
+    "mainPoliticalParties": [
+      "Acción Democrática Nacional (ADN)",
+      "Revolución Ciudadana (RC)",
+      "Construye",
+      "Partido Social Cristiano"
+    ],
+    "latestElections": "Extraordinary general elections 2023; general elections 2025",
+    "politicalSituation": "State security stabilization initiatives, port security modernization, and investment in energy infrastructure under President Daniel Noboa.",
+    "foreignRelations": "Member of UN, OAS, Andean Community, WTO; strong bilateral relations with the United States, EU, and Pacific Rim.",
+    "military": "Military Forces of Ecuador (Army, Navy, Air Force) and National Police.",
+    "internationalOrgs": [
+      "UN",
+      "OAS",
+      "CAN",
+      "WTO",
+      "IMF",
+      "World Bank"
+    ],
+    "adminDivisions": "24 provinces",
+    "history": "Home to ancient Valdivia culture (one of the oldest pottery traditions in the Americas) and the Kingdom of Quito before Inca conquest. Spanish colonial rule made Quito the seat of the Real Audiencia. Gained independence in 1822 at the Battle of Pichincha under Antonio José de Sucre, joining Gran Colombia before seceding in 1830. Charles Darwin visited the Galápagos Islands in 1835, inspiring his theory of natural selection. Adopted the US dollar as legal tender in 2000 following economic crisis.",
+    "recentEvents2020_2026": "Executed major national security campaigns; expanded maritime conservation around Galápagos Marine Reserve; hosted international conservation and investment summits through 2026.",
+    "historicalFigures": [
+      "Antonio José de Sucre",
+      "Eloy Alfaro",
+      "Manuela Sáenz",
+      "Eugenio Espejo",
+      "Oswaldo Guayasamín"
+    ],
+    "ethnicGroups": [
+      "Mestizo ~71.9%",
+      "Montubio ~7.4%",
+      "Afro-Ecuadorian ~7.2%",
+      "Indigenous ~7.0%",
+      "White ~6.1%"
+    ],
+    "religions": [
+      "Roman Catholic ~74%",
+      "Evangelical Protestant ~15%",
+      "Unaffiliated/Atheist ~9%",
+      "Others ~2%"
+    ],
+    "literacyRate": "94.2%",
+    "lifeExpectancy": "77.9 years",
+    "hdi": "0.740 (High)",
+    "urbanization": "64.6%",
+    "education": "Free public education through university level; prominent universities include Universidad San Francisco de Quito and PUCE.",
+    "healthcare": "Public health network administered by the Ministry of Public Health alongside the Ecuadorian Social Security Institute (IESS).",
+    "socialCustoms": "Family-centric social structure, deep reverence for indigenous traditions, Andean market days.",
+    "etiquette": "Formal polite greetings ('Buenos días'), gentle handshakes, respectful conversational tone.",
+    "nationalIdentity": "Defined by the majestic Andean volcanoes, ancient equatorial indigenous heritage, and global ecological guardianship of the Galápagos.",
+    "gdpNominal": "$125 billion (approx. 2026)",
+    "gdpPpp": "$255 billion (approx. 2026)",
+    "gdpPerCapita": "$6,800",
+    "sectors": "Services 56%, Industry 28%, Agriculture & Fisheries 16%",
+    "industries": [
+      "Petroleum extraction and refining",
+      "Shrimp and prawn aquaculture (world's top exporter)",
+      "Food processing",
+      "Textiles",
+      "Wood products"
+    ],
+    "agriculture": [
+      "Bananas (world's #1 exporter)",
+      "Shrimp aquaculture",
+      "Fine flavor cacao (Arriba cacao)",
+      "Cut flowers (roses)",
+      "Tuna fisheries"
+    ],
+    "naturalResources": [
+      "Petroleum (Amazon fields)",
+      "Gold and copper (Fruta del Norte, Mirador)",
+      "Hydropower",
+      "Fish and marine resources"
+    ],
+    "energy": "Hydroelectric (78%), Thermal oil/gas (19%), Solar and wind (3%)",
+    "exports": [
+      "Crude petroleum",
+      "Shrimp and prawns",
+      "Bananas",
+      "Cut flowers",
+      "Cacao beans and chocolate",
+      "Canned tuna"
+    ],
+    "imports": [
+      "Refined fuels",
+      "Industrial machinery",
+      "Motor vehicles",
+      "Chemical products",
+      "Consumer electronics"
+    ],
+    "tradePartners": [
+      "United States (largest partner)",
+      "China",
+      "Panama",
+      "European Union",
+      "Colombia",
+      "Peru"
+    ],
+    "tourism": "Over 2.2 million international travelers visiting the Galápagos Islands, historic Quito, Cuenca, and the Avenue of Volcanoes.",
+    "employment": "Unemployment approx. 4.0%; emphasis on formalization of micro-enterprises and ecotourism jobs.",
+    "debtInflation": "Dollarized economy maintains low and predictable inflation; fiscal consolidation under IMF programs.",
+    "transport": "Quito Metro (first underground heavy metro in Ecuador, inaugurated 2023), paved Pan-American highway corridor.",
+    "airports": [
+      "Mariscal Sucre International Airport (UIO) in Quito",
+      "José Joaquín de Olmedo International (GYE) in Guayaquil"
+    ],
+    "ports": [
+      "Port of Guayaquil (DP World Posorja deepwater port)",
+      "Manta",
+      "Puerto Bolívar (Machala)"
+    ],
+    "internetUsage": "79.1%",
+    "cuisine": "Ceviche ecuatoriano, Encebollado (tuna soup), Locro de papa, Hornado, Seco de chivo, Llapingachos, artisanal Ecuadorian dark chocolate.",
+    "festivals": [
+      "Fiesta del Sol (Inti Raymi)",
+      "Mama Negra (Latacunga)",
+      "Fiestas de Quito",
+      "Carnaval de Guaranda"
+    ],
+    "music": "Pasillo (national musical genre recognized by UNESCO), Sanjuanito, Albazo, Marimba afroecuatoriana.",
+    "dance": "Pasillo, Sanjuanito, Marimba dance of Esmeraldas.",
+    "art": "Oswaldo Guayasamín (humanist master, Chapel of Man), Eduardo Kingman, Tigua naive paintings on sheepskin.",
+    "architecture": "Magnificent Quito Old Town (first UNESCO World Heritage city along with Krakow), Cuenca colonial cathedrals.",
+    "literature": "Jorge Icaza (Huasipungo), Juan Montalvo, Medardo Ángel Silva.",
+    "cinema": "Sebastián Cordero (Ratas, ratones, rateros; Crónicas).",
+    "sports": "Football (LDU Quito Copa Libertadores winners, national team FIFA World Cup appearances), Cycling (Richard Carapaz Olympic champion).",
+    "media": "El Comercio, El Universo, Teleamazonas, Ecuavisa.",
+    "clothing": "Traditional Otavaleño embroidered shirts, felt fedora hats, and ponchos; Panama straw hats (Sombreros de paja toquilla).",
+    "holidays": [
+      "August 10 (Independence Day)",
+      "May 24 (Battle of Pichincha)",
+      "November 2 (Day of the Dead)",
+      "December 6 (Foundation of Quito)"
+    ],
+    "crafts": "Handwoven Panama straw hats (originating in Montecristi), Otavalo woven textiles, Chordeleg silver filigree.",
+    "worldHeritageSites": [
+      "City of Quito (first designated UNESCO site 1978)",
+      "Galápagos Islands (first natural site 1978)",
+      "Historic Centre of Santa Ana de los Cuatro Ríos de Cuenca",
+      "Sangay National Park"
+    ],
+    "unescoIntangible": [
+      "Traditional weaving of the Ecuadorian toquilla straw hat (Panama hat)",
+      "Pasillo song and poetry",
+      "Oral heritage of Zápara people"
+    ],
+    "famousPeople": [
+      "Oswaldo Guayasamín",
+      "Richard Carapaz",
+      "Antonio José de Sucre",
+      "Manuela Sáenz",
+      "Moisés Caicedo"
+    ],
+    "flagDescription": "Horizontal tricolor of yellow (half height), blue (one quarter), and red (one quarter), charged with the national coat of arms in the center.",
+    "coatOfArmsDescription": "Oval shield with Mount Chimborazo and a steamboat on the Guayas River under a golden sun and zodiac signs, crowned by a majestic Andean condor with wings spread.",
+    "symbols": {
+      "animal": "Spectacled bear",
+      "bird": "Andean condor",
+      "flower": "Chuquiragua",
+      "tree": "Quina (Cinchona)"
+    },
+    "landmarks": [
+      "Galápagos Islands",
+      "Historic Centre of Quito & Church of the Society of Jesus",
+      "Cotopaxi Volcano",
+      "Mitad del Mundo (Equator Monument)",
+      "Quilotoa Lagoon"
+    ],
+    "travelNotes": "Unique biodiverse travel experiences; high-altitude awareness in Quito; pristine conservation guidelines in the Galápagos.",
+    "shortSummary": "Straddling the equator, Ecuador features the active volcanoes of the Andes, the biological wonders of the Amazon basin, the colonial splendor of Quito, and the evolutionary sanctuary of the Galápagos Islands.",
+    "flagImage": "https://flagcdn.com/w320/ec.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/ECU_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Volc%C3%A1n_Cotopaxi_2011.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "UNESCO",
+      "INEC Ecuador"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "guyana",
+    "name": "Guyana",
+    "officialName": "Co-operative Republic of Guyana",
+    "nativeName": "Co-operative Republic of Guyana",
+    "continent": "South America",
+    "subregion": "Guiana Shield",
+    "status": "UN Member State",
+    "iso2": "GY",
+    "iso3": "GUY",
+    "isoNumeric": "328",
+    "flagEmoji": "🇬🇾",
+    "demonym": "Guyanese",
+    "capital": "Georgetown",
+    "largestCity": "Georgetown",
+    "majorCities": [
+      "Georgetown",
+      "Linden",
+      "New Amsterdam",
+      "Anna Regina",
+      "Bartica"
+    ],
+    "nationalDay": "February 23 (Republic Day / Mashramani)",
+    "nationalAnthem": "Dear Land of Guyana, of Rivers and Plains",
+    "motto": "One People, One Nation, One Destiny",
+    "population2026": 830000,
+    "areaKm2": 214969,
+    "areaRank": 85,
+    "populationRank": 164,
+    "populationDensity": "3.9 / km²",
+    "coordinates": {
+      "lat": 4.8604,
+      "lng": -58.9302
+    },
+    "borders": [
+      "Brazil",
+      "Suriname",
+      "Venezuela"
+    ],
+    "coastline": "459 km",
+    "landlocked": false,
+    "highestPoint": "Mount Roraima (2,810 m)",
+    "lowestPoint": "Atlantic Ocean (0 m)",
+    "longestRiver": "Essequibo River (1,014 km)",
+    "majorLakes": [
+      "Lake Mainstay",
+      "Capoey Lake"
+    ],
+    "majorMountains": [
+      "Pakaraima Mountains",
+      "Mount Roraima",
+      "Kanuku Mountains"
+    ],
+    "climate": "Tropical rainforest and equatorial savannah with two rainy seasons",
+    "naturalHazards": [
+      "Flash flooding along low-lying coastal plains (below high tide sea level)",
+      "Riverbank inundation"
+    ],
+    "environmentalIssues": [
+      "Coastal flood vulnerability",
+      "Gold mining sediment pollution in rivers"
+    ],
+    "biodiversity": "Over 80% forested with exceptional Guiana Shield biodiversity, including giant otters and harpy eagles",
+    "timeZone": "UTC-04:00",
+    "drivingSide": "left",
+    "callingCode": "+592",
+    "languages": [
+      "English (official)",
+      "Guyanese Creole"
+    ],
+    "currency": "Guyanese Dollar (GYD, $)",
+    "government": "Unitary semi-presidential constitutional republic",
+    "headOfState": "President Irfaan Ali",
+    "headOfGovernment": "Prime Minister Mark Phillips",
+    "legislature": "National Assembly",
+    "constitution": "1980",
+    "mainPoliticalParties": [
+      "People's Progressive Party/Civic (PPP/C)",
+      "A Partnership for National Unity (APNU)",
+      "Alliance for Change (AFC)"
+    ],
+    "latestElections": "General elections 2020; local government elections 2023; general elections 2025",
+    "politicalSituation": "Transformative economic growth driven by offshore petroleum extraction in the Stabroek block; massive sovereign infrastructure investments; border sovereignty defense before ICJ.",
+    "foreignRelations": "Host of CARICOM headquarters; member of UN, Commonwealth, OAS, Non-Aligned Movement; strong alliances with the US, UK, and Caribbean partners.",
+    "military": "Guyana Defence Force (GDF: Army, Coast Guard, Air Corps).",
+    "internationalOrgs": [
+      "UN",
+      "CARICOM",
+      "Commonwealth",
+      "OAS",
+      "WTO",
+      "IMF",
+      "World Bank"
+    ],
+    "adminDivisions": "10 administrative regions",
+    "history": "Inhabited by indigenous Lokono (Arawak) and Kalina (Carib) peoples. Colonized first by the Dutch (Essequibo, Demerara, Berbice) who built extensive seawalls and polders, then ceded to Britain in 1814 as British Guiana. Sugar plantations drew enslaved Africans and, post-emancipation, indentured laborers from India. Gained independence in 1966 and became a republic in 1970. The 2015 offshore oil discoveries transformed Guyana into the world's fastest-growing economy.",
+    "recentEvents2020_2026": "Achieved world-leading annual GDP growth rates (>25-40%) through offshore crude production surpassing 600,000+ barrels per day; funded national bridge and highway mega-projects; defended territorial integrity of the Essequibo region at the International Court of Justice.",
+    "historicalFigures": [
+      "Cuffy (1763 slave rebellion leader)",
+      "Cheddi Jagan",
+      "Forbes Burnham",
+      "Walter Rodney"
+    ],
+    "ethnicGroups": [
+      "Indo-Guyanese ~39.8%",
+      "Afro-Guyanese ~29.3%",
+      "Mixed heritage ~19.9%",
+      "Indigenous Amerindian ~10.5%"
+    ],
+    "religions": [
+      "Christianity ~64%",
+      "Hinduism ~25%",
+      "Islam ~7%",
+      "Others/None ~4%"
+    ],
+    "literacyRate": "88.5%",
+    "lifeExpectancy": "70.1 years",
+    "hdi": "0.714 (High)",
+    "urbanization": "27.0%",
+    "education": "University of Guyana in Turkeyen; universal primary and secondary schooling.",
+    "healthcare": "National healthcare system centered around Georgetown Public Hospital Corporation (GPHC) undergoing multi-hospital modernizations.",
+    "socialCustoms": "Celebration of Mashramani carnival, Phagwah (Holi) color throwing, Eid celebrations, and cricket matches.",
+    "etiquette": "Friendly and respectful, traditional handshakes, addressing elders politely.",
+    "nationalIdentity": "Unique Caribbean-South American hybrid identity rooted in diverse ethnic unity ('Six Peoples').",
+    "gdpNominal": "$26 billion (approx. 2026)",
+    "gdpPpp": "$68 billion (approx. 2026)",
+    "gdpPerCapita": "$31,300",
+    "sectors": "Petroleum & Mining 65%, Services 20%, Agriculture 10%, Manufacturing 5%",
+    "industries": [
+      "Offshore crude oil extraction (Stabroek block)",
+      "Gold and bauxite mining",
+      "Timber",
+      "Sugar and rice processing"
+    ],
+    "agriculture": [
+      "Rice",
+      "Sugarcane",
+      "Coconuts",
+      "Fresh seafood and shrimp",
+      "Tropical fruits"
+    ],
+    "naturalResources": [
+      "Offshore petroleum (11+ billion barrels confirmed reserves)",
+      "Gold",
+      "Bauxite",
+      "Diamonds",
+      "Pristine tropical hardwood"
+    ],
+    "energy": "Historically heavy fuel oil; transitioning to Gas-to-Energy project and solar/hydropower",
+    "exports": [
+      "Crude petroleum",
+      "Gold",
+      "Bauxite",
+      "Rice",
+      "Sugar",
+      "Timber",
+      "Rum (Demerara rum)"
+    ],
+    "imports": [
+      "Vessels and offshore drilling gear",
+      "Machinery and mechanical equipment",
+      "Motor vehicles",
+      "Refined petroleum",
+      "Construction steel"
+    ],
+    "tradePartners": [
+      "United States",
+      "Panama",
+      "Netherlands",
+      "United Kingdom",
+      "United Arab Emirates",
+      "Trinidad and Tobago"
+    ],
+    "tourism": "Premier ecotourism destination for pristine wilderness: Kaieteur Falls (world's highest single-drop waterfall), Rupununi savannahs, birdwatching.",
+    "employment": "Low unemployment, high demand for skilled technical and engineering talent.",
+    "debtInflation": "Massive sovereign Natural Resource Fund (NRF) accumulating billions in foreign reserves; public debt prudently managed.",
+    "transport": "Georgetown coastal road network, new Demerara River Bridge, Linden-to-Lethem interior highway corridor.",
+    "airports": [
+      "Cheddi Jagan International Airport (GEO)",
+      "Eugene F. Correia International Airport (Ogle)"
+    ],
+    "ports": [
+      "Port of Georgetown (Demerara River)"
+    ],
+    "internetUsage": "76.4%",
+    "cuisine": "Pepperpot (traditional meat stew with cassareep), Cook-up rice, Roti and chicken curry, Metemgee, Pholourie, El Dorado Demerara rum.",
+    "festivals": [
+      "Mashramani (Republic Day)",
+      "Phagwah (Holi)",
+      "Diwali",
+      "Guyana Carnival"
+    ],
+    "music": "Soca, Chutney music, Calypso, Reggae, Shanto.",
+    "dance": "Chutney dance, Soca jumping, traditional Amerindian ceremonial dances.",
+    "art": "Wood sculptures by Philip Moore, Amerindian petroglyphs and basketry, vibrant landscape canvases.",
+    "architecture": "St. George's Cathedral in Georgetown (one of the world's tallest freestanding wooden buildings), colonial Demerara window shutters.",
+    "literature": "Martin Carter (celebrated poet), Wilson Harris, Edgar Mittelholzer, Walter Rodney.",
+    "cinema": "Emerging documentary and local Caribbean cinematic productions.",
+    "sports": "Cricket (home of Guyana Amazon Warriors and West Indies legends like Clive Lloyd, Shivnarine Chanderpaul), Football.",
+    "media": "Stabroek News, Kaieteur News, Guyana Chronicle, NCN.",
+    "clothing": "Traditional Indian sari/kurta during festivals, African dashikis during Emancipation Day, modern Western dress in business.",
+    "holidays": [
+      "February 23 (Mashramani)",
+      "May 26 (Independence Day)",
+      "August 1 (Emancipation Day)",
+      "Phagwah",
+      "Diwali"
+    ],
+    "crafts": "Amerindian Tibisiri straw weaving, balata rubber sculptures, indigenous beaded jewelry.",
+    "worldHeritageSites": [
+      "Tentative List: City Hall and Georgetown Wooden Heritage, Fort Zeelandia, Shell Beach"
+    ],
+    "unescoIntangible": [
+      "Mashramani traditions and Guyanese masquerade"
+    ],
+    "famousPeople": [
+      "Irfaan Ali",
+      "Cheddi Jagan",
+      "Walter Rodney",
+      "Clive Lloyd",
+      "Shivnarine Chanderpaul",
+      "Letitia Wright"
+    ],
+    "flagDescription": "The Golden Arrowhead: green field with a red isosceles triangle based on the hoist side, bordered in black, superimposed on a golden triangle bordered in white.",
+    "coatOfArmsDescription": "Crest of an Amerindian feathered headdress with two jaguars supporting a shield bearing a Victoria amazonica lily, water ripples, and a canje pheasant.",
+    "symbols": {
+      "animal": "Jaguar",
+      "bird": "Canje pheasant (Hoatzin)",
+      "flower": "Victoria amazonica (Giant water lily)",
+      "tree": "Greenheart tree"
+    },
+    "landmarks": [
+      "Kaieteur Falls (226 m single drop)",
+      "St. George's Cathedral (Georgetown)",
+      "Mount Roraima",
+      "Rupununi Savannahs",
+      "Iwokrama Rainforest"
+    ],
+    "travelNotes": "Pristine nature and birdwatching haven; travel to interior via licensed charter flights and guided river excursions.",
+    "shortSummary": "Guyana is an English-speaking South American and Caribbean nation celebrated for the thundering majesty of Kaieteur Falls, vast intact Amazonian rainforests, and an unprecedented economic boom driven by offshore energy.",
+    "flagImage": "https://flagcdn.com/w320/gy.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/GUY_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Kaieteur_Falls_Guyana_2007.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "CARICOM",
+      "Bureau of Statistics Guyana"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "paraguay",
+    "name": "Paraguay",
+    "officialName": "Republic of Paraguay",
+    "nativeName": "República del Paraguay / Tetã Paraguái",
+    "continent": "South America",
+    "subregion": "Southern Cone",
+    "status": "UN Member State",
+    "iso2": "PY",
+    "iso3": "PRY",
+    "isoNumeric": "600",
+    "flagEmoji": "🇵🇾",
+    "demonym": "Paraguayan",
+    "capital": "Asunción",
+    "largestCity": "Asunción",
+    "majorCities": [
+      "Asunción",
+      "Ciudad del Este",
+      "San Lorenzo",
+      "Luque",
+      "Capiatá",
+      "Encarnación"
+    ],
+    "nationalDay": "May 14–15 (Independence Days)",
+    "nationalAnthem": "Himno Nacional Paraguayo",
+    "motto": "Paz y justicia (Peace and Justice)",
+    "population2026": 7650000,
+    "areaKm2": 406752,
+    "areaRank": 60,
+    "populationRank": 105,
+    "populationDensity": "18.8 / km²",
+    "coordinates": {
+      "lat": -23.4425,
+      "lng": -58.4438
+    },
+    "borders": [
+      "Argentina",
+      "Bolivia",
+      "Brazil"
+    ],
+    "coastline": "0 km (landlocked)",
+    "landlocked": true,
+    "highestPoint": "Cerro Peró (842 m)",
+    "lowestPoint": "Confluence of Rio Paraguay and Rio Paraná (46 m)",
+    "longestRiver": "Paraguay River (2,621 km)",
+    "majorLakes": [
+      "Lake Ypacaraí",
+      "Lake Ypoá"
+    ],
+    "majorMountains": [
+      "Cordillera de Amambay",
+      "Cordillera del Ybytyruzú"
+    ],
+    "climate": "Subtropical to tropical; humid in the east (Paraneña), semi-arid in the western Gran Chaco",
+    "naturalHazards": [
+      "Periodic localized river flooding",
+      "Chaco seasonal droughts and heatwaves"
+    ],
+    "environmentalIssues": [
+      "Deforestation in the Gran Chaco biome",
+      "Soil erosion in agricultural frontiers"
+    ],
+    "biodiversity": "Rich ecological transition zone between Atlantic Forest in the east and the dry Gran Chaco in the west",
+    "timeZone": "UTC-04:00 (DST observed)",
+    "drivingSide": "right",
+    "callingCode": "+595",
+    "languages": [
+      "Spanish",
+      "Guaraní (both official; spoken by over 85% of population)"
+    ],
+    "currency": "Paraguayan Guaraní (PYG, ₲)",
+    "government": "Unitary presidential constitutional republic",
+    "headOfState": "President Santiago Peña",
+    "headOfGovernment": "President Santiago Peña",
+    "legislature": "Congress of Paraguay (Chamber of Senators and Chamber of Deputies)",
+    "constitution": "1992",
+    "mainPoliticalParties": [
+      "Asociación Nacional Republicana (Colorado Party)",
+      "Partido Liberal Radical Auténtico (PLRA)",
+      "Cruzada Nacional"
+    ],
+    "latestElections": "General elections 2023; municipal elections 2026",
+    "politicalSituation": "Focus on attracting industrial and clean energy investments, finalizing renegotiation of Itaipu Dam Annex C, and Bioceanic highway corridor construction.",
+    "foreignRelations": "Founding member of Mercosur, UN, OAS; only South American nation maintaining formal diplomatic ties with the Republic of China (Taiwan).",
+    "military": "Armed Forces of Paraguay (Army, Navy, Air Force).",
+    "internationalOrgs": [
+      "UN",
+      "Mercosur",
+      "OAS",
+      "WTO",
+      "IMF",
+      "World Bank"
+    ],
+    "adminDivisions": "17 departments and 1 Capital District (Asunción)",
+    "history": "Heartland of the Guaraní people. Spanish established Asunción in 1537 as the 'Mother of Cities' from which Buenos Aires was refounded. Famous for the autonomous Jesuit Reductions in the 17th–18th centuries. Declared independence from Spain in 1811. Devastated by the War of the Triple Alliance (1864–1870 against Brazil, Argentina, Uruguay), losing over half its population, followed by victory in the Chaco War (1932–1935). Overcame the Stroessner dictatorship (1954–1989) to build a stable constitutional democracy.",
+    "recentEvents2020_2026": "President Santiago Peña inaugurated in 2023; advanced construction of the Bioceanic Corridor highway linking the Atlantic and Pacific through the Chaco; attained historical high sovereign credit ratings.",
+    "historicalFigures": [
+      "José Gaspar Rodríguez de Francia",
+      "Francisco Solano López",
+      "Bernardino Caballero",
+      "Augusto Roa Bastos",
+      "Agustín Pío Barrios (Mangoré)"
+    ],
+    "ethnicGroups": [
+      "Mestizo (mixed Spanish and Guaraní) ~95%",
+      "Indigenous ~2%",
+      "Other Europeans / German / Asian ~3%"
+    ],
+    "religions": [
+      "Roman Catholic ~88%",
+      "Evangelical Protestant ~8%",
+      "None/Other ~4%"
+    ],
+    "literacyRate": "94.5%",
+    "lifeExpectancy": "74.8 years",
+    "hdi": "0.717 (High)",
+    "urbanization": "62.8%",
+    "education": "Universidad Nacional de Asunción (UNA) and Catholic University; universal primary schooling.",
+    "healthcare": "Universal public health services under the Ministry of Public Health and Social Welfare (MSPYBS) and Social Insurance Institute (IPS).",
+    "socialCustoms": "Daily ritual of drinking Tereré (cold yerba mate with medicinal herbs / yuyos) in guampa horns, strong community solidarity.",
+    "etiquette": "Courteous greeting in Spanish or Guaraní, polite handshake, respectful attitude toward elders.",
+    "nationalIdentity": "Proudly bilingual Guaraní-Spanish nation celebrating heroic national resilience and rich folk music traditions.",
+    "gdpNominal": "$48 billion (approx. 2026)",
+    "gdpPpp": "$125 billion (approx. 2026)",
+    "gdpPerCapita": "$6,270",
+    "sectors": "Agriculture & Livestock 25%, Industry 30%, Services 45%",
+    "industries": [
+      "Hydroelectric power generation (world's top clean energy exporter per capita)",
+      "Meat packing and beef export",
+      "Soybean crushing",
+      "Beverages and textiles",
+      "Light manufacturing (maquila)"
+    ],
+    "agriculture": [
+      "Soybeans and soybean meal",
+      "Beef cattle (top 10 global exporter)",
+      "Corn",
+      "Wheat",
+      "Cassava (mandioca)",
+      "Stevia"
+    ],
+    "naturalResources": [
+      "Vast hydroelectric power (Itaipu and Yacyretá dams)",
+      "Fertile agricultural soils",
+      "Guarani Aquifer freshwater",
+      "Timber"
+    ],
+    "energy": "100% renewable electricity generation dominated by Itaipu (14 GW shared with Brazil) and Yacyretá (shared with Argentina)",
+    "exports": [
+      "Clean electricity",
+      "Soybeans and soybean oil",
+      "Chilled and frozen beef",
+      "Corn",
+      "Cables and auto parts (maquila)"
+    ],
+    "imports": [
+      "Electronics and mobile phones (commercial re-export hub)",
+      "Refined petroleum",
+      "Motor vehicles",
+      "Fertilizers"
+    ],
+    "tradePartners": [
+      "Brazil (largest partner)",
+      "Argentina",
+      "China",
+      "United States",
+      "Chile",
+      "Taiwan"
+    ],
+    "tourism": "Historic Jesuit Missions of La Santísima Trinidad and Jesús de Tavarangue, Itaipu Dam engineering tours, birding in the Chaco.",
+    "employment": "Unemployment approx. 5.5%; thriving young labor force and maquiladora manufacturing growth.",
+    "debtInflation": "Very low external debt to GDP ratio among South American countries; disciplined fiscal and monetary policy.",
+    "transport": "Paraguay-Paraná Waterway (world's third largest barge fleet for bulk grain/beef transport), new Bioceanic highway corridor.",
+    "airports": [
+      "Silvio Pettirossi International Airport (ASU) in Luque/Asunción",
+      "Guaraní International (AGT) in Ciudad del Este"
+    ],
+    "ports": [
+      "River ports on the Paraguay River: Villeta, San Antonio, Asunción"
+    ],
+    "internetUsage": "77.0%",
+    "cuisine": "Sopa paraguaya (the world's only solid soup, a rich cornbread with cheese and onions), Chipa (cassava cheese bread), Mbejú, Asado, Tereré.",
+    "festivals": [
+      "Fiesta de la Virgen de Caacupé (December 8)",
+      "San Juan Ára",
+      "Festival del Ñandutí"
+    ],
+    "music": "Paraguayan harp music, Guarania (lyrical genre invented by José Asunción Flores), Polka paraguaya.",
+    "dance": "Paraguayan bottle dance (Danza de las botellas), Polka.",
+    "art": "Ñandutí lace weaving (spiderweb lace), Ao Po'i embroidered textiles, indigenous featherwork.",
+    "architecture": "Jesuit-Guaraní Baroque ruins of Trinidad and Jesús, colonial cabildo and Palacio de los López in Asunción.",
+    "literature": "Augusto Roa Bastos (Cervantes Prize winner, I the Supreme).",
+    "cinema": "7 Boxes (7 Cajas), The Heiresses (Las Herederas - double Silver Bear winner at Berlinale).",
+    "sports": "Football (Olimpia 3-time Copa Libertadores champions; national team Olympic silver 2004), Futsal, Tennis.",
+    "media": "ABC Color, Última Hora, La Nación, SNT, Telefuturo.",
+    "clothing": "Embroidered Ao Po'i shirts and dresses, traditional straw sombrero piri.",
+    "holidays": [
+      "May 14–15 (Independence Days)",
+      "March 1 (Heroes' Day)",
+      "December 8 (Virgin of Caacupé)"
+    ],
+    "crafts": "Intricate Ñandutí lace, leather craft, silver filigree bombillas and guampas.",
+    "worldHeritageSites": [
+      "Jesuit Missions of La Santísima Trinidad de Paraná and Jesús de Tavarangue"
+    ],
+    "unescoIntangible": [
+      "Traditional practices and knowledge of Tereré in the culture of Pohã Ñana (Guaraní medicinal herbs)"
+    ],
+    "famousPeople": [
+      "Augusto Roa Bastos",
+      "Agustín Pío Barrios (Mangoré)",
+      "José Luis Chilavert",
+      "Santiago Peña",
+      "Roque Santa Cruz"
+    ],
+    "flagDescription": "Horizontal tricolor of red, white, and blue. Unique among national flags for having different emblems on obverse and reverse: obverse bears national coat of arms; reverse bears the Treasury seal (lion guarding a Phrygian cap).",
+    "coatOfArmsDescription": "Obverse: Yellow five-pointed star of May encircled by palm and olive branches tied with ribbons, inscribed 'REPÚBLICA DEL PARAGUAY'.",
+    "symbols": {
+      "animal": "Jaguar",
+      "bird": "Bare-throated bellbird (Guyra campana)",
+      "flower": "Mburucuyá (Passion flower)",
+      "tree": "Lapacho (Tajy)"
+    },
+    "landmarks": [
+      "Itaipu Dam",
+      "Jesuit Missions of Trinidad and Jesús",
+      "Palacio de los López (Asunción)",
+      "Lake Ypacaraí",
+      "Chaco Biosphere Reserve"
+    ],
+    "travelNotes": "Extremely welcoming and authentic South American experience; safe travel; refreshing culture centered on Tereré.",
+    "shortSummary": "Paraguay is a vibrant, proudly bilingual nation in the heart of South America, renowned as a clean hydroelectric energy giant, producer of exquisite Ñandutí lace, and guardian of the refreshing Tereré herbal tradition.",
+    "flagImage": "https://flagcdn.com/w320/py.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/PRY_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Itaipu_A_01.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "UNESCO",
+      "INE Paraguay"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "peru",
+    "name": "Peru",
+    "officialName": "Republic of Peru",
+    "nativeName": "República del Perú / Piruw Ripuwlika",
+    "continent": "South America",
+    "subregion": "Andean Community",
+    "status": "UN Member State",
+    "iso2": "PE",
+    "iso3": "PER",
+    "isoNumeric": "604",
+    "flagEmoji": "🇵🇪",
+    "demonym": "Peruvian",
+    "capital": "Lima",
+    "largestCity": "Lima",
+    "majorCities": [
+      "Lima",
+      "Arequipa",
+      "Trujillo",
+      "Chiclayo",
+      "Piura",
+      "Cusco",
+      "Iquitos"
+    ],
+    "nationalDay": "July 28–29 (Fiestas Patrias)",
+    "nationalAnthem": "Himno Nacional del Perú",
+    "motto": "Firme y feliz por la unión (Firm and Happy for the Union)",
+    "population2026": 34800000,
+    "areaKm2": 1285216,
+    "areaRank": 19,
+    "populationRank": 44,
+    "populationDensity": "27.1 / km²",
+    "coordinates": {
+      "lat": -9.19,
+      "lng": -75.0152
+    },
+    "borders": [
+      "Bolivia",
+      "Brazil",
+      "Chile",
+      "Colombia",
+      "Ecuador"
+    ],
+    "coastline": "2,414 km",
+    "landlocked": false,
+    "highestPoint": "Huascarán (6,768 m)",
+    "lowestPoint": "Bayóvar Depression (-34 m)",
+    "longestRiver": "Ucayali River (1,771 km) / Amazon headwaters",
+    "majorLakes": [
+      "Lake Titicaca",
+      "Lake Junín"
+    ],
+    "majorMountains": [
+      "Cordillera Blanca",
+      "Huascarán",
+      "Yerupajá",
+      "Ausangate"
+    ],
+    "climate": "Arid coastal desert with Garúa sea mist, alpine highland Andean climate, humid tropical Amazon basin",
+    "naturalHazards": [
+      "Major earthquakes and tsunamis",
+      "Flash floods and landslides (huaycos) during El Niño"
+    ],
+    "environmentalIssues": [
+      "Amazon deforestation",
+      "Illegal gold mining in Madre de Dios",
+      "Andean glacial retreat"
+    ],
+    "biodiversity": "One of the world's 17 megadiverse countries; holds 84 of the world's 117 recognized life zones",
+    "timeZone": "UTC-05:00",
+    "drivingSide": "right",
+    "callingCode": "+51",
+    "languages": [
+      "Spanish",
+      "Quechua",
+      "Aymara",
+      "44 Amazonian indigenous languages"
+    ],
+    "currency": "Peruvian Sol (PEN, S/)",
+    "government": "Unitary presidential constitutional republic",
+    "headOfState": "President Dina Boluarte",
+    "headOfGovernment": "Prime Minister Gustavo Adrianzén",
+    "legislature": "Congress of the Republic (bicameral reform enacted)",
+    "constitution": "1993",
+    "mainPoliticalParties": [
+      "Fuerza Popular",
+      "Alianza para el Progreso",
+      "Perú Libre",
+      "Renovación Popular",
+      "Avanza País"
+    ],
+    "latestElections": "General elections 2021; regional/municipal 2022; general elections scheduled 2026",
+    "politicalSituation": "Hosted the APEC Leaders' Summit in Lima in November 2024; opened the colossal Chancay Megaport; focus on economic recovery and sovereign investment.",
+    "foreignRelations": "Member of Pacific Alliance, APEC, Andean Community, UN, OAS; OECD candidate country.",
+    "military": "Armed Forces of Peru (Army, Navy, Air Force) and National Police.",
+    "internationalOrgs": [
+      "UN",
+      "APEC",
+      "Pacific Alliance",
+      "CAN",
+      "OAS",
+      "WTO",
+      "IMF",
+      "World Bank"
+    ],
+    "adminDivisions": "25 regions and 1 province (Lima Province)",
+    "history": "Cradle of ancient civilization: Norte Chico (Caral, 3000 BCE), Chavín, Moche, Nazca, and Wari, culminating in the monumental Inca Empire (Tawantinsuyu) centered in Cusco. Francisco Pizarro conquered the Inca in 1532, establishing Lima as the 'City of Kings' and Viceroyalty of Peru. Declared independence in 1821 by José de San Martín, consolidated in 1824 at the Battle of Ayacucho under Simón Bolívar and Sucre.",
+    "recentEvents2020_2026": "Inaugurated the world-class Chancay deepwater megaport in late 2024 transforming trans-Pacific trade; successfully chaired APEC 2024; expanded mining production in copper and critical minerals.",
+    "historicalFigures": [
+      "Pachacuti",
+      "Túpac Amaru II",
+      "José de San Martín",
+      "Simón Bolívar",
+      "Miguel Grau",
+      "Mario Vargas Llosa",
+      "César Vallejo"
+    ],
+    "ethnicGroups": [
+      "Mestizo ~60.2%",
+      "Quechua indigenous ~22.3%",
+      "White ~5.9%",
+      "Afro-Peruvian ~3.6%",
+      "Aymara ~2.4%",
+      "Native Amazonian ~1.5%"
+    ],
+    "religions": [
+      "Roman Catholic ~76%",
+      "Evangelical Protestant ~14%",
+      "None/Other ~10%"
+    ],
+    "literacyRate": "95.2%",
+    "lifeExpectancy": "77.1 years",
+    "hdi": "0.762 (High)",
+    "urbanization": "78.8%",
+    "education": "Oldest continuously operating university in the Americas (National University of San Marcos, founded 1551); Pontificia Universidad Católica del Perú.",
+    "healthcare": "Comprehensive Health Insurance (SIS) providing universal basic coverage alongside EsSalud social security.",
+    "socialCustoms": "Gastronomic gatherings, payment to Mother Earth (Pachamama), Andean community reciprocity (Ayni).",
+    "etiquette": "Polite greeting with formal titles, warmth in social settings, deference to cultural traditions.",
+    "nationalIdentity": "Celebrated globally as a gastronomic capital, heir to monumental civilizational archaeology, and custodian of the Andes and Amazon.",
+    "gdpNominal": "$295 billion (approx. 2026)",
+    "gdpPpp": "$605 billion (approx. 2026)",
+    "gdpPerCapita": "$8,480",
+    "sectors": "Services 56%, Industry 33%, Agriculture & Fisheries 11%",
+    "industries": [
+      "Copper mining (#2 producer globally)",
+      "Gold, zinc, silver, and tin mining",
+      "Global gastronomy and food processing",
+      "Textiles (fine alpaca and Pima cotton)",
+      "Fishmeal (#1 producer)"
+    ],
+    "agriculture": [
+      "Fresh blueberries (#1 exporter globally)",
+      "Grapes (#1)",
+      "Avocados",
+      "Asparagus",
+      "Coffee",
+      "Quinoa",
+      "Cacao"
+    ],
+    "naturalResources": [
+      "Copper",
+      "Silver",
+      "Gold",
+      "Zinc",
+      "Natural gas (Camisea)",
+      "Anchoveta fisheries",
+      "Phosphate"
+    ],
+    "energy": "Hydroelectric (52%), Camisea natural gas (42%), Solar and wind (6%)",
+    "exports": [
+      "Copper ores and refined copper",
+      "Gold",
+      "Fresh fruit (blueberries, grapes, avocados)",
+      "Zinc ores",
+      "Fishmeal",
+      "Liquefied natural gas"
+    ],
+    "imports": [
+      "Refined fuels",
+      "Telecommunications hardware",
+      "Industrial machinery",
+      "Motor vehicles",
+      "Plastics"
+    ],
+    "tradePartners": [
+      "China (largest partner)",
+      "United States",
+      "Japan",
+      "South Korea",
+      "Canada",
+      "European Union"
+    ],
+    "tourism": "Over 4.5 million international travelers visiting Machu Picchu, Cusco, the Sacred Valley, Lake Titicaca, the Nazca Lines, and Lima's world-famous restaurant scene.",
+    "employment": "Unemployment approx. 6.5%; high entrepreneurial activity.",
+    "debtInflation": "Peruvian Sol is historically one of the most stable currencies in Latin America; Central Bank (BCRP) holds high foreign reserves.",
+    "transport": "Lima Metro Line 1 & Line 2 (underground), Chancay Port multi-modal corridor, Pan-American highway.",
+    "airports": [
+      "Jorge Chávez International Airport (LIM in Callao - expanded new terminal)",
+      "Alejandro Velasco Astete (CUZ in Cusco)"
+    ],
+    "ports": [
+      "Port of Chancay (state-of-the-art South American mega-hub)",
+      "Port of Callao",
+      "Port of Pisco",
+      "Port of Matarani"
+    ],
+    "internetUsage": "78.5%",
+    "cuisine": "Ceviche (UNESCO Intangible Cultural Heritage), Lomo Saltado, Causa Limeña, Anticuchos, Ají de Gallina, Papa a la Huancaína, Pisco Sour.",
+    "festivals": [
+      "Inti Raymi (Festival of the Sun in Cusco)",
+      "Fiesta de la Virgen de la Candelaria (Puno)",
+      "Señor de los Milagros (Lima)",
+      "Marinera Festival (Trujillo)"
+    ],
+    "music": "Andean Huayno, Afro-Peruvian festejo and landó, Peruvian cumbia (Chicha), Criollo waltz.",
+    "dance": "Marinera norteña, Huayno, Diablada puneña, Danza de las Tijeras (Scissors Dance).",
+    "art": "Cusco School of Painting, traditional Ayacucho retablos, Shipibo-Konibo kené geometrical art.",
+    "architecture": "Inca imperial stone masonry (Machu Picchu, Sacsayhuamán, Coricancha), Spanish baroque in Lima and Arequipa ('White City' in sillar stone).",
+    "literature": "Mario Vargas Llosa (Nobel Prize in Literature 2010), César Vallejo (universal avant-garde poet), José María Arguedas.",
+    "cinema": "The Milk of Sorrow (La teta asustada - Golden Bear winner, Oscar nominated), Wiñaypacha.",
+    "sports": "Football (Copa América champions 1939, 1975), Volleyball (Olympic silver 1988), Surfing (multi-world champions), Paleta frontón.",
+    "media": "El Comercio, La República, RPP Noticias, América Televisión, TV Perú.",
+    "clothing": "Traditional Andean chullo hats, lliclla shawls, and polleras; modern Western attire in coastal cities.",
+    "holidays": [
+      "July 28–29 (Fiestas Patrias)",
+      "June 24 (Inti Raymi / Peasant Day)",
+      "October 8 (Battle of Angamos)",
+      "November 1 (All Saints)"
+    ],
+    "crafts": "Ayacucho retablos, Chulucanas ceramics, handwoven alpaca textiles, carved mate burilado gourds.",
+    "worldHeritageSites": [
+      "Historic Sanctuary of Machu Picchu",
+      "City of Cusco",
+      "Chavín Archaeological Site",
+      "Lines and Geoglyphs of Nasca and Palpa",
+      "Historic Centre of Lima",
+      "Chan Chan Archaeological Zone"
+    ],
+    "unescoIntangible": [
+      "Practices and meanings associated with the preparation and consumption of Ceviche",
+      "Danza de las Tijeras",
+      "Virgen de la Candelaria festival",
+      "Huaconada of Mito"
+    ],
+    "famousPeople": [
+      "Mario Vargas Llosa",
+      "Gastón Acurio",
+      "Pachacuti",
+      "Virgilio Martínez",
+      "Claudio Pizarro",
+      "Paolo Guerrero"
+    ],
+    "flagDescription": "Vertical triband of red, white, and red. State flag incorporates the national coat of arms centered on the white band.",
+    "coatOfArmsDescription": "Shield partitioned into three fields: vicuña (animal kingdom), cinchona tree (plant kingdom), and a cornucopia spilling gold coins (mineral wealth), surmounted by a civic holm oak crown.",
+    "symbols": {
+      "animal": "Vicuña",
+      "bird": "Andean cock-of-the-rock (Tunqui)",
+      "flower": "Cantua (Sacred flower of the Incas)",
+      "tree": "Cinchona (Quina)"
+    },
+    "landmarks": [
+      "Machu Picchu",
+      "Cusco & Sacred Valley",
+      "Nazca Lines",
+      "Lake Titicaca & Uros Floating Islands",
+      "Colca Canyon",
+      "Caral-Supe"
+    ],
+    "travelNotes": "World's leading culinary and archaeological destination; altitude acclimation suggested for Cusco and Puno.",
+    "shortSummary": "Peru is the legendary cradle of the Inca civilization and ancient American cultures, featuring the wonder of Machu Picchu, the deepest Andean canyons, the biodiversity of the Amazon, and an internationally lauded culinary scene.",
+    "flagImage": "https://flagcdn.com/w320/pe.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/PER_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Machu_Picchu%2C_Peru.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "UNESCO",
+      "INEI Perú"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "suriname",
+    "name": "Suriname",
+    "officialName": "Republic of Suriname",
+    "nativeName": "Republiek Suriname",
+    "continent": "South America",
+    "subregion": "Guiana Shield",
+    "status": "UN Member State",
+    "iso2": "SR",
+    "iso3": "SUR",
+    "isoNumeric": "740",
+    "flagEmoji": "🇸🇷",
+    "demonym": "Surinamese",
+    "capital": "Paramaribo",
+    "largestCity": "Paramaribo",
+    "majorCities": [
+      "Paramaribo",
+      "Lelydorp",
+      "Nieuw Nickerie",
+      "Moengo",
+      "Meerzorg"
+    ],
+    "nationalDay": "November 25 (Independence Day)",
+    "nationalAnthem": "God zij met ons Suriname (God Be with Our Suriname)",
+    "motto": "Justitia, Pietas, Fides (Justice, Piety, Fidelity)",
+    "population2026": 645000,
+    "areaKm2": 163820,
+    "areaRank": 92,
+    "populationRank": 167,
+    "populationDensity": "3.9 / km²",
+    "coordinates": {
+      "lat": 3.9193,
+      "lng": -56.0278
+    },
+    "borders": [
+      "Brazil",
+      "Guyana",
+      "French Guiana (France)"
+    ],
+    "coastline": "386 km",
+    "landlocked": false,
+    "highestPoint": "Juliana Top (1,230 m)",
+    "lowestPoint": "Atlantic Ocean (0 m)",
+    "longestRiver": "Courantyne River (724 km) / Marowijne River",
+    "majorLakes": [
+      "Brokopondo Reservoir"
+    ],
+    "majorMountains": [
+      "Wilhelmina Mountains",
+      "Juliana Top",
+      "Eilerts de Haan Mountains"
+    ],
+    "climate": "Equatorial tropical with high humidity and two annual rainy seasons",
+    "naturalHazards": [
+      "Localized coastal and river flooding during torrential rainy seasons"
+    ],
+    "environmentalIssues": [
+      "Small-scale illegal gold mining mercury pollution",
+      "Coastal erosion"
+    ],
+    "biodiversity": "Over 93% covered in primary tropical rainforest—the highest forest cover percentage of any sovereign nation on Earth",
+    "timeZone": "UTC-03:00",
+    "drivingSide": "left",
+    "callingCode": "+597",
+    "languages": [
+      "Dutch (official)",
+      "Sranan Tongo",
+      "Sarnami Hindustani",
+      "Javanese",
+      "Maroon languages"
+    ],
+    "currency": "Surinamese Dollar (SRD, $)",
+    "government": "Unitary presidential constitutional republic",
+    "headOfState": "President Chan Santokhi",
+    "headOfGovernment": "President Chan Santokhi",
+    "legislature": "National Assembly",
+    "constitution": "1987",
+    "mainPoliticalParties": [
+      "Vooruitstrevende Hervormings Partij (VHP)",
+      "Nationale Democratische Partij (NDP)",
+      "Algemene Bevrijdings- en Ontwikkelingspartij (ABOP)"
+    ],
+    "latestElections": "General elections 2020; general elections 2025",
+    "politicalSituation": "Offshore petroleum development in Block 58 (GranMorgu field) with TotalEnergies advancing toward first oil; macroeconomic stabilization program.",
+    "foreignRelations": "Member of CARICOM, UN, OAS, Non-Aligned Movement; historical ties with the Netherlands; strong bilateral ties with France and Brazil.",
+    "military": "Suriname National Army (Land Forces, Air Force, Coast Guard).",
+    "internationalOrgs": [
+      "UN",
+      "CARICOM",
+      "OAS",
+      "WTO",
+      "IMF",
+      "World Bank"
+    ],
+    "adminDivisions": "10 districts",
+    "history": "Inhabited by Arawak, Carib, and Wayana indigenous peoples. British established initial sugar colonies, trading the territory to the Dutch Republic in 1667 in exchange for New Amsterdam (modern New York City). Dutch Guiana relied on enslaved Africans; many escaped to the interior rainforest, founding distinct Maroon societies (Saramaka, Ndyuka). Abolition of slavery in 1863 was followed by indentured immigration from India and Java. Gained independence from the Netherlands in 1975.",
+    "recentEvents2020_2026": "Final Investment Decision (FID) reached for the multibillion-dollar GranMorgu offshore oil development in late 2024; debt restructuring successfully completed under IMF facilities.",
+    "historicalFigures": [
+      "Anton de Kom",
+      "Johan Adolf Pengel",
+      "Henck Arron",
+      "Boni (Maroon resistance leader)"
+    ],
+    "ethnicGroups": [
+      "Indo-Surinamese (Hindustani) ~27.4%",
+      "Maroon ~21.7%",
+      "Creole (Afro-Surinamese) ~15.7%",
+      "Javanese ~13.7%",
+      "Mixed ~13.4%",
+      "Indigenous ~3.8%",
+      "Chinese ~1.5%"
+    ],
+    "religions": [
+      "Christianity ~48%",
+      "Hinduism ~22%",
+      "Islam ~14%",
+      "Traditional / None ~16%"
+    ],
+    "literacyRate": "95.6%",
+    "lifeExpectancy": "72.4 years",
+    "hdi": "0.690 (Medium)",
+    "urbanization": "66.1%",
+    "education": "Anton de Kom University of Suriname in Paramaribo; compulsory primary schooling in Dutch.",
+    "healthcare": "Universal basic health insurance (BZV) alongside Academic Hospital Paramaribo (AZP).",
+    "socialCustoms": "Deep multicultural harmony; synagogues and mosques built side by side; celebration of Divali, Eid, Keti Koti, and Phagwa.",
+    "etiquette": "Polite Dutch and Creole greetings, modest dress when visiting religious sites, respectful handshakes.",
+    "nationalIdentity": "Celebrated for extraordinary ethnic harmony, being the only Dutch-speaking nation in South America, and pristine rainforest preservation.",
+    "gdpNominal": "$4.5 billion (approx. 2026)",
+    "gdpPpp": "$14.2 billion (approx. 2026)",
+    "gdpPerCapita": "$6,980",
+    "sectors": "Services 52%, Mining & Oil 33%, Agriculture & Fisheries 15%",
+    "industries": [
+      "Gold mining (Rosebel and Merian mines)",
+      "Offshore and onshore petroleum extraction (Staatsolie)",
+      "Bauxite/Alumina historical heritage",
+      "Timber processing"
+    ],
+    "agriculture": [
+      "Rice (Nickerie district)",
+      "Bananas",
+      "Palm oil",
+      "Fresh seafood and shrimp",
+      "Citrus fruits"
+    ],
+    "naturalResources": [
+      "Offshore crude oil",
+      "Gold",
+      "Bauxite",
+      "Pristine hardwood timber",
+      "Hydropower (Afobaka Dam)"
+    ],
+    "energy": "Hydroelectric (Afobaka Dam on Brokopondo Reservoir - 60%), Thermal fuel oil (40%), expanding solar",
+    "exports": [
+      "Gold (predominant export)",
+      "Crude and refined oil",
+      "Hardwood timber",
+      "Rice",
+      "Bananas",
+      "Fish and shrimp"
+    ],
+    "imports": [
+      "Mining and drilling machinery",
+      "Refined petroleum",
+      "Motor vehicles",
+      "Foodstuffs",
+      "Chemicals"
+    ],
+    "tradePartners": [
+      "Switzerland (gold refining)",
+      "United Arab Emirates",
+      "United States",
+      "Netherlands",
+      "Trinidad and Tobago",
+      "China"
+    ],
+    "tourism": "Pristine ecotourism in Central Suriname Nature Reserve, Raleighvallen, Brownsberg, and UNESCO historic Paramaribo wooden architecture.",
+    "employment": "Unemployment approx. 7.5%; expanding energy and technical services sector.",
+    "debtInflation": "Inflation normalized following debt exchange and currency stabilization measures.",
+    "transport": "East-West highway connecting Guyana border to French Guiana border; river boat transport in interior.",
+    "airports": [
+      "Johan Adolf Pengel International Airport (PBM) at Zanderij",
+      "Zorg en Hoop Airport (domestic)"
+    ],
+    "ports": [
+      "Port of Paramaribo (Suriname River)"
+    ],
+    "internetUsage": "74.0%",
+    "cuisine": "Roti with curried chicken and potatoes, Pom (baked tayer root with chicken), Moksi Meti, Nasi Goreng, Bami, Saoto soup.",
+    "festivals": [
+      "Keti Koti (Emancipation Day, July 1)",
+      "Divali",
+      "Phagwa (Holi)",
+      "Suriname Jazz Festival",
+      "Owru Yari (New Year's Eve street party)"
+    ],
+    "music": "Kaseko (traditional Creole brass and drum music), Kawina, Baithak Gana, Gamelan.",
+    "dance": "Kaseko dance, traditional Maroon Awasa, Javanese dance dramas.",
+    "art": "Wood carvings of the Maroons (Tembe art), paintings of Erwin de Vries and Marcel Pinas.",
+    "architecture": "Unique Dutch-colonial wooden architecture in Paramaribo; Saint Peter and Paul Cathedral-Basilica (largest wooden structure in Western Hemisphere).",
+    "literature": "Anton de Kom (We Slaves of Suriname), Albert Helman, Edgar Cairo.",
+    "cinema": "Wan Pipel (Pioneering 1976 feature film), vibrant modern documentary scene.",
+    "sports": "Football (Dutch national team legends of Surinamese descent: Ruud Gullit, Frank Rijkaard, Clarence Seedorf, Virgil van Dijk), Swimming (Anthony Nesty Olympic Gold 1988).",
+    "media": "De Ware Tijd, Dagblad Suriname, STVS, Apintie.",
+    "clothing": "Afro-Surinamese Kotomisi dress with folded Angisa headscarves carrying encoded social messages.",
+    "holidays": [
+      "November 25 (Independence Day)",
+      "July 1 (Keti Koti)",
+      "Phagwa",
+      "Eid al-Fitr",
+      "Divali"
+    ],
+    "crafts": "Maroon Tembe geometric woodcarvings, Amerindian seed beadwork, woven cotton hammocks.",
+    "worldHeritageSites": [
+      "Historic Inner City of Paramaribo",
+      "Central Suriname Nature Reserve",
+      "Jodensavanne Archaeological Site and Jewish Savannah Cemetery"
+    ],
+    "unescoIntangible": [
+      "Maroon oral traditions and culinary heritage"
+    ],
+    "famousPeople": [
+      "Anton de Kom",
+      "Anthony Nesty",
+      "Chan Santokhi",
+      "Clarence Seedorf",
+      "Edgar Davids"
+    ],
+    "flagDescription": "Five horizontal bands of green (top), white, red (double width, center), white, and green, with a large golden five-pointed star centered on the red band.",
+    "coatOfArmsDescription": "Two Amerindian warriors supporting an oval shield split into a sailing ship on the ocean and a royal palm tree on land, with a central green diamond enclosing a golden star, bearing the motto 'JUSTITIA PIETAS FIDES'.",
+    "symbols": {
+      "animal": "Jaguar",
+      "bird": "Kiskadee (Grietjebie)",
+      "flower": "Faya lobi (Ixora coccinea)",
+      "tree": "Royal palm"
+    },
+    "landmarks": [
+      "Saint Peter and Paul Cathedral-Basilica",
+      "Fort Zeelandia",
+      "Central Suriname Nature Reserve (Voltzberg)",
+      "Central Market Paramaribo",
+      "Brokopondo Reservoir"
+    ],
+    "travelNotes": "Pristine, untouched Amazonian rainforest; welcoming multicultural atmosphere; visa-free entry for tourism.",
+    "shortSummary": "Suriname is South America's smallest independent nation and its only Dutch-speaking state, boasting the highest percentage of forest cover in the world, remarkable ethnic harmony, and magnificent wooden colonial architecture.",
+    "flagImage": "https://flagcdn.com/w320/sr.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/SUR_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/St_Peter_and_Paul_Cathedral_Paramaribo.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "UNESCO",
+      "Algemeen Bureau voor de Statistiek (ABS Suriname)"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "uruguay",
+    "name": "Uruguay",
+    "officialName": "Oriental Republic of Uruguay",
+    "nativeName": "República Oriental del Uruguay",
+    "continent": "South America",
+    "subregion": "Southern Cone",
+    "status": "UN Member State",
+    "iso2": "UY",
+    "iso3": "URY",
+    "isoNumeric": "858",
+    "flagEmoji": "🇺🇾",
+    "demonym": "Uruguayan",
+    "capital": "Montevideo",
+    "largestCity": "Montevideo",
+    "majorCities": [
+      "Montevideo",
+      "Salto",
+      "Ciudad de la Costa",
+      "Paysandú",
+      "Las Piedras",
+      "Punta del Este"
+    ],
+    "nationalDay": "August 25 (Independence Day)",
+    "nationalAnthem": "Himno Nacional de la República Oriental del Uruguay (Orientales, la Patria o la Tumba)",
+    "motto": "Libertad o Muerte (Liberty or Death)",
+    "population2026": 3440000,
+    "areaKm2": 176215,
+    "areaRank": 89,
+    "populationRank": 134,
+    "populationDensity": "19.5 / km²",
+    "coordinates": {
+      "lat": -32.5228,
+      "lng": -55.7658
+    },
+    "borders": [
+      "Argentina",
+      "Brazil"
+    ],
+    "coastline": "660 km (Río de la Plata estuary and Atlantic Ocean)",
+    "landlocked": false,
+    "highestPoint": "Cerro Catedral (514 m)",
+    "lowestPoint": "Atlantic Ocean (0 m)",
+    "longestRiver": "Río Negro (750 km) / Uruguay River border",
+    "majorLakes": [
+      "Rincón del Bonete Reservoir",
+      "Laguna Merín"
+    ],
+    "majorMountains": [
+      "Cuchilla Grande",
+      "Cuchilla de Haedo",
+      "Cerro Pan de Azúcar"
+    ],
+    "climate": "Humid subtropical with uniform rainfall throughout the year and mild winters",
+    "naturalHazards": [
+      "Periodic windstorms (pamperos)",
+      "Localized agricultural droughts and flash floods"
+    ],
+    "environmentalIssues": [
+      "Agricultural runoff into waterways",
+      "Soil management in intensive monocultures"
+    ],
+    "biodiversity": "Rolling Pampas grasslands, coastal lagoons, and gallery riverine forests",
+    "timeZone": "UTC-03:00",
+    "drivingSide": "right",
+    "callingCode": "+598",
+    "languages": [
+      "Spanish"
+    ],
+    "currency": "Uruguayan Peso (UYU, $)",
+    "government": "Unitary presidential constitutional republic",
+    "headOfState": "President Yamandú Orsi",
+    "headOfGovernment": "President Yamandú Orsi",
+    "legislature": "General Assembly (Chamber of Senators and Chamber of Representatives)",
+    "constitution": "1967 (frequently amended)",
+    "mainPoliticalParties": [
+      "Frente Amplio",
+      "Partido Nacional (Blanco)",
+      "Partido Colorado",
+      "Cabildo Abierto"
+    ],
+    "latestElections": "General elections October/November 2024; presidential inauguration March 2025; departmental elections 2025",
+    "politicalSituation": "Smooth democratic transition following the 2024 presidential election; continuation of strong social consensus, green energy transition, and tech export promotion.",
+    "foreignRelations": "Founding member of Mercosur (headquarters in Montevideo), UN, OAS; globally acclaimed for democratic stability and rule of law.",
+    "military": "Armed Forces of Uruguay (Army, Navy, Air Force); prominent contributor to UN Peacekeeping missions worldwide per capita.",
+    "internationalOrgs": [
+      "UN",
+      "Mercosur",
+      "OAS",
+      "WTO",
+      "IMF",
+      "World Bank"
+    ],
+    "adminDivisions": "19 departments",
+    "history": "Originally inhabited by the Charrúa indigenous people. Long contested between the Spanish Empire and Portuguese Brazil as the Banda Oriental. Gained independence in 1828 through the Treaty of Montevideo brokered by Britain. Under visionary President José Batlle y Ordóñez in the early 20th century, established the world's first modern welfare state, eight-hour workdays, and secular social safety nets. After a brief period of civil-military dictatorship (1973–1985), re-emerged as Latin America's most stable and progressive democracy.",
+    "recentEvents2020_2026": "Achieved near 98% renewable electricity generation nationwide; inaugurated major industrial pulp and rail infrastructure; held transparent 2024 general elections electing Yamandú Orsi to the presidency.",
+    "historicalFigures": [
+      "José Gervasio Artigas (Father of the Nation)",
+      "José Batlle y Ordóñez",
+      "Juan Antonio Lavalleja",
+      "Eduardo Galeano",
+      "Mario Benedetti",
+      "José 'Pepe' Mujica"
+    ],
+    "ethnicGroups": [
+      "White (European descent: Spanish, Italian, British) ~87.7%",
+      "Afro-Uruguayan ~7.8%",
+      "Indigenous descent ~2.4%",
+      "Asian ~0.2%"
+    ],
+    "religions": [
+      "Roman Catholic ~42%",
+      "Agnostic/Atheist/No religion ~41% (most secular nation in the Americas)",
+      "Protestant ~15%",
+      "Others ~2%"
+    ],
+    "literacyRate": "98.9%",
+    "lifeExpectancy": "78.2 years",
+    "hdi": "0.830 (Very High)",
+    "urbanization": "95.5%",
+    "education": "University of the Republic (UdelaR) and UTEC; Plan Ceibal provides free laptops and internet connectivity to all public school students.",
+    "healthcare": "National Integrated Health System (SNIS) providing comprehensive universal healthcare coverage through mutualistas and ASSE public hospitals.",
+    "socialCustoms": "Ubiquitous yerba mate consumption carried in thermoses under the arm everywhere, Sunday family asados, long beachfront rambla strolls.",
+    "etiquette": "Respectful, egalitarian, polite conversation without ostentation, warm handshakes and single cheek kiss.",
+    "nationalIdentity": "Defined by calm civic modesty, secular democracy, passion for football, gaucho heritage, and Afro-Uruguayan candombe beats.",
+    "gdpNominal": "$82 billion (approx. 2026)",
+    "gdpPpp": "$115 billion (approx. 2026)",
+    "gdpPerCapita": "$23,800 (highest in South America)",
+    "sectors": "Services 68%, Industry 22%, Agriculture & Forestry 10%",
+    "industries": [
+      "Software development and IT export hub",
+      "Beef processing and packing (100% electronic cattle traceability)",
+      "Wood pulp manufacturing (UPM, Montes del Plata)",
+      "Financial and professional services",
+      "Dairy and wine"
+    ],
+    "agriculture": [
+      "Beef cattle (four cows per human resident)",
+      "Soybeans",
+      "Wood pulp and forestry",
+      "Dairy products",
+      "Rice",
+      "Tannat red wine"
+    ],
+    "naturalResources": [
+      "Extensive fertile arable pastureland",
+      "Hydropower potential",
+      "Exceptional wind and solar energy resources",
+      "Freshwater aquifers"
+    ],
+    "energy": "Global green leader: 98% renewable electricity generated from Wind (35%), Hydro (45%), Biomass (15%), and Solar (3%)",
+    "exports": [
+      "Wood pulp",
+      "Beef",
+      "Soybeans",
+      "Software and technology services",
+      "Dairy products",
+      "Rice",
+      "Malt"
+    ],
+    "imports": [
+      "Crude petroleum",
+      "Motor vehicles",
+      "Telecommunications equipment",
+      "Chemicals and fertilizers",
+      "Plastics"
+    ],
+    "tradePartners": [
+      "China (largest partner)",
+      "Brazil",
+      "European Union",
+      "United States",
+      "Argentina"
+    ],
+    "tourism": "Over 3.8 million international visitors visiting the glamorous Atlantic resort of Punta del Este, historic Colonia del Sacramento, and Montevideo's Rambla.",
+    "employment": "Unemployment approx. 7.6%; world-renowned software engineering and remote digital services.",
+    "debtInflation": "Investment-grade sovereign rating with lowest country risk spread in Latin America; inflation anchored in single digits.",
+    "transport": "Dense paved highway network, refurbished Central Railway (Ferrocarril Central) freight corridor, modern Montevideo public transport.",
+    "airports": [
+      "Carrasco International Airport (MVD in Montevideo - award-winning architectural design)",
+      "Capitán de Corbeta Carlos A. Curbelo International (PDP in Punta del Este)"
+    ],
+    "ports": [
+      "Port of Montevideo (deepwater natural container port)",
+      "Port of Nueva Palmira (grain terminal on Uruguay River)"
+    ],
+    "internetUsage": "91.8%",
+    "cuisine": "Asado barbecue, Chivito (loaded steak sandwich with ham, cheese, egg, bacon), Dulce de leche, Torta frita, Empanadas, Tannat red wine, Mate.",
+    "festivals": [
+      "Carnaval de Montevideo (world's longest carnival, running over 40 days)",
+      "Desfile de Llamadas (Candombe parade)",
+      "Semana Criolla (Gaucho festival)"
+    ],
+    "music": "Candombe (UNESCO Intangible Cultural Heritage), Murga, Milonga, Tango (Carlos Gardel controversy / La Cumparsita composed in Montevideo), Rock uruguayo.",
+    "dance": "Tango, Candombe, Pericón.",
+    "art": "Joaquín Torres-García (Universal Constructivism), Pedro Figari (post-impressionist scenes of Candombe), Carlos Páez Vilaró (Casapueblo).",
+    "architecture": "Art Deco and Eclectic mansions in Montevideo, colonial Portuguese and Spanish stone buildings in Colonia del Sacramento, Casapueblo living sculpture in Punta Ballena.",
+    "literature": "Eduardo Galeano (Open Veins of Latin America), Mario Benedetti, Juan Carlos Onetti (Cervantes Prize), Delmira Agustini, Horacio Quiroga.",
+    "cinema": "Whisky (Cannes Regard Original prize), A Twelve-Year Night (La noche de 12 años), Society of the Snow (celebrating Uruguayan rugby survivors).",
+    "sports": "Football (First FIFA World Cup champions 1930, 2-time World Cup winners: 1930, 1950 'Maracanazo', 15-time Copa América champions), Rugby Union (Los Teros).",
+    "media": "El País, Búsqueda, El Observador, Canal 10, Teledoce, TV Ciudad.",
+    "clothing": "Gaucho beret (boina), bombachas, and leather boots in countryside; smart European casual attire in Montevideo.",
+    "holidays": [
+      "August 25 (Independence Day)",
+      "July 18 (Constitution Day)",
+      "May 18 (Battle of Las Piedras)",
+      "Carnaval (February)"
+    ],
+    "crafts": "Handcrafted leather goods, carved mate gourds with silver bombillas, Merino wool knitwear.",
+    "worldHeritageSites": [
+      "Historic Quarter of the City of Colonia del Sacramento",
+      "Fray Bentos Industrial Landscape",
+      "The work of engineer Eladio Dieste: Church of Atlántida"
+    ],
+    "unescoIntangible": [
+      "Candombe and its socio-cultural space: a community practice",
+      "Tango (shared with Argentina)"
+    ],
+    "famousPeople": [
+      "José 'Pepe' Mujica",
+      "José Gervasio Artigas",
+      "Luis Suárez",
+      "Edinson Cavani",
+      "Eduardo Galeano",
+      "Joaquín Torres-García",
+      "Diego Forlán"
+    ],
+    "flagDescription": "Nine equal horizontal stripes alternating white and blue, with a white square in the canton containing the golden Sun of May with 16 alternating straight and wavy rays.",
+    "coatOfArmsDescription": "Oval divided into four quarters: scales of justice, Mount of Montevideo with fortress, galloping wild horse, and golden ox, framed by olive and laurel branches tied with a blue ribbon.",
+    "symbols": {
+      "animal": "Southern lapwing (Tero)",
+      "bird": "Southern lapwing (Vanellus chilensis)",
+      "flower": "Ceibo flower",
+      "tree": "Ceibo"
+    },
+    "landmarks": [
+      "Casapueblo (Punta Ballena)",
+      "Colonia del Sacramento Historic Quarter",
+      "Montevideo Rambla & Plaza Independencia",
+      "Palacio Salvo",
+      "Punta del Este Monumento al Ahogado (The Fingers)"
+    ],
+    "travelNotes": "Latin America's safest, most peaceful, and most egalitarian country; clean, cosmopolitan, and highly digitally connected.",
+    "shortSummary": "Uruguay is South America's progressive champion of social democracy and green energy, renowned for its pristine Atlantic coastline, rolling ranchlands, historic football triumph, and the serene daily ritual of yerba mate.",
+    "flagImage": "https://flagcdn.com/w320/uy.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/URY_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Casapueblo_Punta_Ballena_Uruguay.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "IMF",
+      "UNESCO",
+      "Instituto Nacional de Estadística (INE Uruguay)"
+    ],
+    "lastUpdated": "2026-11-24"
+  },
+  {
+    "id": "venezuela",
+    "name": "Venezuela",
+    "officialName": "Bolivarian Republic of Venezuela",
+    "nativeName": "República Bolivariana de Venezuela",
+    "continent": "South America",
+    "subregion": "Northern South America",
+    "status": "UN Member State",
+    "iso2": "VE",
+    "iso3": "VEN",
+    "isoNumeric": "862",
+    "flagEmoji": "🇻🇪",
+    "demonym": "Venezuelan",
+    "capital": "Caracas",
+    "largestCity": "Caracas",
+    "majorCities": [
+      "Caracas",
+      "Maracaibo",
+      "Valencia",
+      "Barquisimeto",
+      "Maracay",
+      "Ciudad Guayana"
+    ],
+    "nationalDay": "July 5 (Independence Day)",
+    "nationalAnthem": "Gloria al Bravo Pueblo (Glory to the Brave People)",
+    "motto": "Dios y Federación (God and Federation)",
+    "population2026": 29800000,
+    "areaKm2": 916445,
+    "areaRank": 32,
+    "populationRank": 50,
+    "populationDensity": "32.5 / km²",
+    "coordinates": {
+      "lat": 6.4238,
+      "lng": -66.5897
+    },
+    "borders": [
+      "Brazil",
+      "Colombia",
+      "Guyana"
+    ],
+    "coastline": "2,800 km (Caribbean Sea and Atlantic Ocean)",
+    "landlocked": false,
+    "highestPoint": "Pico Bolívar (4,978 m)",
+    "lowestPoint": "Lagunillas (-12 m) / Caribbean Sea (0 m)",
+    "longestRiver": "Orinoco River (2,140 km)",
+    "majorLakes": [
+      "Lake Maracaibo",
+      "Lake Valencia"
+    ],
+    "majorMountains": [
+      "Cordillera de Mérida (Andes)",
+      "Pico Bolívar",
+      "Guiana Highlands Tepuis (Mount Roraima, Auyán-tepui)"
+    ],
+    "climate": "Tropical rainy in lowlands and Orinoco Delta, savannah in Llanos, alpine in Andes",
+    "naturalHazards": [
+      "Periodic floods and rock mudslides in coastal mountains",
+      "Occasional earthquakes"
+    ],
+    "environmentalIssues": [
+      "Oil spills in Lake Maracaibo basin",
+      "Deforestation in the Orinoco Mining Arc"
+    ],
+    "biodiversity": "Megadiverse nation ranking among the world's top 10 for wildlife, boasting ancient flat-topped tepuis and pristine Caribbean archipelagos",
+    "timeZone": "UTC-04:00",
+    "drivingSide": "right",
+    "callingCode": "+58",
+    "languages": [
+      "Spanish",
+      "over 30 recognized indigenous languages including Wayuu and Warao"
+    ],
+    "currency": "Venezuelan Bolívar Digital (VED, Bs.)",
+    "government": "Federal presidential constitutional republic",
+    "headOfState": "President Nicolás Maduro (disputed following July 2024 elections)",
+    "headOfGovernment": "President Nicolás Maduro",
+    "legislature": "National Assembly",
+    "constitution": "1999 (Bolivarian Constitution)",
+    "mainPoliticalParties": [
+      "Partido Socialista Unido de Venezuela (PSUV)",
+      "Plataforma Unitaria Democrática (PUD)"
+    ],
+    "latestElections": "Presidential elections July 2024; regional and legislative elections 2025",
+    "politicalSituation": "Complex domestic and international political landscape following the disputed July 2024 presidential election; focus on oil sector joint ventures and sanctions negotiations.",
+    "foreignRelations": "Member of UN, OPEC, CELAC; close strategic alliances with Russia, China, Iran, and Cuba.",
+    "military": "National Bolivarian Armed Forces (FANB: Army, Navy, Military Aviation, National Guard, and Militia).",
+    "internationalOrgs": [
+      "UN",
+      "OPEC",
+      "CELAC",
+      "G77",
+      "WTO",
+      "Non-Aligned Movement"
+    ],
+    "adminDivisions": "23 states, 1 Capital District (Caracas), and Federal Dependencies",
+    "history": "Inhabited by indigenous Carib, Arawak, and Timoto-Cuica peoples. Christopher Columbus sighted the Orinoco delta in 1498; Alonso de Ojeda named the stilt village region 'Venezuela' (Little Venice). Cradle of South American liberation: birthplace of Simón Bolívar (El Libertador) and Francisco de Miranda. Gained independence in 1821 at the Battle of Carabobo. The 20th century was defined by massive oil discoveries around Lake Maracaibo. Hugo Chávez was elected in 1998, initiating the 'Bolivarian Revolution'.",
+    "recentEvents2020_2026": "Conducted the July 2024 presidential election contested by opposition candidate Edmundo González Urrutia; resumed licensed joint-venture crude exports to international markets; asserted claims over Guayana Esequiba.",
+    "historicalFigures": [
+      "Simón Bolívar",
+      "Francisco de Miranda",
+      "Antonio José de Sucre",
+      "Andrés Bello",
+      "Rómulo Gallegos",
+      "Hugo Chávez"
+    ],
+    "ethnicGroups": [
+      "Mestizo ~51.6%",
+      "White ~43.6%",
+      "Afro-Venezuelan ~3.6%",
+      "Indigenous ~2.7%"
+    ],
+    "religions": [
+      "Roman Catholic ~71%",
+      "Protestant/Evangelical ~17%",
+      "None/Other ~12%"
+    ],
+    "literacyRate": "97.5%",
+    "lifeExpectancy": "71.8 years",
+    "hdi": "0.699 (Medium)",
+    "urbanization": "88.4%",
+    "education": "Central University of Venezuela (UCV - UNESCO World Heritage Site) and Universidad Simón Bolívar.",
+    "healthcare": "Barrio Adentro community clinic program alongside public hospital system and private medical centers.",
+    "socialCustoms": "Lively family gatherings, warm personal greetings, deep passion for baseball and beauty pageants.",
+    "etiquette": "Friendly and outgoing, strong eye contact, animated hand gestures, respectful terms of address.",
+    "nationalIdentity": "Defined by pride in Simón Bolívar's continental liberation, baseball fanaticism, world-record natural wonders, and vibrant musical rhythms.",
+    "gdpNominal": "$110 billion (approx. 2026)",
+    "gdpPpp": "$220 billion (approx. 2026)",
+    "gdpPerCapita": "$3,690",
+    "sectors": "Petroleum & Mining 50%, Services 35%, Industry 10%, Agriculture 5%",
+    "industries": [
+      "Petroleum extraction and refining (world's largest proven oil reserves: 300+ billion barrels)",
+      "Iron and steel",
+      "Aluminum smelting",
+      "Chemicals and fertilizers",
+      "Food processing"
+    ],
+    "agriculture": [
+      "Sugarcane",
+      "Corn",
+      "Rice",
+      "Coffee",
+      "Cacao (Criollo cacao world-renowned for fine chocolate)",
+      "Beef and poultry"
+    ],
+    "naturalResources": [
+      "Crude petroleum (Orinoco Oil Belt)",
+      "Natural gas",
+      "Iron ore (Cerro Bolívar)",
+      "Bauxite",
+      "Gold",
+      "Diamonds",
+      "Hydropower (Guri Dam)"
+    ],
+    "energy": "Hydroelectric power from Guri Dam (one of the world's largest, generating 65%+ of national electricity), Natural gas (30%), Oil (5%)",
+    "exports": [
+      "Crude petroleum and fuel oil",
+      "Petrochemicals",
+      "Iron ore and steel",
+      "Scrap metal",
+      "Fine cacao",
+      "Aluminum"
+    ],
+    "imports": [
+      "Refined diluents and fuels",
+      "Foodstuffs and grains",
+      "Pharmaceuticals",
+      "Machinery and replacement parts"
+    ],
+    "tradePartners": [
+      "China",
+      "United States (joint-venture crude licenses)",
+      "India",
+      "Turkey",
+      "Spain",
+      "Brazil"
+    ],
+    "tourism": "Home to Angel Falls (Salto Ángel - world's highest uninterrupted waterfall at 979 m), Los Roques coral archipelago, Canaima National Park, and Morrocoy.",
+    "employment": "High informal economic activity; ongoing efforts to revitalize public-sector and industrial employment.",
+    "debtInflation": "Inflation moderated from hyperinflationary peaks into manageable monthly double digits; extensive domestic use of US dollars.",
+    "transport": "Caracas Metro, national highway arteries (Autopista Regional del Centro), Lake Maracaibo Bridge (General Rafael Urdaneta).",
+    "airports": [
+      "Simón Bolívar International Airport (CCS in Maiquetía/Caracas)",
+      "La Chinita International (MAR in Maracaibo)"
+    ],
+    "ports": [
+      "Puerto Cabello (busiest commercial port)",
+      "La Guaira",
+      "Maracaibo",
+      "Puerto La Cruz"
+    ],
+    "internetUsage": "72.0%",
+    "cuisine": "Arepas (cornmeal cakes stuffed with meat, cheese, black beans), Pabellón Criollo (shredded beef, rice, black beans, fried plantains), Hallacas (Christmas tamales), Cachapas with queso de mano, Tequeños, Venezuelan dark chocolate.",
+    "festivals": [
+      "Diablos Danzantes de Yare (Dancing Devils of Yare on Corpus Christi)",
+      "Feria de La Chinita (Maracaibo)",
+      "Carnaval de El Callao",
+      "Cruz de Mayo"
+    ],
+    "music": "Joropo (national music featuring harp, cuatro, and maracas), Gaita zuliana, Salsa, Venezuelan classical orchestral music (El Sistema).",
+    "dance": "Joropo, Tambor costero, Baile de las Turas.",
+    "art": "Kinetic and optical art pioneers: Carlos Cruz-Diez, Jesús Rafael Soto; Armando Reverón.",
+    "architecture": "Ciudad Universitaria de Caracas designed by Carlos Raúl Villanueva (modernist masterwork), Spanish colonial architecture in Coro.",
+    "literature": "Rómulo Gallegos (Doña Bárbara - acclaimed novelist and president), Andrés Eloy Blanco, Teresa de la Parra.",
+    "cinema": "Cannes Camera d'Or winner Oriana by Fina Torres, Golden Shell winner Bad Hair (Pelo malo).",
+    "sports": "Baseball (national passion; hundreds of MLB superstars including Miguel Cabrera, Ronald Acuña Jr., José Altuve), Basketball, Football (La Vinotinto).",
+    "media": "Televen, Venevisión, Globovisión, El Nacional (digital), Efecto Cocuyo.",
+    "clothing": "Traditional Liqui liqui suit (national formal costume), colorful flowing joropo dresses.",
+    "holidays": [
+      "July 5 (Independence Day)",
+      "April 19 (Declaration of Independence)",
+      "June 24 (Battle of Carabobo)",
+      "Carnaval"
+    ],
+    "crafts": "Wayuu woven tapestries and hammocks, Warao moriche palm basketry, indigenous woodcarvings.",
+    "worldHeritageSites": [
+      "Coro and its Port",
+      "Canaima National Park (featuring Angel Falls and Tepuis)",
+      "Ciudad Universitaria de Caracas"
+    ],
+    "unescoIntangible": [
+      "Dancing Devils of Corpus Christi",
+      "Carnival of El Callao",
+      "Oral tradition of the Mapoyo people"
+    ],
+    "famousPeople": [
+      "Simón Bolívar",
+      "Miguel Cabrera",
+      "Gustavo Dudamel",
+      "Carlos Cruz-Diez",
+      "Carolina Herrera",
+      "Ronald Acuña Jr."
+    ],
+    "flagDescription": "Horizontal tricolor of yellow, blue, and red, with an arc of eight white five-pointed stars centered on the blue band (representing the eight historic provinces).",
+    "coatOfArmsDescription": "Shield divided into three sections: sheaf of 24 stalks of wheat (red field), crossed swords and flags (yellow field), and an untamed white horse galloping freely (blue field), flanked by cornucopias and palm and laurel branches.",
+    "symbols": {
+      "animal": "Jaguar",
+      "bird": "Venezuelan troupial (Turpial)",
+      "flower": "Flor de Mayo orchid (Cattleya mossiae)",
+      "tree": "Araguaney (Handroanthus chrysanthus)"
+    },
+    "landmarks": [
+      "Angel Falls (Salto Ángel)",
+      "Mount Roraima",
+      "Los Roques Archipelago",
+      "Canaima National Park",
+      "Teleférico Mukumbarí de Mérida (world's highest cable car)"
+    ],
+    "travelNotes": "Breathtaking landscapes of Tepuis, Angel Falls, and Caribbean atolls; organized ecotourism and licensed tour guides recommended.",
+    "shortSummary": "Venezuela is blessed with the world's largest proven oil reserves, the thundering drop of Angel Falls, prehistoric flat-topped tepuis that inspired 'The Lost World', and an illustrious legacy in baseball, orchestral music, and Latin American liberation.",
+    "flagImage": "https://flagcdn.com/w320/ve.png",
+    "mapImage": "https://commons.wikimedia.org/wiki/Special:FilePath/VEN_orthographic.svg",
+    "landmarkImage": "https://commons.wikimedia.org/wiki/Special:FilePath/Angel_falls.jpg",
+    "sources": [
+      "CIA World Factbook",
+      "United Nations",
+      "World Bank",
+      "OPEC",
+      "UNESCO",
+      "Instituto Nacional de Estadística (INE Venezuela)"
+    ],
+    "lastUpdated": "2026-11-24"
+  }
+]
