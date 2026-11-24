@@ -3,54 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The World Countries Atlas 197 — Interactive Tracker</title>
-  <meta name="description" content="Production-ready interactive explorer and progress tracker for all 197 sovereign countries and recognized entities.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22><text y=%2226%22 font-size=%2226%22>🌍</text></svg>">
+  <title>The World Countries Atlas 197 — Elite Interactive Cartography</title>
+  <meta name="description" content="Next-generation interactive explorer, stateful reader, and global encyclopedia for all 197 canonical sovereign countries and recognized entities.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22><text y=%2226%22 font-size=%2226%22>🌐</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --bg: #0b0f19;
-      --surface: #131b2e;
-      --surface-hover: #1a243d;
-      --surface-card: #141e33;
-      --border: #23314f;
-      --border-light: #2c3e65;
-      --text: #f0f4fc;
-      --text-muted: #8d9bb5;
-      --text-dim: #627293;
-      --primary: #3b82f6;
-      --primary-hover: #2563eb;
-      --primary-glow: rgba(59, 130, 246, 0.25);
+      --bg: #06080f;
+      --bg-subtle: #0a0e1a;
+      --surface: #0f1629;
+      --surface-hover: #16203b;
+      --surface-card: rgba(15, 22, 41, 0.75);
+      --surface-card-hover: rgba(22, 32, 59, 0.95);
+      --surface-elevated: #1a2542;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-subtle: rgba(255, 255, 255, 0.04);
+      --border-accent: rgba(0, 240, 255, 0.4);
+      --text: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --primary: #00f0ff;
+      --primary-glow: rgba(0, 240, 255, 0.25);
       --accent: #10b981;
       --accent-glow: rgba(16, 185, 129, 0.25);
-      --warning: #f59e0b;
+      --amber: #f59e0b;
+      --purple: #a855f7;
       --danger: #ef4444;
-      --radius-sm: 6px;
-      --radius: 12px;
-      --radius-lg: 18px;
-      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --radius-xs: 4px;
+      --radius-sm: 8px;
+      --radius: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      --shadow-glow: 0 0 35px var(--primary-glow);
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Space Grotesk', var(--font-sans);
+      --font-mono: 'JetBrains Mono', monospace;
+      --transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     [data-theme="light"] {
       --bg: #f8fafc;
+      --bg-subtle: #f1f5f9;
       --surface: #ffffff;
       --surface-hover: #f1f5f9;
-      --surface-card: #ffffff;
+      --surface-card: rgba(255, 255, 255, 0.9);
+      --surface-card-hover: #ffffff;
+      --surface-elevated: #ffffff;
       --border: #e2e8f0;
-      --border-light: #cbd5e1;
+      --border-subtle: #f1f5f9;
+      --border-accent: rgba(2, 132, 199, 0.4);
       --text: #0f172a;
-      --text-muted: #475569;
-      --text-dim: #94a3b8;
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
-      --primary-glow: rgba(37, 99, 235, 0.15);
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --primary: #0284c7;
+      --primary-glow: rgba(2, 132, 199, 0.18);
       --accent: #059669;
       --accent-glow: rgba(5, 150, 105, 0.15);
-      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+      --shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.08);
+      --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.12);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: var(--font-sans);
       background-color: var(--bg);
@@ -58,81 +78,155 @@
       min-height: 100vh;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(0, 240, 255, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+      background-attachment: fixed;
     }
 
     /* Container */
-    .app-container {
-      max-width: 1400px;
+    .app-wrap {
+      max-width: 1440px;
       margin: 0 auto;
-      padding: 1.5rem 1rem 4rem 1rem;
+      padding: 1.5rem 1.25rem 5rem 1.25rem;
     }
 
-    /* Header */
-    header {
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-      backdrop-filter: blur(12px);
+    /* Sticky Navigation HUD */
+    .top-hud {
+      position: sticky;
+      top: 1rem;
+      z-index: 100;
+      background: rgba(11, 17, 33, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 1.75rem 2rem;
+      padding: 0.85rem 1.5rem;
       margin-bottom: 2rem;
       box-shadow: var(--shadow);
-    }
-    [data-theme="light"] header {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(241, 245, 249, 0.95));
-    }
-
-    .header-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1.25rem;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
     }
-    .header-title {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .header-title h1 {
-      font-size: 1.75rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      background: linear-gradient(90deg, #60a5fa, #38bdf8, #34d399);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    [data-theme="light"] .header-title h1 {
-      background: linear-gradient(90deg, #1d4ed8, #0284c7, #059669);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .badge-pill {
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.25rem 0.6rem;
-      border-radius: 9999px;
-      background: rgba(59, 130, 246, 0.15);
-      border: 1px solid var(--primary);
-      color: #93c5fd;
-    }
-    [data-theme="light"] .badge-pill {
-      color: var(--primary);
+    [data-theme="light"] .top-hud {
+      background: rgba(255, 255, 255, 0.88);
     }
 
-    .header-actions {
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(168, 85, 247, 0.15));
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+    .brand-text h1 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, #f8fafc 30%, #00f0ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+    }
+    [data-theme="light"] .brand-text h1 {
+      background: linear-gradient(90deg, #0f172a 30%, #0284c7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Radial Progress Widget in HUD */
+    .hud-metrics {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .radial-widget {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 0.35rem 0.85rem 0.35rem 0.45rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border);
+    }
+    [data-theme="light"] .radial-widget {
+      background: rgba(241, 245, 249, 0.8);
+    }
+    .radial-svg {
+      width: 38px;
+      height: 38px;
+      transform: rotate(-90deg);
+    }
+    .radial-bg {
+      fill: none;
+      stroke: var(--surface-elevated);
+      stroke-width: 3.5;
+    }
+    .radial-fill {
+      fill: none;
+      stroke: var(--primary);
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .radial-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .radial-pct {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.1;
+      color: var(--primary);
+    }
+    .radial-sub {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* HUD Actions */
+    .hud-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 0.9rem;
-      font-size: 0.85rem;
+      gap: 0.45rem;
+      padding: 0.48rem 0.95rem;
+      font-size: 0.82rem;
       font-weight: 600;
       border-radius: var(--radius-sm);
       cursor: pointer;
@@ -141,252 +235,360 @@
       background: var(--surface);
       color: var(--text);
       user-select: none;
+      text-decoration: none;
     }
     .btn:hover {
       background: var(--surface-hover);
-      border-color: var(--border-light);
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+    .btn:active {
+      transform: translateY(0);
     }
     .btn-primary {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #ffffff;
-      box-shadow: 0 4px 12px var(--primary-glow);
+      background: linear-gradient(135deg, #00f0ff, #0284c7);
+      border: none;
+      color: #06080f;
+      font-weight: 700;
+      box-shadow: 0 4px 14px var(--primary-glow);
     }
     .btn-primary:hover {
-      background: var(--primary-hover);
-      border-color: var(--primary-hover);
+      background: linear-gradient(135deg, #38bdf8, #00f0ff);
+      box-shadow: 0 6px 20px rgba(0, 240, 255, 0.4);
+      color: #04060b;
     }
     .btn-accent {
       background: var(--accent);
       border-color: var(--accent);
       color: #ffffff;
+      box-shadow: 0 4px 12px var(--accent-glow);
     }
     .btn-accent:hover {
-      opacity: 0.9;
+      filter: brightness(1.1);
     }
-    .btn-danger {
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .btn-outline:hover {
+      color: var(--text);
+      border-color: var(--text);
+    }
+    .btn-danger-subtle {
       color: var(--danger);
-      border-color: rgba(239, 68, 68, 0.3);
+      background: rgba(239, 68, 68, 0.08);
+      border-color: rgba(239, 68, 68, 0.2);
     }
-    .btn-danger:hover {
-      background: rgba(239, 68, 68, 0.1);
+    .btn-danger-subtle:hover {
+      background: rgba(239, 68, 68, 0.16);
+      border-color: var(--danger);
+    }
+    .kbd-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.35rem;
+      border-radius: var(--radius-xs);
+      color: var(--text-muted);
     }
 
-    /* Progress section */
-    .progress-section {
-      background: rgba(0, 0, 0, 0.2);
+    /* Global Dashboard Cards Row */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      margin-top: 1rem;
-    }
-    [data-theme="light"] .progress-section {
-      background: rgba(241, 245, 249, 0.6);
-    }
-    .progress-header {
+      padding: 1.15rem 1.25rem;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-    .progress-bar-bg {
-      height: 10px;
-      background: var(--surface-hover);
-      border-radius: 9999px;
+      flex-direction: column;
+      position: relative;
       overflow: hidden;
-      margin-bottom: 0.75rem;
+      transition: var(--transition);
     }
-    .progress-bar-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #3b82f6, #10b981);
-      border-radius: 9999px;
-      transition: width 0.4s ease;
+    .stat-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-2px);
     }
-    .continent-progress-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--card-color, var(--primary)), transparent);
+    }
+    .stat-title {
       font-size: 0.75rem;
-    }
-    .continent-chip {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 0.25rem 0.6rem;
-      border-radius: 9999px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      color: var(--text-muted);
     }
-    .continent-chip strong {
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
       color: var(--text);
+      line-height: 1.15;
+    }
+    .stat-desc {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
     }
 
-    /* View Controls Bar */
-    .controls-bar {
+    /* Command Control Center */
+    .control-center {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 1.75rem;
-    }
-    .view-tabs {
-      display: flex;
-      gap: 0.5rem;
-      background: var(--surface);
-      padding: 0.35rem;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      width: fit-content;
-      max-width: 100%;
-      overflow-x: auto;
-    }
-    .view-tab {
-      padding: 0.45rem 1rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      background: transparent;
-      border: none;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-    .view-tab:hover {
-      color: var(--text);
-    }
-    .view-tab.active {
-      background: var(--primary);
-      color: #ffffff;
-      box-shadow: 0 2px 8px var(--primary-glow);
+      gap: 1.1rem;
+      box-shadow: var(--shadow-sm);
     }
 
-    .filter-row {
+    .control-row-1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* View Mode Tabs */
+    .mode-tabs {
+      display: inline-flex;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      padding: 0.25rem;
+      border-radius: var(--radius);
+    }
+    .mode-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .mode-tab:hover {
+      color: var(--text);
+    }
+    .mode-tab.active {
+      background: var(--surface-elevated);
+      color: var(--primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+    .tab-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+    }
+    .mode-tab.active .tab-badge {
+      background: var(--primary-glow);
+      color: var(--primary);
+    }
+
+    /* Layout Toggle: Grid / Table / Bento */
+    .layout-switcher {
+      display: inline-flex;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      padding: 0.25rem;
+      border-radius: var(--radius);
+    }
+    .layout-btn {
+      padding: 0.45rem 0.75rem;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: var(--transition);
+    }
+    .layout-btn:hover { color: var(--text); }
+    .layout-btn.active {
+      background: var(--surface-elevated);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Search & Filter Row */
+    .control-row-2 {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       align-items: center;
       justify-content: space-between;
     }
-    .search-box {
+    .search-wrap {
       flex: 1;
-      min-width: 260px;
+      min-width: 280px;
       position: relative;
     }
-    .search-input {
+    .search-box-input {
       width: 100%;
-      background: var(--surface);
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 0.55rem 1rem 0.55rem 2.25rem;
+      padding: 0.6rem 2.5rem 0.6rem 2.4rem;
       color: var(--text);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       transition: var(--transition);
     }
-    .search-input:focus {
+    .search-box-input:focus {
       outline: none;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px var(--primary-glow);
     }
-    .search-icon {
+    .search-icon-left {
       position: absolute;
-      left: 0.75rem;
+      left: 0.85rem;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--text-dim);
-      font-size: 0.9rem;
+      color: var(--text-muted);
       pointer-events: none;
+      font-size: 0.85rem;
     }
+    .search-clear-btn {
+      position: absolute;
+      right: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .search-clear-btn:hover { color: var(--text); }
 
-    .dropdowns-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .select-input {
-      background: var(--surface);
+    .select-dropdown {
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 0.55rem 1rem;
+      padding: 0.6rem 1rem;
       color: var(--text);
-      font-size: 0.85rem;
-      cursor: pointer;
+      font-size: 0.82rem;
       font-weight: 500;
+      cursor: pointer;
     }
-    .select-input:focus {
+    .select-dropdown:focus {
       outline: none;
       border-color: var(--primary);
     }
 
     /* Continent Filter Pills */
-    .continent-pills {
+    .continent-pills-row {
       display: flex;
       gap: 0.4rem;
       flex-wrap: wrap;
     }
-    .pill {
-      font-size: 0.8rem;
+    .cont-pill {
+      font-size: 0.78rem;
       font-weight: 600;
-      padding: 0.35rem 0.75rem;
-      border-radius: 9999px;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
       border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text-muted);
+      background: var(--bg-subtle);
+      color: var(--text-secondary);
       cursor: pointer;
       transition: var(--transition);
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.4rem;
     }
-    .pill:hover {
-      border-color: var(--border-light);
+    .cont-pill:hover {
+      border-color: rgba(255, 255, 255, 0.2);
       color: var(--text);
     }
-    .pill.active {
-      background: var(--text);
-      color: var(--bg);
-      border-color: var(--text);
+    .cont-pill.active {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(59, 130, 246, 0.2));
+      border-color: var(--primary);
+      color: var(--text);
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+    .pill-counter {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 0.1rem 0.35rem;
+      border-radius: var(--radius-full);
     }
 
-    /* Country Cards Grid */
-    .country-grid {
+    /* Country Grid Layout */
+    .countries-container {
+      margin-top: 1rem;
+      min-height: 400px;
+    }
+    .grid-view-layout {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.25rem;
+      gap: 1.35rem;
     }
 
+    /* Country Card */
     .country-card {
       background: var(--surface-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease, border-color 0.2s ease;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease, opacity 0.3s ease;
       position: relative;
     }
     .country-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-      border-color: var(--border-light);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px rgba(0, 240, 255, 0.12);
+      border-color: rgba(0, 240, 255, 0.3);
     }
     .country-card.is-read {
-      opacity: 0.75;
+      opacity: 0.8;
       border-left: 4px solid var(--accent);
     }
-    .country-card.anim-out {
-      transform: scale(0.9);
+    .country-card.animating-out {
+      transform: scale(0.85) translateY(15px);
       opacity: 0;
+      pointer-events: none;
     }
 
-    /* Card Flag Cover */
+    /* Card Flag Cover Banner */
     .card-banner {
-      height: 150px;
+      height: 165px;
       position: relative;
-      background: #0f172a;
+      background: #080c18;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -396,492 +598,655 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
     }
     .country-card:hover .card-flag-img {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
-    .card-flag-fallback {
-      font-size: 4.5rem;
+    .card-flag-emoji-fallback {
+      font-size: 5rem;
       user-select: none;
     }
-    .card-status-badge {
+    .card-badges-top {
       position: absolute;
       top: 0.75rem;
-      right: 0.75rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.25rem 0.5rem;
-      border-radius: 9999px;
-      backdrop-filter: blur(8px);
+      inset-inline: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
     }
-    .badge-read {
+    .card-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      letter-spacing: 0.03em;
+      pointer-events: auto;
+    }
+    .tag-status-unread {
+      background: rgba(11, 17, 33, 0.85);
+      border: 1px solid rgba(0, 240, 255, 0.4);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .tag-status-unread::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 8px var(--primary);
+    }
+    .tag-status-read {
       background: rgba(16, 185, 129, 0.9);
       color: #ffffff;
+      font-weight: 700;
     }
-    .badge-unread {
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #f1f5f9;
-    }
-
-    .card-continent-tag {
-      position: absolute;
-      bottom: 0.75rem;
-      left: 0.75rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.2rem 0.5rem;
-      border-radius: var(--radius-sm);
-      background: rgba(15, 23, 42, 0.85);
-      color: #cbd5e1;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    .card-cont-badge {
+      background: rgba(11, 17, 33, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
     }
 
-    /* Card Body */
+    /* Card Info Body */
     .card-body {
-      padding: 1.1rem;
+      padding: 1.15rem;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
-    .card-title-row {
+    .card-header-row {
       display: flex;
-      align-items: flex-start;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 0.5rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
-    .card-name {
-      font-size: 1.15rem;
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.18rem;
       font-weight: 700;
       color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .card-official-name {
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      margin-bottom: 0.75rem;
       line-height: 1.3;
     }
+    .card-iso {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.4rem;
+      border-radius: var(--radius-xs);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--primary);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-official {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
-    .card-stats-grid {
+    /* Card Micro Stats Grid */
+    .card-micro-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
-      background: var(--surface);
-      padding: 0.6rem 0.75rem;
-      border-radius: var(--radius-sm);
+      gap: 0.45rem;
+      background: rgba(0, 0, 0, 0.2);
       border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.8rem;
+      margin-bottom: 1rem;
+      font-size: 0.78rem;
     }
-    .stat-item {
+    [data-theme="light"] .card-micro-stats {
+      background: rgba(241, 245, 249, 0.7);
+    }
+    .micro-item {
       display: flex;
       flex-direction: column;
     }
-    .stat-label {
-      font-size: 0.68rem;
+    .micro-label {
+      font-size: 0.65rem;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: var(--text-dim);
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
     }
-    .stat-value {
-      color: var(--text);
+    .micro-val {
       font-weight: 600;
+      color: var(--text);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      margin-top: 0.1rem;
     }
 
-    .card-actions {
+    /* Card Actions Footer */
+    .card-footer {
       display: flex;
       gap: 0.5rem;
       margin-top: auto;
     }
-    .btn-toggle-read {
+    .btn-card-toggle {
       flex: 1;
       justify-content: center;
+      font-size: 0.8rem;
       padding: 0.5rem;
-      font-size: 0.82rem;
     }
-    .btn-details {
-      padding: 0.5rem 0.75rem;
+    .btn-card-details {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.8rem;
     }
 
-    /* Empty state */
+    /* Dense Table Layout Mode */
+    .table-view-layout {
+      width: 100%;
+      overflow-x: auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      text-align: left;
+    }
+    .data-table th {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      font-family: var(--font-display);
+    }
+    .data-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text);
+    }
+    .data-table tr:hover {
+      background: var(--surface-hover);
+    }
+
+    /* Empty States */
     .empty-state {
-      grid-column: 1 / -1;
       text-align: center;
-      padding: 4rem 1.5rem;
+      padding: 4.5rem 1.5rem;
       background: var(--surface);
       border: 1px dashed var(--border);
       border-radius: var(--radius-lg);
+      max-width: 600px;
+      margin: 2rem auto;
     }
-    .empty-state-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .empty-state-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .empty-state-desc {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      max-width: 480px;
-      margin: 0 auto 1.5rem auto;
-    }
+    .empty-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+    .empty-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .empty-desc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.5; }
 
-    /* Full Details Modal */
-    .modal-overlay {
+    /* Slide-Over Dossier Drawer */
+    .drawer-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(8px);
-      z-index: 999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 1000;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.25s ease;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      justify-content: flex-end;
     }
-    .modal-overlay.open {
+    .drawer-overlay.open {
       opacity: 1;
       pointer-events: auto;
     }
-    .modal-card {
-      background: var(--surface-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
+    .drawer-panel {
       width: 100%;
-      max-width: 900px;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      max-width: 880px;
+      height: 100%;
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      box-shadow: -15px 0 50px rgba(0, 0, 0, 0.6);
       display: flex;
       flex-direction: column;
-      position: relative;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
     }
-    .modal-header {
-      position: sticky;
-      top: 0;
-      background: var(--surface);
+    .drawer-overlay.open .drawer-panel {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 1.25rem 1.75rem;
+      background: var(--surface-elevated);
       border-bottom: 1px solid var(--border);
-      padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 10;
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
-    .modal-title-wrap {
+    .drawer-title-group {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 1rem;
     }
-    .modal-title {
-      font-size: 1.35rem;
-      font-weight: 800;
+    .drawer-flag-icon {
+      font-size: 2.2rem;
     }
-    .modal-close {
-      background: transparent;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--text-muted);
-      cursor: pointer;
-      width: 36px;
-      height: 36px;
+    .drawer-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .drawer-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+    .drawer-close {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-secondary);
+      font-size: 1.2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
+      cursor: pointer;
+      transition: var(--transition);
     }
-    .modal-close:hover {
+    .drawer-close:hover {
       background: var(--surface-hover);
       color: var(--text);
+      transform: rotate(90deg);
     }
 
-    .modal-content {
-      padding: 1.5rem;
+    /* Tabbed Navigation inside Drawer */
+    .drawer-tabs-bar {
+      display: flex;
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+      padding: 0.5rem 1rem;
+      gap: 0.4rem;
+    }
+    .drawer-tab {
+      padding: 0.45rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+    .drawer-tab:hover {
+      color: var(--text);
+    }
+    .drawer-tab.active {
+      background: var(--surface);
+      color: var(--primary);
+      border-color: var(--border);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .drawer-body {
+      padding: 1.75rem;
+      overflow-y: auto;
+      flex: 1;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
     }
 
-    /* Modal Image Gallery */
-    .modal-gallery {
+    /* Visual Media Gallery in Drawer */
+    .dossier-visuals {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
+      margin-bottom: 0.5rem;
     }
-    .gallery-item {
-      background: #000000;
+    .dossier-media-card {
+      background: #000;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
-      height: 160px;
+      height: 180px;
       position: relative;
     }
-    .gallery-item img {
+    .dossier-media-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .gallery-caption {
+    .dossier-media-tag {
       position: absolute;
       bottom: 0;
       inset-inline: 0;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.8);
       font-size: 0.72rem;
-      padding: 0.3rem 0.6rem;
+      padding: 0.35rem 0.65rem;
       color: #e2e8f0;
       text-align: center;
+      font-weight: 600;
     }
 
-    /* Modal Sections */
-    .profile-section {
-      background: var(--surface);
+    /* Section Cards inside Drawer */
+    .dossier-section {
+      background: var(--surface-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1.25rem;
+      padding: 1.35rem;
     }
-    .section-title {
-      font-size: 1rem;
+    .dossier-section-header {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
       font-weight: 700;
-      margin-bottom: 0.75rem;
+      color: var(--primary);
+      margin-bottom: 0.85rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: #60a5fa;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 0.4rem;
+      padding-bottom: 0.5rem;
     }
-    .info-table {
+    .dossier-table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.85rem;
     }
-    .info-table tr {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    .dossier-table tr {
+      border-bottom: 1px solid var(--border-subtle);
     }
-    .info-table td {
-      padding: 0.4rem 0.5rem;
+    .dossier-table td {
+      padding: 0.5rem 0.6rem;
       vertical-align: top;
     }
-    .info-table td.label {
+    .dossier-table td.prop {
       width: 35%;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       font-weight: 600;
     }
-    .info-table td.value {
+    .dossier-table td.val {
       color: var(--text);
     }
 
-    .sources-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      font-size: 0.75rem;
-      margin-top: 0.5rem;
-    }
-    .source-tag {
-      background: var(--surface-hover);
-      padding: 0.25rem 0.5rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      text-decoration: none;
-    }
-    .source-tag:hover {
-      color: var(--text);
-      border-color: var(--primary);
-    }
-
-    /* Toast Notification */
-    .toast-container {
+    /* Floating Toast Notification */
+    .toast-box {
       position: fixed;
       bottom: 1.5rem;
       right: 1.5rem;
-      z-index: 1000;
+      z-index: 2000;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
       pointer-events: none;
     }
-    .toast {
-      background: var(--surface);
+    .toast-item {
+      background: var(--surface-elevated);
       border: 1px solid var(--border);
       color: var(--text);
       padding: 0.75rem 1.25rem;
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.75rem;
       font-size: 0.85rem;
-      font-weight: 500;
-      animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      font-weight: 600;
       pointer-events: auto;
+      animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    @keyframes slideIn {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    @keyframes toastIn {
+      from { transform: translateY(20px) scale(0.95); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    .btn-undo {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-xs);
+      font-size: 0.75rem;
+      cursor: pointer;
+      font-weight: 700;
+      margin-left: 0.5rem;
     }
 
-    /* Responsive */
+    /* Canvas Confetti */
+    #confettiCanvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 768px) {
-      .app-container { padding: 1rem 0.75rem 3rem 0.75rem; }
-      header { padding: 1.25rem; }
-      .header-title h1 { font-size: 1.35rem; }
-      .filter-row { flex-direction: column; align-items: stretch; }
-      .search-box { width: 100%; }
-      .dropdowns-group { width: 100%; }
-      .dropdowns-group select { flex: 1; }
-      .country-grid { grid-template-columns: 1fr; }
+      .app-wrap { padding: 1rem 0.75rem 4rem 0.75rem; }
+      .top-hud { padding: 1rem; border-radius: var(--radius); }
+      .brand-text h1 { font-size: 1.15rem; }
+      .control-row-1, .control-row-2 { flex-direction: column; align-items: stretch; }
+      .grid-view-layout { grid-template-columns: 1fr; }
+      .drawer-panel { max-width: 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="app-container">
-    <!-- Header -->
-    <header>
-      <div class="header-top">
-        <div class="header-title">
-          <span style="font-size: 2rem;">🌐</span>
-          <div>
-            <h1>The World Countries Atlas 197</h1>
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.1rem;">
-              Interactive Country Tracker & Verified Global Repository • <span class="badge-pill">197 Canonical Entities</span>
-            </div>
-          </div>
-        </div>
-        <div class="header-actions">
-          <button class="btn btn-primary" id="btnSurprise" title="Pick a random unread country">
-            <span>🎲</span> Surprise Me
-          </button>
-          <button class="btn" id="btnExport" title="Export read progress as JSON">
-            <span>📥</span> Export
-          </button>
-          <button class="btn" id="btnImport" title="Import read progress JSON">
-            <span>📤</span> Import
-          </button>
-          <input type="file" id="importFileInput" accept=".json" style="display:none;">
-          <button class="btn btn-danger" id="btnReset" title="Reset all read progress">
-            <span>🔄</span> Reset
-          </button>
-          <a href="https://github.com/HackerO112/world-countries-atlas-197" target="_blank" rel="noopener noreferrer" class="btn" title="View Repository on GitHub">
-            <span>⭐</span> GitHub
-          </a>
-          <button class="btn" id="btnThemeToggle" title="Toggle Light/Dark Theme">
-            <span id="themeIcon">☀️</span>
-          </button>
+  <canvas id="confettiCanvas"></canvas>
+
+  <div class="app-wrap">
+    <!-- Top HUD Bar -->
+    <header class="top-hud">
+      <div class="brand-section">
+        <div class="brand-logo">🌐</div>
+        <div class="brand-text">
+          <h1>The World Countries Atlas 197</h1>
+          <div class="brand-subtitle">Planetary Sovereignty & Exploratory Reading Tracker</div>
         </div>
       </div>
 
-      <!-- Live Progress Bar -->
-      <div class="progress-section">
-        <div class="progress-header">
-          <span>Global Progress: <strong id="progressText">0 of 197 Read (0%)</strong></span>
-          <span id="unreadCountBadge" style="color: #60a5fa; font-size: 0.85rem;">197 Remaining</span>
+      <!-- Live Radial Progress HUD -->
+      <div class="hud-metrics">
+        <div class="radial-widget" title="Global Exploration Progress">
+          <svg class="radial-svg" viewBox="0 0 36 36">
+            <path class="radial-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="radial-fill" id="radialProgressFill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          </svg>
+          <div class="radial-info">
+            <span class="radial-pct" id="hudPctText">0%</span>
+            <span class="radial-sub" id="hudReadCount">0 / 197 Explored</span>
+          </div>
         </div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" id="progressBarFill"></div>
-        </div>
-        <div class="continent-progress-grid" id="continentProgressGrid">
-          <!-- Populated by JS -->
-        </div>
+      </div>
+
+      <!-- Top Actions -->
+      <div class="hud-actions">
+        <button class="btn btn-primary" id="btnSurprise" title="Discover a Random Unread Country (Press R)">
+          <span>🎲</span> Surprise Me <span class="kbd-tag">R</span>
+        </button>
+        <button class="btn btn-outline" id="btnExport" title="Export progress JSON">
+          <span>📥</span> Export
+        </button>
+        <button class="btn btn-outline" id="btnImport" title="Import progress JSON">
+          <span>📤</span> Import
+        </button>
+        <input type="file" id="fileInput" accept=".json" style="display:none;">
+        <button class="btn btn-danger-subtle" id="btnReset" title="Reset all progress">
+          <span>🔄</span> Reset
+        </button>
+        <a href="https://github.com/HackerO112/world-countries-atlas-197" target="_blank" rel="noopener noreferrer" class="btn" title="View Source on GitHub">
+          <span>⭐</span> GitHub
+        </a>
+        <button class="btn" id="btnThemeToggle" title="Toggle Light/Dark Theme">
+          <span id="themeEmoji">☀️</span>
+        </button>
       </div>
     </header>
 
-    <!-- Controls Bar -->
-    <div class="controls-bar">
-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+    <!-- Global Stat Metrics Row -->
+    <section class="dashboard-grid">
+      <div class="stat-card" style="--card-color: #00f0ff;">
+        <div class="stat-title"><span>🌍</span> Nations Explored</div>
+        <div class="stat-num" id="statExploredCount">0 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 197</span></div>
+        <div class="stat-desc" id="statRemainingDesc">197 sovereign entities awaiting discovery</div>
+      </div>
+      <div class="stat-card" style="--card-color: #10b981;">
+        <div class="stat-title"><span>👥</span> Humanity Covered</div>
+        <div class="stat-num" id="statPopExplored">0.0B <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ ~8.13B</span></div>
+        <div class="stat-desc" id="statPopPct">0.0% of projected planetary population</div>
+      </div>
+      <div class="stat-card" style="--card-color: #a855f7;">
+        <div class="stat-title"><span>📐</span> Landmass Mapped</div>
+        <div class="stat-num" id="statAreaExplored">0M <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 134.2M km²</span></div>
+        <div class="stat-desc" id="statAreaPct">0.0% of sovereign terrestrial territory</div>
+      </div>
+      <div class="stat-card" style="--card-color: #f59e0b;">
+        <div class="stat-title"><span>🌐</span> Continental Hubs</div>
+        <div class="stat-num" id="statContinentsCompleted">0 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 6</span></div>
+        <div class="stat-desc">Complete all 6 regions to finish Atlas</div>
+      </div>
+    </section>
+
+    <!-- Command & Control Center -->
+    <section class="control-center">
+      <div class="control-row-1">
         <!-- View Mode Tabs (Default: Unread Only) -->
-        <div class="view-tabs" role="tablist">
-          <button class="view-tab active" data-view="unread" role="tab" id="tabUnread">
-            📖 Unread Only (<span id="countUnreadTab">197</span>)
+        <div class="mode-tabs" role="tablist">
+          <button class="mode-tab active" data-view="unread" role="tab" id="tabUnread">
+            <span>📖</span> Unread Queue <span class="tab-badge" id="countUnreadBadge">197</span>
           </button>
-          <button class="view-tab" data-view="read" role="tab" id="tabRead">
-            ✅ Read Only (<span id="countReadTab">0</span>)
+          <button class="mode-tab" data-view="read" role="tab" id="tabRead">
+            <span>✅</span> Explored Nations <span class="tab-badge" id="countReadBadge">0</span>
           </button>
-          <button class="view-tab" data-view="all" role="tab" id="tabAll">
-            🌍 All Countries (197)
+          <button class="mode-tab" data-view="all" role="tab" id="tabAll">
+            <span>🌍</span> Complete Atlas <span class="tab-badge">197</span>
           </button>
         </div>
 
-        <button class="btn btn-accent" id="btnMarkAllVisible" style="font-size:0.8rem;">
-          ✓ Mark All Visible as Read
-        </button>
+        <!-- Layout Switcher: Grid vs Table -->
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <button class="btn btn-accent" id="btnMarkAllVisible" style="font-size:0.78rem;">
+            ✓ Mark Visible as Read
+          </button>
+          <div class="layout-switcher">
+            <button class="layout-btn active" data-layout="grid" title="Visual Cards Grid">
+              <span>▦</span> Grid
+            </button>
+            <button class="layout-btn" data-layout="table" title="Dense Table Matrix">
+              <span>☰</span> Table
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Search & Filters -->
-      <div class="filter-row">
-        <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="searchInput" class="search-input" placeholder="Search by name, capital, demonym, ISO, language... (Press '/' to focus)">
+      <div class="control-row-2">
+        <div class="search-wrap">
+          <span class="search-icon-left">🔍</span>
+          <input type="text" id="searchInput" class="search-box-input" placeholder="Search by name, capital, demonym, ISO code, language... (Press '/' to search)">
+          <button class="search-clear-btn" id="searchClearBtn">&times;</button>
         </div>
 
-        <div class="dropdowns-group">
-          <select id="sortSelect" class="select-input">
-            <option value="name-asc">Sort: Name (A to Z)</option>
-            <option value="name-desc">Sort: Name (Z to A)</option>
-            <option value="pop-desc">Sort: Population (High to Low)</option>
-            <option value="pop-asc">Sort: Population (Low to High)</option>
-            <option value="area-desc">Sort: Area (Largest First)</option>
-            <option value="area-asc">Sort: Area (Smallest First)</option>
-          </select>
-        </div>
+        <select id="sortSelect" class="select-dropdown">
+          <option value="name-asc">Sort: Name (A → Z)</option>
+          <option value="name-desc">Sort: Name (Z → A)</option>
+          <option value="pop-desc">Sort: Population (High → Low)</option>
+          <option value="pop-asc">Sort: Population (Low → High)</option>
+          <option value="area-desc">Sort: Area (Largest First)</option>
+          <option value="area-asc">Sort: Area (Smallest First)</option>
+        </select>
       </div>
 
       <!-- Continent Pills -->
-      <div class="continent-pills" id="continentPills">
-        <button class="pill active" data-continent="all">All Continents</button>
-        <button class="pill" data-continent="Africa">Africa (54)</button>
-        <button class="pill" data-continent="Asia">Asia (49)</button>
-        <button class="pill" data-continent="Europe">Europe (45)</button>
-        <button class="pill" data-continent="North America">North America (23)</button>
-        <button class="pill" data-continent="South America">South America (12)</button>
-        <button class="pill" data-continent="Oceania">Oceania (14)</button>
+      <div class="continent-pills-row" id="continentPillsWrap">
+        <button class="cont-pill active" data-continent="all">
+          <span>All Regions</span> <span class="pill-counter" id="pillCountAll">197</span>
+        </button>
+        <button class="cont-pill" data-continent="Africa">
+          <span>Africa</span> <span class="pill-counter" id="pillCountAfrica">54</span>
+        </button>
+        <button class="cont-pill" data-continent="Asia">
+          <span>Asia</span> <span class="pill-counter" id="pillCountAsia">49</span>
+        </button>
+        <button class="cont-pill" data-continent="Europe">
+          <span>Europe</span> <span class="pill-counter" id="pillCountEurope">45</span>
+        </button>
+        <button class="cont-pill" data-continent="North America">
+          <span>North America</span> <span class="pill-counter" id="pillCountNA">23</span>
+        </button>
+        <button class="cont-pill" data-continent="South America">
+          <span>South America</span> <span class="pill-counter" id="pillCountSA">12</span>
+        </button>
+        <button class="cont-pill" data-continent="Oceania">
+          <span>Oceania</span> <span class="pill-counter" id="pillCountOceania">14</span>
+        </button>
       </div>
-    </div>
+    </section>
 
-    <!-- Country Cards Grid -->
-    <main class="country-grid" id="countryGrid">
-      <div class="empty-state">
-        <div class="empty-state-icon">⏳</div>
-        <div class="empty-state-title">Loading Atlas Dataset...</div>
-        <div class="empty-state-desc">Fetching countries.json. Please ensure this file is present in the same directory.</div>
-      </div>
+    <!-- Main Dynamic Container -->
+    <main class="countries-container" id="countriesContainer">
+      <!-- Populated dynamically via JS -->
     </main>
   </div>
 
-  <!-- Full Profile Modal -->
-  <div class="modal-overlay" id="profileModal" role="dialog" aria-modal="true">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div class="modal-title-wrap">
-          <span id="modalFlagEmoji" style="font-size:1.8rem;">🇺🇳</span>
+  <!-- Slide-Over Dossier Drawer -->
+  <div class="drawer-overlay" id="dossierDrawer" role="dialog" aria-modal="true">
+    <div class="drawer-panel">
+      <!-- Sticky Drawer Header -->
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <span class="drawer-flag-icon" id="drawerFlagIcon">🌐</span>
           <div>
-            <div class="modal-title" id="modalCountryName">Country Name</div>
-            <div style="font-size:0.8rem; color:var(--text-muted);" id="modalOfficialName">Official Name</div>
+            <div class="drawer-title" id="drawerCountryName">Country Name</div>
+            <div class="drawer-subtitle" id="drawerOfficialName">Official Name</div>
           </div>
         </div>
-        <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+        <button class="drawer-close" id="drawerCloseBtn" aria-label="Close dossier">&times;</button>
       </div>
-      <div class="modal-content" id="modalBody">
-        <!-- Rendered dynamically -->
+
+      <!-- Drawer Category Tabs -->
+      <div class="drawer-tabs-bar" role="tablist">
+        <button class="drawer-tab active" data-dtab="overview">🏛️ Overview</button>
+        <button class="drawer-tab" data-dtab="geography">🗺️ Geography</button>
+        <button class="drawer-tab" data-dtab="politics">⚖️ Politics (2026)</button>
+        <button class="drawer-tab" data-dtab="history">📜 History</button>
+        <button class="drawer-tab" data-dtab="society">👥 Society</button>
+        <button class="drawer-tab" data-dtab="economy">💼 Economy</button>
+        <button class="drawer-tab" data-dtab="culture">🎭 Culture</button>
+        <button class="drawer-tab" data-dtab="symbols">🏰 Symbols</button>
+        <button class="drawer-tab" data-dtab="sources">📚 Sources</button>
+      </div>
+
+      <!-- Drawer Scrollable Content -->
+      <div class="drawer-body" id="drawerBody">
+        <!-- Rendered by JS -->
       </div>
     </div>
   </div>
 
-  <!-- Toast Notification Container -->
-  <div class="toast-container" id="toastContainer"></div>
+  <!-- Toast Notification System -->
+  <div class="toast-box" id="toastBox"></div>
 
   <script>
     (function() {
@@ -894,45 +1259,56 @@
       let selectedContinent = 'all';
       let searchQuery = '';
       let currentSort = 'name-asc';
+      let currentLayout = 'grid'; // 'grid' | 'table'
+      let activeDrawerCountry = null;
+      let activeDrawerTab = 'overview';
+      let lastToggledId = null;
 
-      // Elements
-      const countryGrid = document.getElementById('countryGrid');
-      const progressText = document.getElementById('progressText');
-      const progressBarFill = document.getElementById('progressBarFill');
-      const unreadCountBadge = document.getElementById('unreadCountBadge');
-      const continentProgressGrid = document.getElementById('continentProgressGrid');
-      const countUnreadTab = document.getElementById('countUnreadTab');
-      const countReadTab = document.getElementById('countReadTab');
+      // DOM Elements
+      const countriesContainer = document.getElementById('countriesContainer');
+      const radialProgressFill = document.getElementById('radialProgressFill');
+      const hudPctText = document.getElementById('hudPctText');
+      const hudReadCount = document.getElementById('hudReadCount');
+      const statExploredCount = document.getElementById('statExploredCount');
+      const statRemainingDesc = document.getElementById('statRemainingDesc');
+      const statPopExplored = document.getElementById('statPopExplored');
+      const statPopPct = document.getElementById('statPopPct');
+      const statAreaExplored = document.getElementById('statAreaExplored');
+      const statAreaPct = document.getElementById('statAreaPct');
+      const statContinentsCompleted = document.getElementById('statContinentsCompleted');
+      const countUnreadBadge = document.getElementById('countUnreadBadge');
+      const countReadBadge = document.getElementById('countReadBadge');
       const searchInput = document.getElementById('searchInput');
+      const searchClearBtn = document.getElementById('searchClearBtn');
       const sortSelect = document.getElementById('sortSelect');
-      const continentPills = document.querySelectorAll('#continentPills .pill');
-      const viewTabs = document.querySelectorAll('.view-tab');
+      const fileInput = document.getElementById('fileInput');
       const btnSurprise = document.getElementById('btnSurprise');
-      const btnReset = document.getElementById('btnReset');
       const btnExport = document.getElementById('btnExport');
       const btnImport = document.getElementById('btnImport');
-      const importFileInput = document.getElementById('importFileInput');
+      const btnReset = document.getElementById('btnReset');
       const btnMarkAllVisible = document.getElementById('btnMarkAllVisible');
       const btnThemeToggle = document.getElementById('btnThemeToggle');
-      const themeIcon = document.getElementById('themeIcon');
-      const profileModal = document.getElementById('profileModal');
-      const modalCloseBtn = document.getElementById('modalCloseBtn');
-      const toastContainer = document.getElementById('toastContainer');
+      const themeEmoji = document.getElementById('themeEmoji');
+      const dossierDrawer = document.getElementById('dossierDrawer');
+      const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+      const drawerBody = document.getElementById('drawerBody');
+      const toastBox = document.getElementById('toastBox');
+      const confettiCanvas = document.getElementById('confettiCanvas');
 
-      // Initialize Theme
+      // Theme Management
       const savedTheme = localStorage.getItem('worldAtlas_theme') || 'dark';
       document.documentElement.setAttribute('data-theme', savedTheme);
-      themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+      themeEmoji.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
       btnThemeToggle.addEventListener('click', () => {
         const cur = document.documentElement.getAttribute('data-theme') || 'dark';
         const next = cur === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('worldAtlas_theme', next);
-        themeIcon.textContent = next === 'dark' ? '☀️' : '🌙';
+        themeEmoji.textContent = next === 'dark' ? '☀️' : '🌙';
       });
 
-      // Load read status from localStorage
+      // Storage
       function loadReadState() {
         try {
           const raw = localStorage.getItem(STORAGE_KEY);
@@ -943,7 +1319,7 @@
             }
           }
         } catch (e) {
-          console.error('Failed to parse localStorage read data:', e);
+          console.error(e);
           readSet = new Set();
         }
       }
@@ -952,112 +1328,138 @@
         try {
           localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(readSet)));
         } catch (e) {
-          console.error('Failed to save to localStorage:', e);
+          console.error(e);
         }
-        updateProgress();
-        updateTabCounts();
+        updateGlobalMetrics();
+        updateFilterCounters();
       }
 
       // Fetch Dataset
-      async function loadDataset() {
+      async function initApp() {
         try {
-          const resp = await fetch('./countries.json');
-          if (!resp.ok) {
-            throw new Error(`HTTP error ${resp.status}`);
-          }
-          allCountries = await resp.json();
-          if (!Array.isArray(allCountries) || allCountries.length === 0) {
-            throw new Error('countries.json is empty or not an array');
-          }
-          renderApp();
+          const res = await fetch('./countries.json');
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          allCountries = await res.json();
+          loadReadState();
+          updateGlobalMetrics();
+          updateFilterCounters();
+          renderView();
         } catch (err) {
-          countryGrid.innerHTML = `
+          countriesContainer.innerHTML = `
             <div class="empty-state">
-              <div class="empty-state-icon">⚠️</div>
-              <div class="empty-state-title">Unable to Load countries.json</div>
-              <div class="empty-state-desc">
-                ${err.message}. If opening locally via <code>file://</code>, modern browsers block cross-origin JSON requests.
-                <br><br>
-                <strong>Quick Fix:</strong> Run a local web server:
-                <br>
-                <code>python3 -m http.server 8000</code> or <code>npx serve .</code>
-                <br>
-                Or deploy to <strong>GitHub Pages</strong> as described in the README.
+              <div class="empty-icon">⚠️</div>
+              <div class="empty-title">Cannot Load countries.json</div>
+              <div class="empty-desc">
+                ${err.message}. If viewing locally via <code>file://</code>, please launch a web server:
+                <br><code>python3 -m http.server 8000</code> or deploy to GitHub Pages.
               </div>
             </div>
           `;
         }
       }
 
-      // Progress Calculation
-      function updateProgress() {
+      // Metrics Calculation
+      function updateGlobalMetrics() {
         const total = allCountries.length || 197;
         const readCount = readSet.size;
         const unreadCount = Math.max(0, total - readCount);
-        const pct = total > 0 ? ((readCount / total) * 100).toFixed(1) : 0;
+        const pct = total > 0 ? ((readCount / total) * 100) : 0;
 
-        progressText.textContent = `${readCount} of ${total} Read (${pct}%)`;
-        unreadCountBadge.textContent = `${unreadCount} Remaining`;
-        progressBarFill.style.width = `${pct}%`;
+        // Radial Ring
+        const dashOffset = 100 - pct;
+        radialProgressFill.style.strokeDashoffset = dashOffset;
+        hudPctText.textContent = `${pct.toFixed(0)}%`;
+        hudReadCount.textContent = `${readCount} / ${total} Explored`;
 
-        // Continent breakdown
-        const continentStats = {
-          Africa: { total: 0, read: 0 },
-          Asia: { total: 0, read: 0 },
-          Europe: { total: 0, read: 0 },
-          "North America": { total: 0, read: 0 },
-          "South America": { total: 0, read: 0 },
-          Oceania: { total: 0, read: 0 },
-        };
+        // Explored Card
+        statExploredCount.innerHTML = `${readCount} <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ ${total}</span>`;
+        statRemainingDesc.textContent = `${unreadCount} sovereign entities remaining`;
+
+        // Population covered
+        let totalPop = 0;
+        let readPop = 0;
+        let totalArea = 0;
+        let readArea = 0;
+        const continentStats = {};
 
         allCountries.forEach(c => {
-          if (continentStats[c.continent]) {
-            continentStats[c.continent].total++;
-            if (readSet.has(c.id)) {
-              continentStats[c.continent].read++;
-            }
+          const pop = c.population2026 || 0;
+          const area = c.areaKm2 || 0;
+          totalPop += pop;
+          totalArea += area;
+
+          if (!continentStats[c.continent]) continentStats[c.continent] = { total: 0, read: 0 };
+          continentStats[c.continent].total++;
+
+          if (readSet.has(c.id)) {
+            readPop += pop;
+            readArea += area;
+            continentStats[c.continent].read++;
           }
         });
 
-        const shortNames = {
-          Africa: "AF", Asia: "AS", Europe: "EU", "North America": "NA", "South America": "SA", Oceania: "OC"
-        };
+        const popB = (readPop / 1e9).toFixed(2);
+        const popTotalB = (totalPop / 1e9).toFixed(2);
+        const popPct = totalPop > 0 ? ((readPop / totalPop) * 100).toFixed(1) : 0;
+        statPopExplored.innerHTML = `${popB}B <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ ~${popTotalB}B</span>`;
+        statPopPct.textContent = `${popPct}% of world population explored`;
 
-        continentProgressGrid.innerHTML = Object.entries(continentStats).map(([name, data]) => {
-          const s = shortNames[name] || name;
-          return `<div class="continent-chip"><strong>${s}:</strong> ${data.read}/${data.total}</div>`;
-        }).join('');
+        const areaM = (readArea / 1e6).toFixed(1);
+        const areaTotalM = (totalArea / 1e6).toFixed(1);
+        const areaPct = totalArea > 0 ? ((readArea / totalArea) * 100).toFixed(1) : 0;
+        statAreaExplored.innerHTML = `${areaM}M <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ ${areaTotalM}M km²</span>`;
+        statAreaPct.textContent = `${areaPct}% of global land territory`;
+
+        // Continents completed
+        let completedContinents = 0;
+        Object.values(continentStats).forEach(st => {
+          if (st.total > 0 && st.read === st.total) completedContinents++;
+        });
+        statContinentsCompleted.innerHTML = `${completedContinents} <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 6</span>`;
+
+        countUnreadBadge.textContent = unreadCount;
+        countReadBadge.textContent = readCount;
       }
 
-      function updateTabCounts() {
-        const total = allCountries.length || 197;
-        const readCount = readSet.size;
-        const unreadCount = Math.max(0, total - readCount);
-        countUnreadTab.textContent = unreadCount;
-        countReadTab.textContent = readCount;
+      function updateFilterCounters() {
+        const counts = { all: 0, Africa: 0, Asia: 0, Europe: 0, "North America": 0, "South America": 0, Oceania: 0 };
+        allCountries.forEach(c => {
+          const isRead = readSet.has(c.id);
+          let matchMode = true;
+          if (currentView === 'unread' && isRead) matchMode = false;
+          if (currentView === 'read' && !isRead) matchMode = false;
+
+          if (matchMode) {
+            counts.all++;
+            if (counts[c.continent] !== undefined) counts[c.continent]++;
+          }
+        });
+
+        document.getElementById('pillCountAll').textContent = counts.all;
+        document.getElementById('pillCountAfrica').textContent = counts.Africa;
+        document.getElementById('pillCountAsia').textContent = counts.Asia;
+        document.getElementById('pillCountEurope').textContent = counts.Europe;
+        document.getElementById('pillCountNA').textContent = counts['North America'];
+        document.getElementById('pillCountSA').textContent = counts['South America'];
+        document.getElementById('pillCountOceania').textContent = counts.Oceania;
       }
 
-      // Filter and Sort countries
-      function getFilteredCountries() {
+      // Filter & Sort Logic
+      function getVisibleCountries() {
         return allCountries.filter(c => {
           const isRead = readSet.has(c.id);
-          // View Mode filter
           if (currentView === 'unread' && isRead) return false;
           if (currentView === 'read' && !isRead) return false;
-
-          // Continent filter
           if (selectedContinent !== 'all' && c.continent !== selectedContinent) return false;
 
-          // Search query
           if (searchQuery) {
             const q = searchQuery.toLowerCase();
             const searchable = [
-              c.name, c.officialName, c.nativeName, c.capital, c.largestCity,
-              c.demonym, c.iso2, c.iso3, ...(c.languages || [])
+              c.name, c.officialName, c.nativeName, c.capital, c.demonym,
+              c.iso2, c.iso3, ...(c.languages || [])
             ].join(' ').toLowerCase();
             if (!searchable.includes(q)) return false;
           }
-
           return true;
         }).sort((a, b) => {
           if (currentSort === 'name-asc') return a.name.localeCompare(b.name);
@@ -1070,443 +1472,650 @@
         });
       }
 
-      // Render Cards Grid
-      function renderCards() {
-        const filtered = getFilteredCountries();
-        if (filtered.length === 0) {
-          countryGrid.innerHTML = `
+      // Render Active View
+      function renderView() {
+        const visible = getVisibleCountries();
+        if (visible.length === 0) {
+          countriesContainer.innerHTML = `
             <div class="empty-state">
-              <div class="empty-state-icon">🎉</div>
-              <div class="empty-state-title">
-                ${currentView === 'unread' ? 'All Caught Up!' : 'No Countries Found'}
+              <div class="empty-icon">${currentView === 'unread' ? '🎉' : '🔍'}</div>
+              <div class="empty-title">
+                ${currentView === 'unread' ? 'Unread Queue Cleared!' : 'No Matching Countries Found'}
               </div>
-              <div class="empty-state-desc">
+              <div class="empty-desc">
                 ${currentView === 'unread' 
-                  ? 'You have marked all countries in this view as read! Switch to "Read Only" or "All Countries" to review.' 
-                  : 'No countries match your search or filter criteria.'}
+                  ? 'Incredible! You have explored every country in this view. Switch to "Explored Nations" or "Complete Atlas" to review your knowledge.' 
+                  : 'Try adjusting your search criteria or continent filter.'}
               </div>
             </div>
           `;
           return;
         }
 
-        countryGrid.innerHTML = filtered.map(c => {
-          const isRead = readSet.has(c.id);
-          const flagSrc = c.flagImage || `https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png`;
-          const popStr = (c.population2026 || 0).toLocaleString();
-          const areaStr = (c.areaKm2 || 0).toLocaleString() + ' km²';
+        if (currentLayout === 'grid') {
+          renderGrid(visible);
+        } else {
+          renderTable(visible);
+        }
+      }
 
-          return `
-            <article class="country-card ${isRead ? 'is-read' : ''}" id="card-${c.id}">
-              <div class="card-banner">
-                <img 
-                  class="card-flag-img" 
-                  src="${flagSrc}" 
-                  alt="Flag of ${c.name}" 
-                  loading="lazy" 
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-                >
-                <div class="card-flag-fallback" style="display:none;">${c.flagEmoji || '🏳️'}</div>
-                <div class="card-status-badge ${isRead ? 'badge-read' : 'badge-unread'}">
-                  ${isRead ? '✓ READ' : 'UNREAD'}
-                </div>
-                <div class="card-continent-tag">${c.continent} • ${c.subregion || ''}</div>
-              </div>
+      // Render Grid View
+      function renderGrid(countries) {
+        countriesContainer.innerHTML = `
+          <div class="grid-view-layout">
+            ${countries.map(c => {
+              const isRead = readSet.has(c.id);
+              const flagSrc = c.flagImage || `https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png`;
+              const popFormatted = (c.population2026 || 0).toLocaleString();
+              const areaFormatted = (c.areaKm2 || 0).toLocaleString() + ' km²';
 
-              <div class="card-body">
-                <div class="card-title-row">
-                  <h3 class="card-name">${c.flagEmoji || ''} ${c.name}</h3>
-                  <span style="font-size:0.75rem; color:var(--text-dim); font-weight:700;">${c.iso3 || ''}</span>
-                </div>
-                <div class="card-official-name">${c.officialName || c.name}</div>
-
-                <div class="card-stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Capital</span>
-                    <span class="stat-value">${c.capital || 'N/A'}</span>
+              return `
+                <article class="country-card ${isRead ? 'is-read' : ''}" id="card-${c.id}">
+                  <div class="card-banner">
+                    <img 
+                      class="card-flag-img" 
+                      src="${flagSrc}" 
+                      alt="Flag of ${c.name}" 
+                      loading="lazy" 
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                    >
+                    <div class="card-flag-emoji-fallback" style="display:none;">${c.flagEmoji || '🏳️'}</div>
+                    <div class="card-badges-top">
+                      <span class="card-tag ${isRead ? 'tag-status-read' : 'tag-status-unread'}">
+                        ${isRead ? '✓ EXPLORED' : 'UNREAD'}
+                      </span>
+                      <span class="card-tag card-cont-badge">${c.continent}</span>
+                    </div>
                   </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Population</span>
-                    <span class="stat-value">${popStr}</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Area</span>
-                    <span class="stat-value">${areaStr}</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Currency</span>
-                    <span class="stat-value">${c.currency || 'N/A'}</span>
-                  </div>
-                </div>
 
-                <div class="card-actions">
-                  <button 
-                    class="btn btn-toggle-read ${isRead ? 'btn-danger' : 'btn-accent'}" 
-                    data-id="${c.id}"
-                  >
-                    ${isRead ? '✕ Mark Unread' : '✓ Mark as Read'}
-                  </button>
-                  <button 
-                    class="btn btn-details" 
-                    data-id="${c.id}" 
-                    title="View Comprehensive Profile"
-                  >
-                    📖 Profile
-                  </button>
-                </div>
-              </div>
-            </article>
-          `;
-        }).join('');
+                  <div class="card-body">
+                    <div class="card-header-row">
+                      <h3 class="card-title">${c.flagEmoji || ''} ${c.name}</h3>
+                      <span class="card-iso">${c.iso3 || ''}</span>
+                    </div>
+                    <div class="card-official" title="${c.officialName || c.name}">${c.officialName || c.name}</div>
 
-        // Attach event listeners to card buttons
-        countryGrid.querySelectorAll('.btn-toggle-read').forEach(b => {
-          b.addEventListener('click', (e) => {
+                    <div class="card-micro-stats">
+                      <div class="micro-item">
+                        <span class="micro-label">🏛️ Capital</span>
+                        <span class="micro-val">${c.capital || 'N/A'}</span>
+                      </div>
+                      <div class="micro-item">
+                        <span class="micro-label">👥 Population</span>
+                        <span class="micro-val">${popFormatted}</span>
+                      </div>
+                      <div class="micro-item">
+                        <span class="micro-label">📐 Area</span>
+                        <span class="micro-val">${areaFormatted}</span>
+                      </div>
+                      <div class="micro-item">
+                        <span class="micro-label">💰 Currency</span>
+                        <span class="micro-val">${c.currency || 'N/A'}</span>
+                      </div>
+                    </div>
+
+                    <div class="card-footer">
+                      <button 
+                        class="btn btn-card-toggle ${isRead ? 'btn-danger-subtle' : 'btn-accent'}" 
+                        data-action="toggle" 
+                        data-id="${c.id}"
+                      >
+                        ${isRead ? '✕ Mark Unread' : '✓ Mark Explored'}
+                      </button>
+                      <button 
+                        class="btn btn-card-details" 
+                        data-action="details" 
+                        data-id="${c.id}" 
+                        title="Open Deep Dossier"
+                      >
+                        📖 Dossier
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              `;
+            }).join('')}
+          </div>
+        `;
+        bindCardActions();
+      }
+
+      // Render Table View
+      function renderTable(countries) {
+        countriesContainer.innerHTML = `
+          <div class="table-view-layout">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Entity</th>
+                  <th>Status</th>
+                  <th>Region</th>
+                  <th>Capital</th>
+                  <th>2026 Population</th>
+                  <th>Area</th>
+                  <th>Currency</th>
+                  <th style="text-align:right;">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${countries.map(c => {
+                  const isRead = readSet.has(c.id);
+                  const flagSrc = c.flagImage || `https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png`;
+                  return `
+                    <tr id="row-${c.id}">
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.6rem;">
+                          <img src="${flagSrc}" width="26" height="17" alt="${c.name}" style="border-radius:2px; object-fit:cover;">
+                          <strong>${c.name}</strong>
+                          <span class="card-iso">${c.iso3 || ''}</span>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="card-tag ${isRead ? 'tag-status-read' : 'tag-status-unread'}" style="font-size:0.65rem;">
+                          ${isRead ? 'EXPLORED' : 'UNREAD'}
+                        </span>
+                      </td>
+                      <td>${c.continent} • <span style="color:var(--text-muted);">${c.subregion || ''}</span></td>
+                      <td>${c.capital || 'N/A'}</td>
+                      <td>${(c.population2026 || 0).toLocaleString()}</td>
+                      <td>${(c.areaKm2 || 0).toLocaleString()} km²</td>
+                      <td style="font-size:0.75rem; color:var(--text-muted);">${c.currency || 'N/A'}</td>
+                      <td style="text-align:right;">
+                        <button class="btn btn-card-toggle ${isRead ? 'btn-danger-subtle' : 'btn-accent'}" data-action="toggle" data-id="${c.id}" style="padding:0.3rem 0.6rem; font-size:0.75rem;">
+                          ${isRead ? 'Unmark' : 'Mark Read'}
+                        </button>
+                        <button class="btn btn-card-details" data-action="details" data-id="${c.id}" style="padding:0.3rem 0.6rem; font-size:0.75rem;">
+                          Dossier
+                        </button>
+                      </td>
+                    </tr>
+                  `;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        `;
+        bindCardActions();
+      }
+
+      // Bind Card Actions
+      function bindCardActions() {
+        countriesContainer.querySelectorAll('[data-action="toggle"]').forEach(btn => {
+          btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            toggleReadStatus(b.dataset.id);
+            toggleCountryRead(btn.dataset.id);
           });
         });
-
-        countryGrid.querySelectorAll('.btn-details').forEach(b => {
-          b.addEventListener('click', (e) => {
+        countriesContainer.querySelectorAll('[data-action="details"]').forEach(btn => {
+          btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            openProfileModal(b.dataset.id);
+            openDossierDrawer(btn.dataset.id);
           });
         });
       }
 
-      // Toggle Read Status with instant animation in Unread mode
-      function toggleReadStatus(id) {
+      // Toggle Read Status with Animation
+      function toggleCountryRead(id) {
         const country = allCountries.find(c => c.id === id);
         if (!country) return;
 
         const isCurrentlyRead = readSet.has(id);
-        const cardEl = document.getElementById(`card-${id}`);
+        lastToggledId = id;
 
         if (isCurrentlyRead) {
           readSet.delete(id);
           saveReadState();
           showToast(`Marked ${country.name} as unread`);
-          if (currentView === 'read') {
-            if (cardEl) {
-              cardEl.classList.add('anim-out');
-              setTimeout(() => renderCards(), 200);
-            } else {
-              renderCards();
-            }
-          } else {
-            renderCards();
-          }
+          renderView();
         } else {
           readSet.add(id);
           saveReadState();
-          showToast(`Marked ${country.name} as read!`);
+
+          // Check milestones for confetti
+          const total = allCountries.length || 197;
+          if (readSet.size === Math.floor(total * 0.25) || 
+              readSet.size === Math.floor(total * 0.5) || 
+              readSet.size === Math.floor(total * 0.75) || 
+              readSet.size === total) {
+            triggerConfetti();
+          }
+
+          showToast(`Explored ${country.name}!`, true);
+
           if (currentView === 'unread') {
-            if (cardEl) {
-              cardEl.classList.add('anim-out');
-              setTimeout(() => renderCards(), 200);
+            const el = document.getElementById(`card-${id}`) || document.getElementById(`row-${id}`);
+            if (el) {
+              el.classList.add('animating-out');
+              setTimeout(() => renderView(), 220);
             } else {
-              renderCards();
+              renderView();
             }
           } else {
-            renderCards();
+            renderView();
           }
         }
       }
 
-      // Full Profile Modal
-      function openProfileModal(id) {
+      // Slide-Over Dossier Drawer
+      function openDossierDrawer(id) {
         const c = allCountries.find(x => x.id === id);
         if (!c) return;
+        activeDrawerCountry = c;
+        activeDrawerTab = 'overview';
 
-        document.getElementById('modalFlagEmoji').textContent = c.flagEmoji || '🌍';
-        document.getElementById('modalCountryName').textContent = `${c.name} (${c.iso3 || ''})`;
-        document.getElementById('modalOfficialName').textContent = `${c.officialName || c.name} • ${c.nativeName || ''}`;
+        document.getElementById('drawerFlagIcon').textContent = c.flagEmoji || '🌐';
+        document.getElementById('drawerCountryName').textContent = `${c.name} (${c.iso3 || ''})`;
+        document.getElementById('drawerOfficialName').textContent = `${c.officialName || c.name} • ${c.nativeName || ''}`;
 
+        renderDrawerTabContent();
+        dossierDrawer.classList.add('open');
+      }
+
+      function closeDossierDrawer() {
+        dossierDrawer.classList.remove('open');
+      }
+
+      drawerCloseBtn.addEventListener('click', closeDossierDrawer);
+      dossierDrawer.addEventListener('click', (e) => {
+        if (e.target === dossierDrawer) closeDossierDrawer();
+      });
+
+      // Drawer Tab Switching
+      document.querySelectorAll('.drawer-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.drawer-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          activeDrawerTab = tab.dataset.dtab;
+          renderDrawerTabContent();
+        });
+      });
+
+      function renderDrawerTabContent() {
+        const c = activeDrawerCountry;
+        if (!c) return;
         const isRead = readSet.has(c.id);
+
         const flagSrc = c.flagImage || `https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png`;
         const mapSrc = c.mapImage || `https://commons.wikimedia.org/wiki/Special:FilePath/${c.iso3}_orthographic.svg`;
         const landmarkSrc = c.landmarkImage || flagSrc;
 
-        const modalBody = document.getElementById('modalBody');
-        modalBody.innerHTML = `
-          <!-- Image Gallery -->
-          <div class="modal-gallery">
-            <div class="gallery-item">
-              <img src="${flagSrc}" alt="Flag of ${c.name}" onerror="this.src='https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png'">
-              <div class="gallery-caption">National Flag</div>
-            </div>
-            <div class="gallery-item">
-              <img src="${mapSrc}" alt="Orthographic Location of ${c.name}" onerror="this.parentElement.style.display='none'">
-              <div class="gallery-caption">Location Map</div>
-            </div>
-            ${landmarkSrc && landmarkSrc !== flagSrc ? `
-            <div class="gallery-item">
-              <img src="${landmarkSrc}" alt="Landmark of ${c.name}" onerror="this.parentElement.style.display='none'">
-              <div class="gallery-caption">Notable Landmark</div>
-            </div>` : ''}
-          </div>
+        let content = '';
 
-          <!-- Quick Actions inside Modal -->
-          <div style="display:flex; justify-content:space-between; align-items:center; background:var(--surface); padding:0.75rem 1rem; border-radius:var(--radius); border:1px solid var(--border);">
-            <div>
-              Status: <strong>${isRead ? '✅ Read' : '📖 Unread'}</strong>
-            </div>
-            <button class="btn ${isRead ? 'btn-danger' : 'btn-accent'}" id="modalToggleBtn">
-              ${isRead ? '✕ Mark as Unread' : '✓ Mark as Read'}
-            </button>
-          </div>
-
-          <!-- Section 1: Identity -->
-          <div class="profile-section">
-            <div class="section-title">🏛️ Identity & Sovereignty</div>
-            <table class="info-table">
-              <tr><td class="label">Official Name</td><td class="value">${c.officialName || 'N/A'}</td></tr>
-              <tr><td class="label">Native Name</td><td class="value">${c.nativeName || 'N/A'}</td></tr>
-              <tr><td class="label">Status</td><td class="value">${c.status || 'UN Member State'}</td></tr>
-              <tr><td class="label">Demonym</td><td class="value">${c.demonym || 'N/A'}</td></tr>
-              <tr><td class="label">ISO Codes</td><td class="value">ISO2: ${c.iso2} | ISO3: ${c.iso3} | Numeric: ${c.isoNumeric}</td></tr>
-              <tr><td class="label">Capital City</td><td class="value">${c.capital || 'N/A'}</td></tr>
-              <tr><td class="label">Largest City</td><td class="value">${c.largestCity || 'N/A'}</td></tr>
-              <tr><td class="label">Major Cities</td><td class="value">${Array.isArray(c.majorCities) ? c.majorCities.join(', ') : (c.majorCities || 'N/A')}</td></tr>
-              <tr><td class="label">National Day</td><td class="value">${c.nationalDay || 'N/A'}</td></tr>
-              <tr><td class="label">National Anthem</td><td class="value">${c.nationalAnthem || 'N/A'}</td></tr>
-              <tr><td class="label">Motto</td><td class="value"><em>${c.motto || 'N/A'}</em></td></tr>
-            </table>
-          </div>
-
-          <!-- Section 2: Geography -->
-          <div class="profile-section">
-            <div class="section-title">🗺️ Geography & Environment</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">${c.geography || ''}</p>
-            <table class="info-table">
-              <tr><td class="label">Area</td><td class="value">${(c.areaKm2 || 0).toLocaleString()} km² (Rank: #${c.areaRank || 'N/A'})</td></tr>
-              <tr><td class="label">Population Density</td><td class="value">${c.populationDensity || 'N/A'}</td></tr>
-              <tr><td class="label">Coordinates</td><td class="value">${c.coordinates ? `${c.coordinates.lat}°, ${c.coordinates.lng}°` : 'N/A'}</td></tr>
-              <tr><td class="label">Borders</td><td class="value">${Array.isArray(c.borders) ? (c.borders.length ? c.borders.join(', ') : 'None (Island)') : (c.borders || 'None')}</td></tr>
-              <tr><td class="label">Coastline</td><td class="value">${c.coastline || 'N/A'} ${c.landlocked ? '(Landlocked)' : ''}</td></tr>
-              <tr><td class="label">Highest Point</td><td class="value">${c.highestPoint || 'N/A'}</td></tr>
-              <tr><td class="label">Lowest Point</td><td class="value">${c.lowestPoint || 'N/A'}</td></tr>
-              <tr><td class="label">Longest River</td><td class="value">${c.longestRiver || 'N/A'}</td></tr>
-              <tr><td class="label">Climate</td><td class="value">${c.climate || 'N/A'}</td></tr>
-              <tr><td class="label">Natural Hazards</td><td class="value">${Array.isArray(c.naturalHazards) ? c.naturalHazards.join(', ') : (c.naturalHazards || 'N/A')}</td></tr>
-              <tr><td class="label">Biodiversity</td><td class="value">${c.biodiversity || 'N/A'}</td></tr>
-              <tr><td class="label">Time Zone & Driving</td><td class="value">${c.timeZone || 'N/A'} • Driving: ${c.drivingSide ? c.drivingSide.toUpperCase() : 'RIGHT'}</td></tr>
-            </table>
-          </div>
-
-          <!-- Section 3: Government & Politics -->
-          <div class="profile-section">
-            <div class="section-title">⚖️ Government & Politics</div>
-            <table class="info-table">
-              <tr><td class="label">Government Type</td><td class="value">${c.government || 'N/A'}</td></tr>
-              <tr><td class="label">Head of State</td><td class="value">${c.headOfState || 'N/A'}</td></tr>
-              <tr><td class="label">Head of Government</td><td class="value">${c.headOfGovernment || 'N/A'}</td></tr>
-              <tr><td class="label">Legislature</td><td class="value">${c.legislature || 'N/A'}</td></tr>
-              <tr><td class="label">Constitution</td><td class="value">${c.constitution || 'N/A'}</td></tr>
-              <tr><td class="label">Political Situation (2026)</td><td class="value">${c.politicalSituation || 'N/A'}</td></tr>
-              <tr><td class="label">Foreign Relations</td><td class="value">${c.foreignRelations || 'N/A'}</td></tr>
-              <tr><td class="label">International Orgs</td><td class="value">${Array.isArray(c.internationalOrgs) ? c.internationalOrgs.join(', ') : (c.internationalOrgs || 'N/A')}</td></tr>
-            </table>
-          </div>
-
-          <!-- Section 4: History -->
-          <div class="profile-section">
-            <div class="section-title">📜 History & Timeline</div>
-            <p style="font-size:0.85rem; line-height:1.6; margin-bottom:0.75rem;">${c.history || 'N/A'}</p>
-            ${c.recentEvents2020_2026 ? `
-              <div style="background:var(--surface-hover); padding:0.75rem; border-radius:var(--radius-sm); border-left:3px solid var(--primary); font-size:0.82rem;">
-                <strong>Recent Events (2020–2026):</strong> ${c.recentEvents2020_2026}
+        if (activeDrawerTab === 'overview') {
+          content = `
+            <div class="dossier-visuals">
+              <div class="dossier-media-card">
+                <img src="${flagSrc}" alt="Flag of ${c.name}">
+                <div class="dossier-media-tag">National Flag</div>
               </div>
-            ` : ''}
-          </div>
-
-          <!-- Section 5: People & Society -->
-          <div class="profile-section">
-            <div class="section-title">👥 People & Society</div>
-            <table class="info-table">
-              <tr><td class="label">Population (2026)</td><td class="value">${(c.population2026 || 0).toLocaleString()} (Rank: #${c.populationRank || 'N/A'})</td></tr>
-              <tr><td class="label">Official Languages</td><td class="value">${Array.isArray(c.languages) ? c.languages.join(', ') : (c.languages || 'N/A')}</td></tr>
-              <tr><td class="label">Ethnic Groups</td><td class="value">${Array.isArray(c.ethnicGroups) ? c.ethnicGroups.join(', ') : (c.ethnicGroups || 'N/A')}</td></tr>
-              <tr><td class="label">Religions</td><td class="value">${Array.isArray(c.religions) ? c.religions.join(', ') : (c.religions || 'N/A')}</td></tr>
-              <tr><td class="label">Literacy Rate</td><td class="value">${c.literacyRate || 'N/A'}</td></tr>
-              <tr><td class="label">Life Expectancy</td><td class="value">${c.lifeExpectancy || 'N/A'}</td></tr>
-              <tr><td class="label">HDI</td><td class="value">${c.hdi || 'N/A'}</td></tr>
-              <tr><td class="label">Urbanization</td><td class="value">${c.urbanization || 'N/A'}</td></tr>
-              <tr><td class="label">Social Customs & Etiquette</td><td class="value">${c.socialCustoms || ''} ${c.etiquette ? `(${c.etiquette})` : ''}</td></tr>
-            </table>
-          </div>
-
-          <!-- Section 6: Economy -->
-          <div class="profile-section">
-            <div class="section-title">💼 Economy & Infrastructure</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">${c.economy || ''}</p>
-            <table class="info-table">
-              <tr><td class="label">GDP (Nominal)</td><td class="value">${c.gdpNominal || 'N/A'}</td></tr>
-              <tr><td class="label">GDP (PPP)</td><td class="value">${c.gdpPpp || 'N/A'}</td></tr>
-              <tr><td class="label">GDP Per Capita</td><td class="value">${c.gdpPerCapita || 'N/A'}</td></tr>
-              <tr><td class="label">Currency</td><td class="value">${c.currency || 'N/A'}</td></tr>
-              <tr><td class="label">Key Industries</td><td class="value">${Array.isArray(c.industries) ? c.industries.join(', ') : (c.industries || 'N/A')}</td></tr>
-              <tr><td class="label">Major Exports</td><td class="value">${Array.isArray(c.exports) ? c.exports.join(', ') : (c.exports || 'N/A')}</td></tr>
-              <tr><td class="label">Major Imports</td><td class="value">${Array.isArray(c.imports) ? c.imports.join(', ') : (c.imports || 'N/A')}</td></tr>
-              <tr><td class="label">Natural Resources</td><td class="value">${Array.isArray(c.naturalResources) ? c.naturalResources.join(', ') : (c.naturalResources || 'N/A')}</td></tr>
-            </table>
-          </div>
-
-          <!-- Section 7: Culture & Heritage -->
-          <div class="profile-section">
-            <div class="section-title">🎭 Culture & Heritage</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">${c.culture || ''}</p>
-            <table class="info-table">
-              <tr><td class="label">Cuisine & Dishes</td><td class="value">${c.cuisine || 'N/A'}</td></tr>
-              <tr><td class="label">Festivals & Holidays</td><td class="value">${Array.isArray(c.festivals) ? c.festivals.join(', ') : (c.festivals || 'N/A')}</td></tr>
-              <tr><td class="label">Music & Dance</td><td class="value">${c.music || 'N/A'} • ${c.dance || 'N/A'}</td></tr>
-              <tr><td class="label">Literature & Arts</td><td class="value">${c.literature || 'N/A'}</td></tr>
-              <tr><td class="label">Sports</td><td class="value">${c.sports || 'N/A'}</td></tr>
-              <tr><td class="label">UNESCO Sites</td><td class="value">${Array.isArray(c.worldHeritageSites) ? c.worldHeritageSites.join(', ') : (c.worldHeritageSites || 'N/A')}</td></tr>
-            </table>
-          </div>
-
-          <!-- Section 8: Symbols & Tourism -->
-          <div class="profile-section">
-            <div class="section-title">🏰 Symbols & Landmarks</div>
-            <table class="info-table">
-              <tr><td class="label">Top Landmarks</td><td class="value">${Array.isArray(c.landmarks) ? c.landmarks.join(', ') : (c.landmarks || 'N/A')}</td></tr>
-              <tr><td class="label">Flag Symbolism</td><td class="value">${c.flagDescription || 'N/A'}</td></tr>
-              <tr><td class="label">Coat of Arms</td><td class="value">${c.coatOfArmsDescription || 'N/A'}</td></tr>
-              <tr><td class="label">National Symbols</td><td class="value">${c.symbols ? (typeof c.symbols === 'object' ? Object.entries(c.symbols).map(([k,v])=>`${k}: ${v}`).join('; ') : c.symbols) : 'N/A'}</td></tr>
-              <tr><td class="label">Travel & Safety Notes</td><td class="value">${c.travelNotes || 'Standard travel safety precautions apply.'}</td></tr>
-            </table>
-          </div>
-
-          <!-- Section 9: Verified Sources -->
-          <div class="profile-section">
-            <div class="section-title">📚 Verified Sources</div>
-            <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.5rem;">
-              Dataset verified through: <strong>${c.lastUpdated || '2026-11-24'}</strong>
+              <div class="dossier-media-card">
+                <img src="${mapSrc}" alt="Location of ${c.name}" onerror="this.parentElement.style.display='none'">
+                <div class="dossier-media-tag">Orthographic Map</div>
+              </div>
+              ${landmarkSrc && landmarkSrc !== flagSrc ? `
+              <div class="dossier-media-card">
+                <img src="${landmarkSrc}" alt="Landmark of ${c.name}" onerror="this.parentElement.style.display='none'">
+                <div class="dossier-media-tag">Iconic Landmark</div>
+              </div>` : ''}
             </div>
-            <div class="sources-list">
-              ${(c.sources || ["CIA World Factbook", "United Nations", "World Bank", "IMF", "UNESCO"]).map(s => `
-                <span class="source-tag">🔗 ${s}</span>
-              `).join('')}
+
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--surface-elevated); padding:0.85rem 1.25rem; border-radius:var(--radius); border:1px solid var(--border);">
+              <div>Exploration Status: <strong style="color:${isRead ? 'var(--accent)' : 'var(--primary)'}">${isRead ? '✓ Explored' : '📖 Unread Queue'}</strong></div>
+              <button class="btn ${isRead ? 'btn-danger-subtle' : 'btn-accent'}" id="drawerActionBtn">
+                ${isRead ? '✕ Mark as Unread' : '✓ Mark as Explored'}
+              </button>
             </div>
-          </div>
+
+            <div class="dossier-section">
+              <div class="dossier-section-header">🏛️ Core Identity</div>
+              <table class="dossier-table">
+                <tr><td class="prop">Official Title</td><td class="val">${c.officialName || 'N/A'}</td></tr>
+                <tr><td class="prop">Native Script</td><td class="val">${c.nativeName || 'N/A'}</td></tr>
+                <tr><td class="prop">Geopolitical Status</td><td class="val">${c.status || 'UN Member State'}</td></tr>
+                <tr><td class="prop">Demonym</td><td class="val">${c.demonym || 'N/A'}</td></tr>
+                <tr><td class="prop">ISO Identifiers</td><td class="val"><code>${c.iso2}</code> / <code>${c.iso3}</code> (Numeric: <code>${c.isoNumeric}</code>)</td></tr>
+                <tr><td class="prop">Capital City</td><td class="val">${c.capital || 'N/A'}</td></tr>
+                <tr><td class="prop">Largest Metropolis</td><td class="val">${c.largestCity || c.capital || 'N/A'}</td></tr>
+                <tr><td class="prop">National Day</td><td class="val">${c.nationalDay || 'N/A'}</td></tr>
+                <tr><td class="prop">National Anthem</td><td class="val"><em>${c.nationalAnthem || 'N/A'}</em></td></tr>
+                <tr><td class="prop">National Motto</td><td class="val"><em>"${c.motto || 'None'}"</em></td></tr>
+              </table>
+            </div>
+          `;
+        } else if (activeDrawerTab === 'geography') {
+          content = `
+            <div class="dossier-section">
+              <div class="dossier-section-header">🗺️ Physical Geography & Climate</div>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1rem;">${c.geography || ''}</p>
+              <table class="dossier-table">
+                <tr><td class="prop">Total Surface Area</td><td class="val">${(c.areaKm2 || 0).toLocaleString()} km² (Global Rank: #${c.areaRank || 'N/A'})</td></tr>
+                <tr><td class="prop">Population Density</td><td class="val">${c.populationDensity || 'N/A'}</td></tr>
+                <tr><td class="prop">Borders</td><td class="val">${Array.isArray(c.borders) ? (c.borders.length ? c.borders.join(', ') : 'None (Island state)') : (c.borders || 'None')}</td></tr>
+                <tr><td class="prop">Coastline</td><td class="val">${c.coastline || 'N/A'} ${c.landlocked ? '(Landlocked)' : ''}</td></tr>
+                <tr><td class="prop">Elevation Extremes</td><td class="val">Highest: ${c.highestPoint || 'N/A'} • Lowest: ${c.lowestPoint || 'N/A'}</td></tr>
+                <tr><td class="prop">Longest River & Lakes</td><td class="val">${c.longestRiver || 'N/A'} • Lakes: ${Array.isArray(c.majorLakes) ? c.majorLakes.join(', ') : (c.majorLakes || 'None')}</td></tr>
+                <tr><td class="prop">Climate Profile</td><td class="val">${c.climate || 'N/A'}</td></tr>
+                <tr><td class="prop">Natural Hazards</td><td class="val">${Array.isArray(c.naturalHazards) ? c.naturalHazards.join(', ') : (c.naturalHazards || 'None')}</td></tr>
+                <tr><td class="prop">Biodiversity Reserve</td><td class="val">${c.biodiversity || 'N/A'}</td></tr>
+                <tr><td class="prop">Time Zone & Driving</td><td class="val">${c.timeZone || 'N/A'} • Driving: ${(c.drivingSide || 'right').toUpperCase()}</td></tr>
+              </table>
+            </div>
+          `;
+        } else if (activeDrawerTab === 'politics') {
+          content = `
+            <div class="dossier-section">
+              <div class="dossier-section-header">⚖️ Government & Geopolitical Context (2026)</div>
+              <table class="dossier-table">
+                <tr><td class="prop">Government Type</td><td class="val">${c.government || 'N/A'}</td></tr>
+                <tr><td class="prop">Head of State</td><td class="val">${c.headOfState || 'N/A'}</td></tr>
+                <tr><td class="prop">Head of Government</td><td class="val">${c.headOfGovernment || 'N/A'}</td></tr>
+                <tr><td class="prop">Legislature</td><td class="val">${c.legislature || 'N/A'}</td></tr>
+                <tr><td class="prop">Constitution</td><td class="val">${c.constitution || 'N/A'}</td></tr>
+                <tr><td class="prop">Latest Elections (2024–2026)</td><td class="val">${c.latestElections || 'N/A'}</td></tr>
+                <tr><td class="prop">Current Situation</td><td class="val" style="line-height:1.5;">${c.politicalSituation || 'N/A'}</td></tr>
+                <tr><td class="prop">Defense Forces</td><td class="val">${c.military || 'N/A'}</td></tr>
+                <tr><td class="prop">International Alliances</td><td class="val">${Array.isArray(c.internationalOrgs) ? c.internationalOrgs.join(', ') : (c.internationalOrgs || 'N/A')}</td></tr>
+              </table>
+            </div>
+          `;
+        } else if (activeDrawerTab === 'history') {
+          content = `
+            <div class="dossier-section">
+              <div class="dossier-section-header">📜 Historical Epochs & Trajectory</div>
+              <p style="font-size:0.88rem; line-height:1.65; margin-bottom:1rem;">${c.history || 'N/A'}</p>
+              ${c.recentEvents2020_2026 ? `
+                <div style="background:var(--bg-subtle); padding:0.95rem; border-radius:var(--radius-sm); border-left:3px solid var(--primary); font-size:0.85rem; line-height:1.5; margin-bottom:1rem;">
+                  <strong style="color:var(--primary);">Recent Milestones (2020–2026):</strong> ${c.recentEvents2020_2026}
+                </div>
+              ` : ''}
+              <div style="font-size:0.82rem; color:var(--text-secondary);">
+                <strong>Key Historical Figures:</strong> ${Array.isArray(c.historicalFigures) ? c.historicalFigures.join(', ') : (c.historicalFigures || 'N/A')}
+              </div>
+            </div>
+          `;
+        } else if (activeDrawerTab === 'society') {
+          content = `
+            <div class="dossier-section">
+              <div class="dossier-section-header">👥 Demographics & Social Fabric</div>
+              <table class="dossier-table">
+                <tr><td class="prop">2026 Population</td><td class="val">${(c.population2026 || 0).toLocaleString()} (Rank: #${c.populationRank || 'N/A'})</td></tr>
+                <tr><td class="prop">Official Languages</td><td class="val">${Array.isArray(c.languages) ? c.languages.join(', ') : (c.languages || 'N/A')}</td></tr>
+                <tr><td class="prop">Ethnic Composition</td><td class="val">${Array.isArray(c.ethnicGroups) ? c.ethnicGroups.join(', ') : (c.ethnicGroups || 'N/A')}</td></tr>
+                <tr><td class="prop">Religious Breakdown</td><td class="val">${Array.isArray(c.religions) ? c.religions.join(', ') : (c.religions || 'N/A')}</td></tr>
+                <tr><td class="prop">Adult Literacy</td><td class="val">${c.literacyRate || 'N/A'}</td></tr>
+                <tr><td class="prop">Life Expectancy</td><td class="val">${c.lifeExpectancy || 'N/A'}</td></tr>
+                <tr><td class="prop">Human Development (HDI)</td><td class="val">${c.hdi || 'N/A'}</td></tr>
+                <tr><td class="prop">Urbanization</td><td class="val">${c.urbanization || 'N/A'}</td></tr>
+                <tr><td class="prop">Etiquette & Customs</td><td class="val">${c.socialCustoms || ''} ${c.etiquette ? `(${c.etiquette})` : ''}</td></tr>
+              </table>
+            </div>
+          `;
+        } else if (activeDrawerTab === 'economy') {
+          content = `
+            <div class="dossier-section">
+              <div class="dossier-section-header">💼 Economy, Trade & Infrastructure</div>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1rem;">${c.economy || ''}</p>
+              <table class="dossier-table">
+                <tr><td class="prop">GDP (Nominal)</td><td class="val">${c.gdpNominal || 'N/A'}</td></tr>
+                <tr><td class="prop">GDP (PPP)</td><td class="val">${c.gdpPpp || 'N/A'}</td></tr>
+                <tr><td class="prop">GDP Per Capita</td><td class="val">${c.gdpPerCapita || 'N/A'}</td></tr>
+                <tr><td class="prop">Currency</td><td class="val">${c.currency || 'N/A'}</td></tr>
+                <tr><td class="prop">Key Industries</td><td class="val">${Array.isArray(c.industries) ? c.industries.join(', ') : (c.industries || 'N/A')}</td></tr>
+                <tr><td class="prop">Primary Exports</td><td class="val">${Array.isArray(c.exports) ? c.exports.join(', ') : (c.exports || 'N/A')}</td></tr>
+                <tr><td class="prop">Primary Imports</td><td class="val">${Array.isArray(c.imports) ? c.imports.join(', ') : (c.imports || 'N/A')}</td></tr>
+                <tr><td class="prop">Trade Partners</td><td class="val">${Array.isArray(c.tradePartners) ? c.tradePartners.join(', ') : (c.tradePartners || 'N/A')}</td></tr>
+              </table>
+            </div>
+          `;
+        } else if (activeDrawerTab === 'culture') {
+          content = `
+            <div class="dossier-section">
+              <div class="dossier-section-header">🎭 Cultural Heritage & Living Arts</div>
+              <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1rem;">${c.culture || ''}</p>
+              <table class="dossier-table">
+                <tr><td class="prop">Gastronomy & Dishes</td><td class="val">${c.cuisine || 'N/A'}</td></tr>
+                <tr><td class="prop">Festivals & Celebrations</td><td class="val">${Array.isArray(c.festivals) ? c.festivals.join(', ') : (c.festivals || 'N/A')}</td></tr>
+                <tr><td class="prop">Music & Performing Arts</td><td class="val">${c.music || 'N/A'} • ${c.dance || 'N/A'}</td></tr>
+                <tr><td class="prop">Sports Culture</td><td class="val">${c.sports || 'N/A'}</td></tr>
+                <tr><td class="prop">UNESCO World Heritage</td><td class="val">${Array.isArray(c.worldHeritageSites) ? c.worldHeritageSites.join(', ') : (c.worldHeritageSites || 'None')}</td></tr>
+              </table>
+            </div>
+          `;
+        } else if (activeDrawerTab === 'symbols') {
+          content = `
+            <div class="dossier-section">
+              <div class="dossier-section-header">🏰 State Emblems & Landmarks</div>
+              <table class="dossier-table">
+                <tr><td class="prop">Iconic Landmarks</td><td class="val">${Array.isArray(c.landmarks) ? c.landmarks.join(', ') : (c.landmarks || 'N/A')}</td></tr>
+                <tr><td class="prop">Flag Symbolism</td><td class="val">${c.flagDescription || 'N/A'}</td></tr>
+                <tr><td class="prop">Coat of Arms</td><td class="val">${c.coatOfArmsDescription || 'N/A'}</td></tr>
+                <tr><td class="prop">National Emblems</td><td class="val">${c.symbols ? (typeof c.symbols === 'object' ? Object.entries(c.symbols).map(([k,v])=>`${k}: ${v}`).join('; ') : c.symbols) : 'N/A'}</td></tr>
+                <tr><td class="prop">Travel & Advisory</td><td class="val">${c.travelNotes || 'Standard travel precautions apply.'}</td></tr>
+              </table>
+            </div>
+          `;
+        } else if (activeDrawerTab === 'sources') {
+          content = `
+            <div class="dossier-section">
+              <div class="dossier-section-header">📚 Verification Metadata & Sources</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
+                Dossier certified and updated through: <strong>${c.lastUpdated || '2026-11-24'}</strong>
+              </div>
+              <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.5rem;">
+                ${(c.sources || ["CIA World Factbook", "United Nations", "World Bank", "IMF", "UNESCO"]).map(s => `
+                  <span class="cont-pill" style="font-size:0.75rem;">🔗 ${s}</span>
+                `).join('')}
+              </div>
+              <a href="https://commons.wikimedia.org/wiki/Category:${c.name.replace(/\s+/g, '_')}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:0.8rem;">
+                Explore ${c.name} Media on Wikimedia Commons ↗
+              </a>
+            </div>
+          `;
+        }
+
+        drawerBody.innerHTML = content;
+
+        const actionBtn = document.getElementById('drawerActionBtn');
+        if (actionBtn) {
+          actionBtn.addEventListener('click', () => {
+            toggleCountryRead(c.id);
+            renderDrawerTabContent();
+          });
+        }
+      }
+
+      // Confetti Animation Effect
+      function triggerConfetti() {
+        const ctx = confettiCanvas.getContext('2d');
+        confettiCanvas.width = window.innerWidth;
+        confettiCanvas.height = window.innerHeight;
+
+        const particles = [];
+        const colors = ['#00f0ff', '#10b981', '#f59e0b', '#a855f7', '#ec4899'];
+
+        for (let i = 0; i < 80; i++) {
+          particles.push({
+            x: window.innerWidth / 2,
+            y: window.innerHeight / 2,
+            vx: (Math.random() - 0.5) * 16,
+            vy: (Math.random() - 0.5) * 16 - 3,
+            size: Math.random() * 7 + 4,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            rotation: Math.random() * 360,
+            dr: (Math.random() - 0.5) * 10,
+            life: 1
+          });
+        }
+
+        function step() {
+          ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+          let alive = false;
+          particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.35; // gravity
+            p.rotation += p.dr;
+            p.life -= 0.015;
+
+            if (p.life > 0) {
+              alive = true;
+              ctx.save();
+              ctx.translate(p.x, p.y);
+              ctx.rotate((p.rotation * Math.PI) / 180);
+              ctx.fillStyle = p.color;
+              ctx.globalAlpha = p.life;
+              ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+              ctx.restore();
+            }
+          });
+
+          if (alive) {
+            requestAnimationFrame(step);
+          } else {
+            ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      // Toast Notifications with Undo
+      function showToast(message, showUndo = false) {
+        const toast = document.createElement('div');
+        toast.className = 'toast-item';
+        toast.innerHTML = `
+          <span>🌐</span>
+          <span>${message}</span>
+          ${showUndo ? `<button class="btn-undo" id="toastUndoBtn">Undo</button>` : ''}
         `;
+        toastBox.appendChild(toast);
 
-        // Toggle button inside modal
-        const modalToggleBtn = document.getElementById('modalToggleBtn');
-        modalToggleBtn.addEventListener('click', () => {
-          toggleReadStatus(c.id);
-          const updatedRead = readSet.has(c.id);
-          modalToggleBtn.className = `btn ${updatedRead ? 'btn-danger' : 'btn-accent'}`;
-          modalToggleBtn.textContent = updatedRead ? '✕ Mark as Unread' : '✓ Mark as Read';
+        if (showUndo) {
+          toast.querySelector('#toastUndoBtn').addEventListener('click', () => {
+            if (lastToggledId) {
+              readSet.delete(lastToggledId);
+              saveReadState();
+              renderView();
+              toast.remove();
+            }
+          });
+        }
+
+        setTimeout(() => {
+          toast.style.transition = 'all 0.3s ease';
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateY(15px)';
+          setTimeout(() => toast.remove(), 300);
+        }, 3500);
+      }
+
+      // Event Listeners
+      // View Mode Tabs
+      document.querySelectorAll('.mode-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentView = tab.dataset.view;
+          updateFilterCounters();
+          renderView();
         });
-
-        profileModal.classList.add('open');
-      }
-
-      function closeModal() {
-        profileModal.classList.remove('open');
-      }
-
-      modalCloseBtn.addEventListener('click', closeModal);
-      profileModal.addEventListener('click', (e) => {
-        if (e.target === profileModal) closeModal();
       });
 
+      // Layout Switcher
+      document.querySelectorAll('.layout-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentLayout = btn.dataset.layout;
+          renderView();
+        });
+      });
+
+      // Continent Pills
+      document.querySelectorAll('.cont-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          document.querySelectorAll('.cont-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          selectedContinent = pill.dataset.continent;
+          renderView();
+        });
+      });
+
+      // Search Box
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        searchClearBtn.style.display = searchQuery ? 'block' : 'none';
+        renderView();
+      });
+
+      searchClearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        searchClearBtn.style.display = 'none';
+        renderView();
+        searchInput.focus();
+      });
+
+      // Sort Select
+      sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        renderView();
+      });
+
+      // Surprise Discovery Button (R)
+      function triggerSurprise() {
+        const unread = allCountries.filter(c => !readSet.has(c.id));
+        if (unread.length === 0) {
+          showToast('🎉 All 197 countries explored!');
+          return;
+        }
+        const pick = unread[Math.floor(Math.random() * unread.length)];
+        openDossierDrawer(pick.id);
+      }
+
+      btnSurprise.addEventListener('click', triggerSurprise);
+
+      // Keyboard Shortcuts
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && profileModal.classList.contains('open')) {
-          closeModal();
+        if (e.key === 'Escape') {
+          closeDossierDrawer();
         }
         if (e.key === '/' && document.activeElement !== searchInput) {
           e.preventDefault();
           searchInput.focus();
         }
-      });
-
-      // Toast Notification
-      function showToast(msg) {
-        const toast = document.createElement('div');
-        toast.className = 'toast';
-        toast.innerHTML = `<span>ℹ️</span> <span>${msg}</span>`;
-        toastContainer.appendChild(toast);
-        setTimeout(() => {
-          toast.style.opacity = '0';
-          toast.style.transform = 'translateY(10px)';
-          setTimeout(() => toast.remove(), 250);
-        }, 2500);
-      }
-
-      // Event Listeners: View Mode Tabs
-      viewTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          viewTabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          currentView = tab.dataset.view;
-          renderCards();
-        });
-      });
-
-      // Continent Filter
-      continentPills.forEach(pill => {
-        pill.addEventListener('click', () => {
-          continentPills.forEach(p => p.classList.remove('active'));
-          pill.classList.add('active');
-          selectedContinent = pill.dataset.continent;
-          renderCards();
-        });
-      });
-
-      // Search & Sort
-      searchInput.addEventListener('input', (e) => {
-        searchQuery = e.target.value.trim();
-        renderCards();
-      });
-
-      sortSelect.addEventListener('change', (e) => {
-        currentSort = e.target.value;
-        renderCards();
-      });
-
-      // Surprise Me / Random Unread Country
-      btnSurprise.addEventListener('click', () => {
-        const unreadList = allCountries.filter(c => !readSet.has(c.id));
-        if (unreadList.length === 0) {
-          showToast('🎉 All 197 countries have been marked as read!');
-          return;
+        if ((e.key === 'r' || e.key === 'R') && document.activeElement !== searchInput && !dossierDrawer.classList.contains('open')) {
+          e.preventDefault();
+          triggerSurprise();
         }
-        const randomIndex = Math.floor(Math.random() * unreadList.length);
-        const randomCountry = unreadList[randomIndex];
-        openProfileModal(randomCountry.id);
       });
 
-      // Mark All Visible as Read
+      // Mark Visible as Read
       btnMarkAllVisible.addEventListener('click', () => {
-        const visible = getFilteredCountries();
+        const visible = getVisibleCountries();
         if (visible.length === 0) return;
-        if (confirm(`Mark all ${visible.length} visible countries as read?`)) {
+        if (confirm(`Mark all ${visible.length} currently visible countries as explored?`)) {
           visible.forEach(c => readSet.add(c.id));
           saveReadState();
-          showToast(`Marked ${visible.length} countries as read!`);
-          renderCards();
+          showToast(`Marked ${visible.length} nations as explored!`);
+          renderView();
         }
       });
 
-      // Reset Progress
+      // Reset
       btnReset.addEventListener('click', () => {
-        if (confirm('Are you sure you want to reset all reading progress? This cannot be undone unless you have an exported backup.')) {
+        if (confirm('Reset all reading progress? This action will clear all local tracking data.')) {
           readSet.clear();
           saveReadState();
-          showToast('All progress has been reset.');
-          renderCards();
+          showToast('Progress has been reset.');
+          renderView();
         }
       });
 
-      // Export Progress JSON
+      // Export
       btnExport.addEventListener('click', () => {
         const data = {
           exportDate: new Date().toISOString(),
-          version: 'worldCountersAtlas_read_v1',
+          app: 'worldCountersAtlas_read_v1',
           readCount: readSet.size,
           total: allCountries.length,
           readIds: Array.from(readSet)
@@ -1515,52 +2124,41 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `world-atlas-progress-${new Date().toISOString().slice(0,10)}.json`;
+        a.download = `atlas-progress-${new Date().toISOString().slice(0, 10)}.json`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-        showToast('Progress exported successfully!');
+        showToast('Exploration progress exported!');
       });
 
-      // Import Progress JSON
-      btnImport.addEventListener('click', () => {
-        importFileInput.click();
-      });
-
-      importFileInput.addEventListener('change', (e) => {
+      // Import
+      btnImport.addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
         if (!file) return;
         const reader = new FileReader();
-        reader.onload = (event) => {
+        reader.onload = (evt) => {
           try {
-            const parsed = JSON.parse(event.target.result);
-            const ids = parsed.readIds || parsed;
+            const data = JSON.parse(evt.target.result);
+            const ids = data.readIds || data;
             if (Array.isArray(ids)) {
               readSet = new Set(ids);
               saveReadState();
-              showToast(`Imported ${readSet.size} read countries successfully!`);
-              renderCards();
+              showToast(`Imported ${readSet.size} explored countries!`);
+              renderView();
             } else {
-              alert('Invalid backup file format.');
+              alert('Invalid backup format.');
             }
           } catch (err) {
-            alert('Failed to parse JSON file.');
+            alert('Failed to parse backup JSON.');
           }
         };
         reader.readAsText(file);
       });
 
-      // Render full app
-      function renderApp() {
-        loadReadState();
-        updateProgress();
-        updateTabCounts();
-        renderCards();
-      }
-
-      // Initial kickoff
-      loadDataset();
+      // Initialize
+      initApp();
     })();
   </script>
 </body>
