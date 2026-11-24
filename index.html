@@ -3,70 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The World Countries Atlas 197 — Elite Interactive Cartography</title>
-  <meta name="description" content="Next-generation interactive explorer, stateful reader, and global encyclopedia for all 197 canonical sovereign countries and recognized entities.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22><text y=%2226%22 font-size=%2226%22>🌐</text></svg>">
+  <title>The World Countries Atlas 197 — Modern Cartography & Sovereign Directory</title>
+  <meta name="description" content="Next-generation production-grade global atlas and stateful sovereign country tracker covering all 197 canonical entities.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2300f0ff%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/><path d=%22M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20%22/><path d=%22M2 12h20%22/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
+    /* Design Tokens */
     :root {
-      --bg: #06080f;
-      --bg-subtle: #0a0e1a;
-      --surface: #0f1629;
-      --surface-hover: #16203b;
-      --surface-card: rgba(15, 22, 41, 0.75);
-      --surface-card-hover: rgba(22, 32, 59, 0.95);
-      --surface-elevated: #1a2542;
+      --bg: #090a0f;
+      --bg-subtle: #10121a;
+      --surface: #141724;
+      --surface-elevated: #1b2032;
+      --surface-hover: #222940;
+      --surface-card: rgba(18, 21, 33, 0.72);
+      --surface-card-hover: rgba(26, 31, 50, 0.95);
       --border: rgba(255, 255, 255, 0.08);
       --border-subtle: rgba(255, 255, 255, 0.04);
-      --border-accent: rgba(0, 240, 255, 0.4);
+      --border-hover: rgba(255, 255, 255, 0.2);
+      --border-accent: rgba(34, 211, 238, 0.35);
       --text: #f8fafc;
       --text-secondary: #94a3b8;
       --text-muted: #64748b;
-      --primary: #00f0ff;
-      --primary-glow: rgba(0, 240, 255, 0.25);
+      --primary: #22d3ee;
+      --primary-glow: rgba(34, 211, 238, 0.2);
       --accent: #10b981;
-      --accent-glow: rgba(16, 185, 129, 0.25);
-      --amber: #f59e0b;
-      --purple: #a855f7;
+      --accent-glow: rgba(16, 185, 129, 0.2);
+      --warning: #f59e0b;
       --danger: #ef4444;
+      --indigo: #818cf8;
       --radius-xs: 4px;
       --radius-sm: 8px;
       --radius: 14px;
       --radius-lg: 20px;
       --radius-full: 9999px;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-      --shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      --shadow-glow: 0 0 35px var(--primary-glow);
-      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-display: 'Space Grotesk', var(--font-sans);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+      --shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      --shadow-glow: 0 0 30px var(--primary-glow);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --font-display: 'Plus Jakarta Sans', var(--font-sans);
       --font-mono: 'JetBrains Mono', monospace;
-      --transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     [data-theme="light"] {
       --bg: #f8fafc;
       --bg-subtle: #f1f5f9;
       --surface: #ffffff;
-      --surface-hover: #f1f5f9;
-      --surface-card: rgba(255, 255, 255, 0.9);
-      --surface-card-hover: #ffffff;
       --surface-elevated: #ffffff;
+      --surface-hover: #f1f5f9;
+      --surface-card: rgba(255, 255, 255, 0.95);
+      --surface-card-hover: #ffffff;
       --border: #e2e8f0;
       --border-subtle: #f1f5f9;
-      --border-accent: rgba(2, 132, 199, 0.4);
+      --border-hover: #cbd5e1;
+      --border-accent: rgba(2, 132, 199, 0.35);
       --text: #0f172a;
       --text-secondary: #475569;
       --text-muted: #94a3b8;
       --primary: #0284c7;
-      --primary-glow: rgba(2, 132, 199, 0.18);
+      --primary-glow: rgba(2, 132, 199, 0.14);
       --accent: #059669;
-      --accent-glow: rgba(5, 150, 105, 0.15);
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-      --shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.08);
-      --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.12);
+      --accent-glow: rgba(5, 150, 105, 0.12);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.08);
+      --shadow-glow: 0 0 20px rgba(2, 132, 199, 0.1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -80,132 +83,157 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 15% 10%, rgba(0, 240, 255, 0.04) 0%, transparent 40%),
-        radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.04) 0%, transparent 45%),
-        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.05) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.04) 0%, transparent 50%),
+        radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 28px 28px;
       background-attachment: fixed;
     }
-
-    /* Container */
-    .app-wrap {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: 1.5rem 1.25rem 5rem 1.25rem;
+    [data-theme="light"] body {
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.04) 0%, transparent 60%),
+        radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 28px 28px;
     }
 
-    /* Sticky Navigation HUD */
-    .top-hud {
+    /* SVG Icon Helpers */
+    .icon {
+      width: 1.15em;
+      height: 1.15em;
+      display: inline-block;
+      vertical-align: -0.2em;
+      stroke-width: 1.8;
+      stroke: currentColor;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+    .icon-sm { width: 0.95em; height: 0.95em; vertical-align: -0.15em; }
+    .icon-lg { width: 1.5em; height: 1.5em; vertical-align: -0.25em; }
+
+    /* App Container */
+    .app-viewport {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 5rem 1.25rem;
+    }
+
+    /* Top Command Header */
+    .site-header {
       position: sticky;
       top: 1rem;
       z-index: 100;
-      background: rgba(11, 17, 33, 0.85);
+      background: rgba(14, 18, 28, 0.82);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 0.85rem 1.5rem;
+      padding: 0.85rem 1.4rem;
       margin-bottom: 2rem;
       box-shadow: var(--shadow);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1.25rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
-    [data-theme="light"] .top-hud {
-      background: rgba(255, 255, 255, 0.88);
+    [data-theme="light"] .site-header {
+      background: rgba(255, 255, 255, 0.9);
     }
 
-    .brand-section {
+    .brand-group {
       display: flex;
       align-items: center;
-      gap: 0.9rem;
+      gap: 0.85rem;
     }
-    .brand-logo {
-      width: 44px;
-      height: 44px;
+    .brand-badge {
+      width: 42px;
+      height: 42px;
       border-radius: var(--radius-sm);
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(168, 85, 247, 0.15));
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(129, 140, 248, 0.15));
       border: 1px solid var(--border-accent);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      color: var(--primary);
       box-shadow: 0 0 15px var(--primary-glow);
     }
-    .brand-text h1 {
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-heading {
       font-family: var(--font-display);
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      background: linear-gradient(90deg, #f8fafc 30%, #00f0ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--text);
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      line-height: 1.2;
     }
-    [data-theme="light"] .brand-text h1 {
-      background: linear-gradient(90deg, #0f172a 30%, #0284c7 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .pill-scope {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.12rem 0.5rem;
+      border-radius: var(--radius-full);
+      background: rgba(34, 211, 238, 0.12);
+      color: var(--primary);
+      border: 1px solid var(--border-accent);
     }
-    .brand-subtitle {
-      font-size: 0.75rem;
+    .brand-caption {
+      font-size: 0.74rem;
       color: var(--text-secondary);
       font-weight: 500;
     }
 
-    /* Radial Progress Widget in HUD */
-    .hud-metrics {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .radial-widget {
+    /* Live Progress Ring & Metronome in Header */
+    .header-tracker {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       background: rgba(0, 0, 0, 0.25);
-      padding: 0.35rem 0.85rem 0.35rem 0.45rem;
+      padding: 0.35rem 0.9rem 0.35rem 0.45rem;
       border-radius: var(--radius-full);
       border: 1px solid var(--border);
     }
-    [data-theme="light"] .radial-widget {
+    [data-theme="light"] .header-tracker {
       background: rgba(241, 245, 249, 0.8);
     }
-    .radial-svg {
-      width: 38px;
-      height: 38px;
+    .gauge-svg {
+      width: 36px;
+      height: 36px;
       transform: rotate(-90deg);
     }
-    .radial-bg {
+    .gauge-track {
       fill: none;
       stroke: var(--surface-elevated);
       stroke-width: 3.5;
     }
-    .radial-fill {
+    .gauge-fill {
       fill: none;
       stroke: var(--primary);
       stroke-width: 3.5;
       stroke-linecap: round;
       stroke-dasharray: 100;
       stroke-dashoffset: 100;
-      transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: stroke-dashoffset 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .radial-info {
+    .gauge-data {
       display: flex;
       flex-direction: column;
     }
-    .radial-pct {
-      font-family: var(--font-display);
+    .gauge-percent {
+      font-family: var(--font-mono);
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       line-height: 1.1;
       color: var(--primary);
     }
-    .radial-sub {
+    .gauge-label {
       font-size: 0.68rem;
       color: var(--text-muted);
       font-weight: 600;
@@ -213,19 +241,20 @@
       letter-spacing: 0.04em;
     }
 
-    /* HUD Actions */
-    .hud-actions {
+    /* Header Actions */
+    .header-actions {
       display: flex;
       align-items: center;
       gap: 0.45rem;
       flex-wrap: wrap;
     }
 
+    /* Standard Button Component */
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      padding: 0.48rem 0.95rem;
+      padding: 0.5rem 0.95rem;
       font-size: 0.82rem;
       font-weight: 600;
       border-radius: var(--radius-sm);
@@ -236,42 +265,40 @@
       color: var(--text);
       user-select: none;
       text-decoration: none;
+      line-height: 1;
     }
     .btn:hover {
       background: var(--surface-hover);
-      border-color: rgba(255, 255, 255, 0.18);
+      border-color: var(--border-hover);
       transform: translateY(-1px);
     }
     .btn:active {
       transform: translateY(0);
     }
     .btn-primary {
-      background: linear-gradient(135deg, #00f0ff, #0284c7);
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
       border: none;
-      color: #06080f;
+      color: #ffffff;
       font-weight: 700;
       box-shadow: 0 4px 14px var(--primary-glow);
     }
     .btn-primary:hover {
-      background: linear-gradient(135deg, #38bdf8, #00f0ff);
-      box-shadow: 0 6px 20px rgba(0, 240, 255, 0.4);
-      color: #04060b;
+      filter: brightness(1.1);
+      box-shadow: 0 6px 20px rgba(34, 211, 238, 0.35);
     }
     .btn-accent {
       background: var(--accent);
-      border-color: var(--accent);
+      border: none;
       color: #ffffff;
       box-shadow: 0 4px 12px var(--accent-glow);
     }
-    .btn-accent:hover {
-      filter: brightness(1.1);
-    }
-    .btn-outline {
+    .btn-accent:hover { filter: brightness(1.1); }
+    .btn-subtle {
       background: transparent;
-      border: 1px solid var(--border);
+      border-color: var(--border);
       color: var(--text-secondary);
     }
-    .btn-outline:hover {
+    .btn-subtle:hover {
       color: var(--text);
       border-color: var(--text);
     }
@@ -284,73 +311,83 @@
       background: rgba(239, 68, 68, 0.16);
       border-color: var(--danger);
     }
-    .kbd-tag {
+    .kbd-chip {
       font-family: var(--font-mono);
       font-size: 0.65rem;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.28);
       border: 1px solid var(--border);
-      padding: 0.15rem 0.35rem;
+      padding: 0.12rem 0.35rem;
       border-radius: var(--radius-xs);
       color: var(--text-muted);
     }
 
-    /* Global Dashboard Cards Row */
-    .dashboard-grid {
+    /* Metric Cards Grid */
+    .metric-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1rem;
       margin-bottom: 2rem;
     }
-    .stat-card {
+    .metric-card {
       background: var(--surface-card);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1.15rem 1.25rem;
+      padding: 1.25rem;
       display: flex;
       flex-direction: column;
       position: relative;
       overflow: hidden;
       transition: var(--transition);
     }
-    .stat-card:hover {
-      border-color: rgba(255, 255, 255, 0.18);
+    .metric-card:hover {
+      border-color: var(--border-hover);
       transform: translateY(-2px);
+      box-shadow: var(--shadow);
     }
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--card-color, var(--primary)), transparent);
+    .metric-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
     }
-    .stat-title {
+    .metric-title {
       font-size: 0.75rem;
       color: var(--text-secondary);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 0.4rem;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.45rem;
     }
-    .stat-num {
+    .metric-icon-box {
+      width: 30px;
+      height: 30px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--metric-color, var(--primary));
+    }
+    .metric-value {
       font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 700;
+      font-size: 1.7rem;
+      font-weight: 800;
       color: var(--text);
       line-height: 1.15;
     }
-    .stat-desc {
-      font-size: 0.72rem;
+    .metric-sub {
+      font-size: 0.74rem;
       color: var(--text-muted);
-      margin-top: 0.35rem;
+      margin-top: 0.4rem;
     }
 
-    /* Command Control Center */
-    .control-center {
+    /* Command & Control Bar */
+    .command-bar {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
@@ -358,11 +395,11 @@
       margin-bottom: 1.75rem;
       display: flex;
       flex-direction: column;
-      gap: 1.1rem;
+      gap: 1.15rem;
       box-shadow: var(--shadow-sm);
     }
 
-    .control-row-1 {
+    .bar-row-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -370,15 +407,15 @@
       gap: 1rem;
     }
 
-    /* View Mode Tabs */
-    .mode-tabs {
+    /* Segmented Queue Tabs */
+    .segmented-control {
       display: inline-flex;
       background: var(--bg-subtle);
       border: 1px solid var(--border);
       padding: 0.25rem;
       border-radius: var(--radius);
     }
-    .mode-tab {
+    .segment-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
@@ -392,93 +429,91 @@
       cursor: pointer;
       transition: var(--transition);
     }
-    .mode-tab:hover {
-      color: var(--text);
-    }
-    .mode-tab.active {
+    .segment-btn:hover { color: var(--text); }
+    .segment-btn.active {
       background: var(--surface-elevated);
       color: var(--primary);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      box-shadow: var(--shadow-sm);
     }
-    .tab-badge {
+    .segment-count {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
-      padding: 0.1rem 0.4rem;
+      font-size: 0.7rem;
+      padding: 0.1rem 0.42rem;
       border-radius: var(--radius-full);
       background: rgba(255, 255, 255, 0.08);
       color: var(--text);
     }
-    .mode-tab.active .tab-badge {
+    .segment-btn.active .segment-count {
       background: var(--primary-glow);
       color: var(--primary);
     }
 
-    /* Layout Toggle: Grid / Table / Bento */
-    .layout-switcher {
+    /* View Mode: Grid / Table */
+    .view-toggles {
       display: inline-flex;
       background: var(--bg-subtle);
       border: 1px solid var(--border);
       padding: 0.25rem;
       border-radius: var(--radius);
     }
-    .layout-btn {
+    .view-btn {
       padding: 0.45rem 0.75rem;
       border-radius: var(--radius-sm);
       background: transparent;
       border: none;
       color: var(--text-secondary);
       cursor: pointer;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       display: flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.4rem;
       transition: var(--transition);
     }
-    .layout-btn:hover { color: var(--text); }
-    .layout-btn.active {
+    .view-btn:hover { color: var(--text); }
+    .view-btn.active {
       background: var(--surface-elevated);
       color: var(--text);
       box-shadow: var(--shadow-sm);
     }
 
-    /* Search & Filter Row */
-    .control-row-2 {
+    /* Filter & Search Bar */
+    .bar-row-filters {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       align-items: center;
       justify-content: space-between;
     }
-    .search-wrap {
+    .search-container {
       flex: 1;
-      min-width: 280px;
+      min-width: 290px;
       position: relative;
     }
-    .search-box-input {
+    .search-input-field {
       width: 100%;
       background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 0.6rem 2.5rem 0.6rem 2.4rem;
+      padding: 0.62rem 2.6rem 0.62rem 2.5rem;
       color: var(--text);
       font-size: 0.88rem;
+      font-family: var(--font-sans);
       transition: var(--transition);
     }
-    .search-box-input:focus {
+    .search-input-field:focus {
       outline: none;
       border-color: var(--primary);
       box-shadow: 0 0 0 3px var(--primary-glow);
     }
-    .search-icon-left {
+    .search-icon-pos {
       position: absolute;
       left: 0.85rem;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
       pointer-events: none;
-      font-size: 0.85rem;
     }
-    .search-clear-btn {
+    .search-clear-trigger {
       position: absolute;
       right: 0.85rem;
       top: 50%;
@@ -487,33 +522,33 @@
       border: none;
       color: var(--text-muted);
       cursor: pointer;
-      font-size: 0.9rem;
       display: none;
     }
-    .search-clear-btn:hover { color: var(--text); }
+    .search-clear-trigger:hover { color: var(--text); }
 
-    .select-dropdown {
+    .select-picker {
       background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 0.6rem 1rem;
+      padding: 0.62rem 1rem;
       color: var(--text);
       font-size: 0.82rem;
       font-weight: 500;
+      font-family: var(--font-sans);
       cursor: pointer;
     }
-    .select-dropdown:focus {
+    .select-picker:focus {
       outline: none;
       border-color: var(--primary);
     }
 
-    /* Continent Filter Pills */
-    .continent-pills-row {
+    /* Continental Filter Chips */
+    .continent-chips-tray {
       display: flex;
-      gap: 0.4rem;
+      gap: 0.45rem;
       flex-wrap: wrap;
     }
-    .cont-pill {
+    .chip {
       font-size: 0.78rem;
       font-weight: 600;
       padding: 0.35rem 0.85rem;
@@ -525,32 +560,31 @@
       transition: var(--transition);
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.45rem;
     }
-    .cont-pill:hover {
-      border-color: rgba(255, 255, 255, 0.2);
+    .chip:hover {
+      border-color: var(--border-hover);
       color: var(--text);
     }
-    .cont-pill.active {
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(59, 130, 246, 0.2));
+    .chip.active {
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.14), rgba(59, 130, 246, 0.18));
       border-color: var(--primary);
       color: var(--text);
       box-shadow: 0 0 12px var(--primary-glow);
     }
-    .pill-counter {
+    .chip-count {
       font-family: var(--font-mono);
       font-size: 0.68rem;
-      background: rgba(0, 0, 0, 0.25);
-      padding: 0.1rem 0.35rem;
+      background: rgba(0, 0, 0, 0.28);
+      padding: 0.1rem 0.38rem;
       border-radius: var(--radius-full);
     }
 
-    /* Country Grid Layout */
-    .countries-container {
-      margin-top: 1rem;
-      min-height: 400px;
+    /* Country Container */
+    .atlas-stage {
+      min-height: 420px;
     }
-    .grid-view-layout {
+    .atlas-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.35rem;
@@ -571,43 +605,39 @@
     }
     .country-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px rgba(0, 240, 255, 0.12);
-      border-color: rgba(0, 240, 255, 0.3);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 24px rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.35);
     }
-    .country-card.is-read {
-      opacity: 0.8;
+    .country-card.is-explored {
+      opacity: 0.82;
       border-left: 4px solid var(--accent);
     }
-    .country-card.animating-out {
-      transform: scale(0.85) translateY(15px);
+    .country-card.dismissing {
+      transform: scale(0.85) translateY(16px);
       opacity: 0;
       pointer-events: none;
     }
 
-    /* Card Flag Cover Banner */
+    /* Flag Banner */
     .card-banner {
       height: 165px;
       position: relative;
-      background: #080c18;
+      background: #060913;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .card-flag-img {
+    .card-banner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.4s ease;
     }
-    .country-card:hover .card-flag-img {
-      transform: scale(1.06);
+    .country-card:hover .card-banner img {
+      transform: scale(1.05);
     }
-    .card-flag-emoji-fallback {
-      font-size: 5rem;
-      user-select: none;
-    }
-    .card-badges-top {
+    .card-overlay-pills {
       position: absolute;
       top: 0.75rem;
       inset-inline: 0.75rem;
@@ -616,7 +646,7 @@
       align-items: center;
       pointer-events: none;
     }
-    .card-tag {
+    .badge-status {
       font-size: 0.68rem;
       font-weight: 700;
       padding: 0.25rem 0.55rem;
@@ -625,56 +655,58 @@
       -webkit-backdrop-filter: blur(8px);
       letter-spacing: 0.03em;
       pointer-events: auto;
-    }
-    .tag-status-unread {
-      background: rgba(11, 17, 33, 0.85);
-      border: 1px solid rgba(0, 240, 255, 0.4);
-      color: var(--primary);
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.35rem;
     }
-    .tag-status-unread::before {
-      content: '';
+    .badge-status.unread {
+      background: rgba(14, 18, 28, 0.88);
+      border: 1px solid rgba(34, 211, 238, 0.4);
+      color: var(--primary);
+    }
+    .dot-pulse {
       width: 6px;
       height: 6px;
       border-radius: 50%;
       background: var(--primary);
       box-shadow: 0 0 8px var(--primary);
     }
-    .tag-status-read {
+    .badge-status.read {
       background: rgba(16, 185, 129, 0.9);
       color: #ffffff;
-      font-weight: 700;
     }
-    .card-cont-badge {
-      background: rgba(11, 17, 33, 0.85);
+    .badge-continent {
+      background: rgba(14, 18, 28, 0.88);
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: #e2e8f0;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-full);
     }
 
-    /* Card Info Body */
-    .card-body {
+    /* Card Core Info */
+    .card-interior {
       padding: 1.15rem;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
-    .card-header-row {
+    .card-title-line {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 0.5rem;
       margin-bottom: 0.2rem;
     }
-    .card-title {
+    .card-name {
       font-family: var(--font-display);
       font-size: 1.18rem;
       font-weight: 700;
       color: var(--text);
       line-height: 1.3;
     }
-    .card-iso {
+    .card-iso-tag {
       font-family: var(--font-mono);
       font-size: 0.72rem;
       font-weight: 700;
@@ -684,7 +716,7 @@
       color: var(--primary);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .card-official {
+    .card-subline {
       font-size: 0.76rem;
       color: var(--text-muted);
       margin-bottom: 0.85rem;
@@ -695,26 +727,26 @@
       overflow: hidden;
     }
 
-    /* Card Micro Stats Grid */
-    .card-micro-stats {
+    /* Micro Data Grid with SVGs */
+    .card-datapoints {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.45rem;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.22);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       padding: 0.65rem 0.8rem;
       margin-bottom: 1rem;
       font-size: 0.78rem;
     }
-    [data-theme="light"] .card-micro-stats {
+    [data-theme="light"] .card-datapoints {
       background: rgba(241, 245, 249, 0.7);
     }
-    .micro-item {
+    .data-item {
       display: flex;
       flex-direction: column;
     }
-    .micro-label {
+    .data-key {
       font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -722,49 +754,53 @@
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 0.25rem;
+      gap: 0.35rem;
     }
-    .micro-val {
+    .data-key svg {
+      color: var(--primary);
+      opacity: 0.85;
+    }
+    .data-val {
       font-weight: 600;
       color: var(--text);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-top: 0.1rem;
+      margin-top: 0.12rem;
     }
 
-    /* Card Actions Footer */
-    .card-footer {
+    /* Card Action Footer */
+    .card-bottom-actions {
       display: flex;
       gap: 0.5rem;
       margin-top: auto;
     }
-    .btn-card-toggle {
+    .btn-toggle-explored {
       flex: 1;
       justify-content: center;
       font-size: 0.8rem;
       padding: 0.5rem;
     }
-    .btn-card-details {
+    .btn-open-dossier {
       padding: 0.5rem 0.8rem;
       font-size: 0.8rem;
     }
 
-    /* Dense Table Layout Mode */
-    .table-view-layout {
+    /* Dense Table Layout */
+    .dense-table-tray {
       width: 100%;
       overflow-x: auto;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
     }
-    .data-table {
+    .matrix-table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.84rem;
       text-align: left;
     }
-    .data-table th {
+    .matrix-table th {
       background: rgba(0, 0, 0, 0.25);
       padding: 0.85rem 1rem;
       font-weight: 700;
@@ -772,36 +808,20 @@
       border-bottom: 1px solid var(--border);
       font-family: var(--font-display);
     }
-    .data-table td {
+    .matrix-table td {
       padding: 0.8rem 1rem;
       border-bottom: 1px solid var(--border-subtle);
       color: var(--text);
     }
-    .data-table tr:hover {
-      background: var(--surface-hover);
-    }
-
-    /* Empty States */
-    .empty-state {
-      text-align: center;
-      padding: 4.5rem 1.5rem;
-      background: var(--surface);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius-lg);
-      max-width: 600px;
-      margin: 2rem auto;
-    }
-    .empty-icon { font-size: 3.5rem; margin-bottom: 1rem; }
-    .empty-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .empty-desc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.5; }
+    .matrix-table tr:hover { background: var(--surface-hover); }
 
     /* Slide-Over Dossier Drawer */
     .drawer-overlay {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       z-index: 1000;
       opacity: 0;
       pointer-events: none;
@@ -813,24 +833,24 @@
       opacity: 1;
       pointer-events: auto;
     }
-    .drawer-panel {
+    .drawer-stage {
       width: 100%;
       max-width: 880px;
       height: 100%;
       background: var(--surface);
       border-left: 1px solid var(--border);
-      box-shadow: -15px 0 50px rgba(0, 0, 0, 0.6);
+      box-shadow: -15px 0 50px rgba(0, 0, 0, 0.65);
       display: flex;
       flex-direction: column;
       transform: translateX(100%);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       overflow: hidden;
     }
-    .drawer-overlay.open .drawer-panel {
+    .drawer-overlay.open .drawer-stage {
       transform: translateX(0);
     }
 
-    .drawer-header {
+    .drawer-top-banner {
       padding: 1.25rem 1.75rem;
       background: var(--surface-elevated);
       border-bottom: 1px solid var(--border);
@@ -841,56 +861,59 @@
       top: 0;
       z-index: 20;
     }
-    .drawer-title-group {
+    .drawer-country-lead {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
-    .drawer-flag-icon {
-      font-size: 2.2rem;
+    .drawer-flag-thumb {
+      width: 44px;
+      height: 30px;
+      border-radius: var(--radius-xs);
+      object-fit: cover;
+      box-shadow: var(--shadow-sm);
     }
-    .drawer-title {
+    .drawer-heading {
       font-family: var(--font-display);
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
       line-height: 1.2;
     }
-    .drawer-subtitle {
-      font-size: 0.82rem;
+    .drawer-subheading {
+      font-size: 0.8rem;
       color: var(--text-secondary);
     }
-    .drawer-close {
+    .drawer-close-btn {
       width: 38px;
       height: 38px;
       border-radius: 50%;
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text-secondary);
-      font-size: 1.2rem;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: var(--transition);
     }
-    .drawer-close:hover {
+    .drawer-close-btn:hover {
       background: var(--surface-hover);
       color: var(--text);
       transform: rotate(90deg);
     }
 
-    /* Tabbed Navigation inside Drawer */
-    .drawer-tabs-bar {
+    /* Tabbed Navigation Bar */
+    .drawer-tab-row {
       display: flex;
       background: var(--bg-subtle);
       border-bottom: 1px solid var(--border);
       overflow-x: auto;
       padding: 0.5rem 1rem;
-      gap: 0.4rem;
+      gap: 0.35rem;
     }
-    .drawer-tab {
+    .dtab {
       padding: 0.45rem 0.85rem;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
       color: var(--text-secondary);
       border: 1px solid transparent;
@@ -899,18 +922,19 @@
       cursor: pointer;
       white-space: nowrap;
       transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
     }
-    .drawer-tab:hover {
-      color: var(--text);
-    }
-    .drawer-tab.active {
+    .dtab:hover { color: var(--text); }
+    .dtab.active {
       background: var(--surface);
       color: var(--primary);
       border-color: var(--border);
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
-    .drawer-body {
+    .drawer-scroll-body {
       padding: 1.75rem;
       overflow-y: auto;
       flex: 1;
@@ -919,31 +943,30 @@
       gap: 1.5rem;
     }
 
-    /* Visual Media Gallery in Drawer */
-    .dossier-visuals {
+    /* Visual Media Gallery */
+    .dossier-media-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
-      margin-bottom: 0.5rem;
     }
-    .dossier-media-card {
+    .media-card {
       background: #000;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
-      height: 180px;
+      height: 175px;
       position: relative;
     }
-    .dossier-media-card img {
+    .media-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .dossier-media-tag {
+    .media-caption {
       position: absolute;
       bottom: 0;
       inset-inline: 0;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.82);
       font-size: 0.72rem;
       padding: 0.35rem 0.65rem;
       color: #e2e8f0;
@@ -951,14 +974,14 @@
       font-weight: 600;
     }
 
-    /* Section Cards inside Drawer */
-    .dossier-section {
+    /* Structured Section Cards */
+    .dossier-card {
       background: var(--surface-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.35rem;
     }
-    .dossier-section-header {
+    .dossier-header-title {
       font-family: var(--font-display);
       font-size: 1.05rem;
       font-weight: 700;
@@ -970,29 +993,29 @@
       border-bottom: 1px solid var(--border);
       padding-bottom: 0.5rem;
     }
-    .dossier-table {
+    .dossier-matrix {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.85rem;
     }
-    .dossier-table tr {
+    .dossier-matrix tr {
       border-bottom: 1px solid var(--border-subtle);
     }
-    .dossier-table td {
+    .dossier-matrix td {
       padding: 0.5rem 0.6rem;
       vertical-align: top;
     }
-    .dossier-table td.prop {
+    .dossier-matrix td.spec-key {
       width: 35%;
       color: var(--text-secondary);
       font-weight: 600;
     }
-    .dossier-table td.val {
+    .dossier-matrix td.spec-val {
       color: var(--text);
     }
 
-    /* Floating Toast Notification */
-    .toast-box {
+    /* Toast Notifications */
+    .toast-tray {
       position: fixed;
       bottom: 1.5rem;
       right: 1.5rem;
@@ -1002,7 +1025,7 @@
       gap: 0.5rem;
       pointer-events: none;
     }
-    .toast-item {
+    .toast-pill {
       background: var(--surface-elevated);
       border: 1px solid var(--border);
       color: var(--text);
@@ -1015,13 +1038,13 @@
       font-size: 0.85rem;
       font-weight: 600;
       pointer-events: auto;
-      animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: toastSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    @keyframes toastIn {
+    @keyframes toastSlide {
       from { transform: translateY(20px) scale(0.95); opacity: 0; }
       to { transform: translateY(0) scale(1); opacity: 1; }
     }
-    .btn-undo {
+    .btn-undo-pill {
       background: transparent;
       border: 1px solid var(--primary);
       color: var(--primary);
@@ -1033,7 +1056,7 @@
       margin-left: 0.5rem;
     }
 
-    /* Canvas Confetti */
+    /* Confetti Canvas */
     #confettiCanvas {
       position: fixed;
       inset: 0;
@@ -1041,134 +1064,337 @@
       z-index: 9999;
     }
 
-    /* Responsive adjustments */
+    /* Responsive */
     @media (max-width: 768px) {
-      .app-wrap { padding: 1rem 0.75rem 4rem 0.75rem; }
-      .top-hud { padding: 1rem; border-radius: var(--radius); }
-      .brand-text h1 { font-size: 1.15rem; }
-      .control-row-1, .control-row-2 { flex-direction: column; align-items: stretch; }
-      .grid-view-layout { grid-template-columns: 1fr; }
-      .drawer-panel { max-width: 100%; }
+      .app-viewport { padding: 1rem 0.75rem 4rem 0.75rem; }
+      .site-header { padding: 1rem; border-radius: var(--radius); }
+      .brand-heading { font-size: 1.15rem; }
+      .bar-row-top, .bar-row-filters { flex-direction: column; align-items: stretch; }
+      .atlas-grid { grid-template-columns: 1fr; }
+      .drawer-stage { max-width: 100%; }
     }
   </style>
 </head>
 <body>
   <canvas id="confettiCanvas"></canvas>
 
-  <div class="app-wrap">
-    <!-- Top HUD Bar -->
-    <header class="top-hud">
-      <div class="brand-section">
-        <div class="brand-logo">🌐</div>
-        <div class="brand-text">
-          <h1>The World Countries Atlas 197</h1>
-          <div class="brand-subtitle">Planetary Sovereignty & Exploratory Reading Tracker</div>
-        </div>
-      </div>
+  <!-- SVG Sprite Library (Bespoke Classical Icons) -->
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Globe / Wireframe Sphere -->
+      <g id="icon-globe">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+        <path d="M2 12h20"/>
+      </g>
+      <!-- Search -->
+      <g id="icon-search">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.3-4.3"/>
+      </g>
+      <!-- Shuffle / Dice / Surprise -->
+      <g id="icon-sparkles">
+        <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>
+        <path d="M18 3v4"/>
+        <path d="M20 5h-4"/>
+      </g>
+      <!-- Download / Export -->
+      <g id="icon-download">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" x2="12" y1="15" y2="3"/>
+      </g>
+      <!-- Upload / Import -->
+      <g id="icon-upload">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="17 8 12 3 7 8"/>
+        <line x1="12" x2="12" y1="3" y2="15"/>
+      </g>
+      <!-- Reset / Refresh -->
+      <g id="icon-rotate">
+        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+        <path d="M3 3v5h5"/>
+      </g>
+      <!-- GitHub Octocat -->
+      <g id="icon-github">
+        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+        <path d="M9 18c-4.51 2-5-2-7-2"/>
+      </g>
+      <!-- Theme Sun -->
+      <g id="icon-sun">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2"/>
+        <path d="M12 20v2"/>
+        <path d="m4.93 4.93 1.41 1.41"/>
+        <path d="m17.66 17.66 1.41 1.41"/>
+        <path d="M2 12h2"/>
+        <path d="M20 12h2"/>
+        <path d="m6.34 17.66-1.41 1.41"/>
+        <path d="m19.07 4.93-1.41 1.41"/>
+      </g>
+      <!-- Theme Moon -->
+      <g id="icon-moon">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+      </g>
+      <!-- Check Circle -->
+      <g id="icon-check-circle">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+        <polyline points="22 4 12 14.01 9 11.01"/>
+      </g>
+      <!-- Book / Reader -->
+      <g id="icon-book-open">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+      </g>
+      <!-- Grid View -->
+      <g id="icon-grid">
+        <rect width="7" height="7" x="3" y="3" rx="1"/>
+        <rect width="7" height="7" x="14" y="3" rx="1"/>
+        <rect width="7" height="7" x="14" y="14" rx="1"/>
+        <rect width="7" height="7" x="3" y="14" rx="1"/>
+      </g>
+      <!-- Table Matrix View -->
+      <g id="icon-table">
+        <path d="M12 3v18"/>
+        <rect width="18" height="18" x="3" y="3" rx="2"/>
+        <path d="M3 9h18"/>
+        <path d="M3 15h18"/>
+      </g>
+      <!-- Micro-data icons -->
+      <g id="icon-landmark">
+        <line x1="2" x2="22" y1="2" y2="2"/>
+        <line x1="2" x2="22" y1="22" y2="22"/>
+        <line x1="4" x2="4" y1="6" y2="18"/>
+        <line x1="9" x2="9" y1="6" y2="18"/>
+        <line x1="15" x2="15" y1="6" y2="18"/>
+        <line x1="20" x2="20" y1="6" y2="18"/>
+      </g>
+      <g id="icon-users">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </g>
+      <g id="icon-maximize">
+        <polyline points="15 3 21 3 21 9"/>
+        <polyline points="9 21 3 21 3 15"/>
+        <line x1="21" x2="14" y1="3" y2="10"/>
+        <line x1="3" x2="10" y1="21" y2="14"/>
+      </g>
+      <g id="icon-coins">
+        <circle cx="8" cy="8" r="6"/>
+        <path d="M18.09 10.37A6 6 0 1 1 10.34 18"/>
+        <path d="M7 6h1v4"/>
+        <path d="m16.71 13.88.7.71-2.82 2.82"/>
+      </g>
+      <!-- Dossier Tabs Icons -->
+      <g id="icon-shield">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+      </g>
+      <g id="icon-compass">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </g>
+      <g id="icon-scale">
+        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+        <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+        <path d="M7 21h10"/>
+        <path d="M12 3v18"/>
+        <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+      </g>
+      <g id="icon-history">
+        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+        <path d="M3 3v5h5"/>
+        <polyline points="12 7 12 12 15 15"/>
+      </g>
+      <g id="icon-chart">
+        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+        <polyline points="16 7 22 7 22 13"/>
+      </g>
+      <g id="icon-palette">
+        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2Z"/>
+      </g>
+      <g id="icon-map-pin">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </g>
+      <g id="icon-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </g>
+      <g id="icon-arrow-up-right">
+        <path d="M7 17 17 7"/>
+        <path d="M7 7h10v10"/>
+      </g>
+      <g id="icon-x">
+        <path d="M18 6 6 18"/>
+        <path d="m6 6 12 12"/>
+      </g>
+    </defs>
+  </svg>
 
-      <!-- Live Radial Progress HUD -->
-      <div class="hud-metrics">
-        <div class="radial-widget" title="Global Exploration Progress">
-          <svg class="radial-svg" viewBox="0 0 36 36">
-            <path class="radial-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-            <path class="radial-fill" id="radialProgressFill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-          </svg>
-          <div class="radial-info">
-            <span class="radial-pct" id="hudPctText">0%</span>
-            <span class="radial-sub" id="hudReadCount">0 / 197 Explored</span>
+  <div class="app-viewport">
+    <!-- Top Command Header -->
+    <header class="site-header">
+      <div class="brand-group">
+        <div class="brand-badge">
+          <svg class="icon icon-lg"><use href="#icon-globe"/></svg>
+        </div>
+        <div class="brand-meta">
+          <div class="brand-heading">
+            World Atlas <span class="pill-scope">197 Entities</span>
           </div>
+          <div class="brand-caption">Sovereignty & Spatial Intelligence Directory</div>
         </div>
       </div>
 
-      <!-- Top Actions -->
-      <div class="hud-actions">
-        <button class="btn btn-primary" id="btnSurprise" title="Discover a Random Unread Country (Press R)">
-          <span>🎲</span> Surprise Me <span class="kbd-tag">R</span>
+      <!-- Live Circular HUD Metronome -->
+      <div class="header-tracker" title="Global exploration meter">
+        <svg class="gauge-svg" viewBox="0 0 36 36">
+          <path class="gauge-track" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          <path class="gauge-fill" id="radialProgressFill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+        </svg>
+        <div class="gauge-data">
+          <span class="gauge-percent" id="hudPctText">0%</span>
+          <span class="gauge-label" id="hudReadCount">0 / 197 Explored</span>
+        </div>
+      </div>
+
+      <!-- Quick Action Controls -->
+      <div class="header-actions">
+        <button class="btn btn-primary" id="btnSurprise" title="Discover a random unread country (Press R)">
+          <svg class="icon"><use href="#icon-sparkles"/></svg>
+          <span>Surprise Me</span>
+          <span class="kbd-chip">R</span>
         </button>
-        <button class="btn btn-outline" id="btnExport" title="Export progress JSON">
-          <span>📥</span> Export
+        <button class="btn btn-subtle" id="btnExport" title="Export progress JSON">
+          <svg class="icon"><use href="#icon-download"/></svg>
+          <span>Export</span>
         </button>
-        <button class="btn btn-outline" id="btnImport" title="Import progress JSON">
-          <span>📤</span> Import
+        <button class="btn btn-subtle" id="btnImport" title="Import progress JSON">
+          <svg class="icon"><use href="#icon-upload"/></svg>
+          <span>Import</span>
         </button>
         <input type="file" id="fileInput" accept=".json" style="display:none;">
         <button class="btn btn-danger-subtle" id="btnReset" title="Reset all progress">
-          <span>🔄</span> Reset
+          <svg class="icon"><use href="#icon-rotate"/></svg>
+          <span>Reset</span>
         </button>
         <a href="https://github.com/HackerO112/world-countries-atlas-197" target="_blank" rel="noopener noreferrer" class="btn" title="View Source on GitHub">
-          <span>⭐</span> GitHub
+          <svg class="icon"><use href="#icon-github"/></svg>
+          <span>GitHub</span>
         </a>
         <button class="btn" id="btnThemeToggle" title="Toggle Light/Dark Theme">
-          <span id="themeEmoji">☀️</span>
+          <svg class="icon" id="themeSvg"><use href="#icon-sun"/></svg>
         </button>
       </div>
     </header>
 
-    <!-- Global Stat Metrics Row -->
-    <section class="dashboard-grid">
-      <div class="stat-card" style="--card-color: #00f0ff;">
-        <div class="stat-title"><span>🌍</span> Nations Explored</div>
-        <div class="stat-num" id="statExploredCount">0 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 197</span></div>
-        <div class="stat-desc" id="statRemainingDesc">197 sovereign entities awaiting discovery</div>
+    <!-- Global Planetary Metrics Row -->
+    <section class="metric-grid">
+      <div class="metric-card" style="--metric-color: #22d3ee;">
+        <div class="metric-top-row">
+          <div class="metric-title">Nations Explored</div>
+          <div class="metric-icon-box">
+            <svg class="icon"><use href="#icon-globe"/></svg>
+          </div>
+        </div>
+        <div class="metric-value" id="statExploredCount">0 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 197</span></div>
+        <div class="metric-sub" id="statRemainingDesc">197 sovereign entities awaiting discovery</div>
       </div>
-      <div class="stat-card" style="--card-color: #10b981;">
-        <div class="stat-title"><span>👥</span> Humanity Covered</div>
-        <div class="stat-num" id="statPopExplored">0.0B <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ ~8.13B</span></div>
-        <div class="stat-desc" id="statPopPct">0.0% of projected planetary population</div>
+
+      <div class="metric-card" style="--metric-color: #10b981;">
+        <div class="metric-top-row">
+          <div class="metric-title">Humanity Covered</div>
+          <div class="metric-icon-box">
+            <svg class="icon"><use href="#icon-users"/></svg>
+          </div>
+        </div>
+        <div class="metric-value" id="statPopExplored">0.0B <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ ~8.13B</span></div>
+        <div class="metric-sub" id="statPopPct">0.0% of world population explored</div>
       </div>
-      <div class="stat-card" style="--card-color: #a855f7;">
-        <div class="stat-title"><span>📐</span> Landmass Mapped</div>
-        <div class="stat-num" id="statAreaExplored">0M <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 134.2M km²</span></div>
-        <div class="stat-desc" id="statAreaPct">0.0% of sovereign terrestrial territory</div>
+
+      <div class="metric-card" style="--metric-color: #818cf8;">
+        <div class="metric-top-row">
+          <div class="metric-title">Landmass Mapped</div>
+          <div class="metric-icon-box">
+            <svg class="icon"><use href="#icon-maximize"/></svg>
+          </div>
+        </div>
+        <div class="metric-value" id="statAreaExplored">0M <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 134.2M km²</span></div>
+        <div class="metric-sub" id="statAreaPct">0.0% of terrestrial land territory</div>
       </div>
-      <div class="stat-card" style="--card-color: #f59e0b;">
-        <div class="stat-title"><span>🌐</span> Continental Hubs</div>
-        <div class="stat-num" id="statContinentsCompleted">0 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 6</span></div>
-        <div class="stat-desc">Complete all 6 regions to finish Atlas</div>
+
+      <div class="metric-card" style="--metric-color: #f59e0b;">
+        <div class="metric-top-row">
+          <div class="metric-title">Continental Hubs</div>
+          <div class="metric-icon-box">
+            <svg class="icon"><use href="#icon-compass"/></svg>
+          </div>
+        </div>
+        <div class="metric-value" id="statContinentsCompleted">0 <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 6</span></div>
+        <div class="metric-sub">Complete all 6 regions to finish Atlas</div>
       </div>
     </section>
 
     <!-- Command & Control Center -->
-    <section class="control-center">
-      <div class="control-row-1">
-        <!-- View Mode Tabs (Default: Unread Only) -->
-        <div class="mode-tabs" role="tablist">
-          <button class="mode-tab active" data-view="unread" role="tab" id="tabUnread">
-            <span>📖</span> Unread Queue <span class="tab-badge" id="countUnreadBadge">197</span>
+    <section class="command-bar">
+      <div class="bar-row-top">
+        <!-- Segmented Queue Controls -->
+        <div class="segmented-control" role="tablist">
+          <button class="segment-btn active" data-view="unread" role="tab" id="tabUnread">
+            <svg class="icon icon-sm"><use href="#icon-book-open"/></svg>
+            <span>Unread Queue</span>
+            <span class="segment-count" id="countUnreadBadge">197</span>
           </button>
-          <button class="mode-tab" data-view="read" role="tab" id="tabRead">
-            <span>✅</span> Explored Nations <span class="tab-badge" id="countReadBadge">0</span>
+          <button class="segment-btn" data-view="read" role="tab" id="tabRead">
+            <svg class="icon icon-sm"><use href="#icon-check-circle"/></svg>
+            <span>Explored Nations</span>
+            <span class="segment-count" id="countReadBadge">0</span>
           </button>
-          <button class="mode-tab" data-view="all" role="tab" id="tabAll">
-            <span>🌍</span> Complete Atlas <span class="tab-badge">197</span>
+          <button class="segment-btn" data-view="all" role="tab" id="tabAll">
+            <svg class="icon icon-sm"><use href="#icon-globe"/></svg>
+            <span>Complete Atlas</span>
+            <span class="segment-count">197</span>
           </button>
         </div>
 
-        <!-- Layout Switcher: Grid vs Table -->
+        <!-- Layout Controls -->
         <div style="display:flex; align-items:center; gap:0.75rem;">
           <button class="btn btn-accent" id="btnMarkAllVisible" style="font-size:0.78rem;">
-            ✓ Mark Visible as Read
+            <svg class="icon icon-sm"><use href="#icon-check-circle"/></svg>
+            <span>Mark Visible as Read</span>
           </button>
-          <div class="layout-switcher">
-            <button class="layout-btn active" data-layout="grid" title="Visual Cards Grid">
-              <span>▦</span> Grid
+          <div class="view-toggles">
+            <button class="view-btn active" data-layout="grid" title="Visual Cards Grid">
+              <svg class="icon icon-sm"><use href="#icon-grid"/></svg>
+              <span>Grid</span>
             </button>
-            <button class="layout-btn" data-layout="table" title="Dense Table Matrix">
-              <span>☰</span> Table
+            <button class="view-btn" data-layout="table" title="Dense Table Matrix">
+              <svg class="icon icon-sm"><use href="#icon-table"/></svg>
+              <span>Table</span>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Search & Filters -->
-      <div class="control-row-2">
-        <div class="search-wrap">
-          <span class="search-icon-left">🔍</span>
-          <input type="text" id="searchInput" class="search-box-input" placeholder="Search by name, capital, demonym, ISO code, language... (Press '/' to search)">
-          <button class="search-clear-btn" id="searchClearBtn">&times;</button>
+      <!-- Filters & Instant Search -->
+      <div class="bar-row-filters">
+        <div class="search-container">
+          <span class="search-icon-pos">
+            <svg class="icon"><use href="#icon-search"/></svg>
+          </span>
+          <input type="text" id="searchInput" class="search-input-field" placeholder="Search by name, capital, demonym, ISO, language... (Press '/' to search)">
+          <button class="search-clear-trigger" id="searchClearBtn">
+            <svg class="icon icon-sm"><use href="#icon-x"/></svg>
+          </button>
         </div>
 
-        <select id="sortSelect" class="select-dropdown">
+        <select id="sortSelect" class="select-picker">
           <option value="name-asc">Sort: Name (A → Z)</option>
           <option value="name-desc">Sort: Name (Z → A)</option>
           <option value="pop-desc">Sort: Population (High → Low)</option>
@@ -1178,75 +1404,104 @@
         </select>
       </div>
 
-      <!-- Continent Pills -->
-      <div class="continent-pills-row" id="continentPillsWrap">
-        <button class="cont-pill active" data-continent="all">
-          <span>All Regions</span> <span class="pill-counter" id="pillCountAll">197</span>
+      <!-- Continental Chips -->
+      <div class="continent-chips-tray" id="continentPillsWrap">
+        <button class="chip active" data-continent="all">
+          <span>All Regions</span> <span class="chip-count" id="pillCountAll">197</span>
         </button>
-        <button class="cont-pill" data-continent="Africa">
-          <span>Africa</span> <span class="pill-counter" id="pillCountAfrica">54</span>
+        <button class="chip" data-continent="Africa">
+          <span>Africa</span> <span class="chip-count" id="pillCountAfrica">54</span>
         </button>
-        <button class="cont-pill" data-continent="Asia">
-          <span>Asia</span> <span class="pill-counter" id="pillCountAsia">49</span>
+        <button class="chip" data-continent="Asia">
+          <span>Asia</span> <span class="chip-count" id="pillCountAsia">49</span>
         </button>
-        <button class="cont-pill" data-continent="Europe">
-          <span>Europe</span> <span class="pill-counter" id="pillCountEurope">45</span>
+        <button class="chip" data-continent="Europe">
+          <span>Europe</span> <span class="chip-count" id="pillCountEurope">45</span>
         </button>
-        <button class="cont-pill" data-continent="North America">
-          <span>North America</span> <span class="pill-counter" id="pillCountNA">23</span>
+        <button class="chip" data-continent="North America">
+          <span>North America</span> <span class="chip-count" id="pillCountNA">23</span>
         </button>
-        <button class="cont-pill" data-continent="South America">
-          <span>South America</span> <span class="pill-counter" id="pillCountSA">12</span>
+        <button class="chip" data-continent="South America">
+          <span>South America</span> <span class="chip-count" id="pillCountSA">12</span>
         </button>
-        <button class="cont-pill" data-continent="Oceania">
-          <span>Oceania</span> <span class="pill-counter" id="pillCountOceania">14</span>
+        <button class="chip" data-continent="Oceania">
+          <span>Oceania</span> <span class="chip-count" id="pillCountOceania">14</span>
         </button>
       </div>
     </section>
 
-    <!-- Main Dynamic Container -->
-    <main class="countries-container" id="countriesContainer">
-      <!-- Populated dynamically via JS -->
+    <!-- Atlas Stage (Grid or Table) -->
+    <main class="atlas-stage" id="countriesContainer">
+      <!-- Injected by JS -->
     </main>
   </div>
 
   <!-- Slide-Over Dossier Drawer -->
   <div class="drawer-overlay" id="dossierDrawer" role="dialog" aria-modal="true">
-    <div class="drawer-panel">
-      <!-- Sticky Drawer Header -->
-      <div class="drawer-header">
-        <div class="drawer-title-group">
-          <span class="drawer-flag-icon" id="drawerFlagIcon">🌐</span>
+    <div class="drawer-stage">
+      <!-- Header -->
+      <div class="drawer-top-banner">
+        <div class="drawer-country-lead">
+          <img class="drawer-flag-thumb" id="drawerFlagImg" src="" alt="Flag">
           <div>
-            <div class="drawer-title" id="drawerCountryName">Country Name</div>
-            <div class="drawer-subtitle" id="drawerOfficialName">Official Name</div>
+            <div class="drawer-heading" id="drawerCountryName">Country Name</div>
+            <div class="drawer-subheading" id="drawerOfficialName">Official Name</div>
           </div>
         </div>
-        <button class="drawer-close" id="drawerCloseBtn" aria-label="Close dossier">&times;</button>
+        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close dossier">
+          <svg class="icon"><use href="#icon-x"/></svg>
+        </button>
       </div>
 
-      <!-- Drawer Category Tabs -->
-      <div class="drawer-tabs-bar" role="tablist">
-        <button class="drawer-tab active" data-dtab="overview">🏛️ Overview</button>
-        <button class="drawer-tab" data-dtab="geography">🗺️ Geography</button>
-        <button class="drawer-tab" data-dtab="politics">⚖️ Politics (2026)</button>
-        <button class="drawer-tab" data-dtab="history">📜 History</button>
-        <button class="drawer-tab" data-dtab="society">👥 Society</button>
-        <button class="drawer-tab" data-dtab="economy">💼 Economy</button>
-        <button class="drawer-tab" data-dtab="culture">🎭 Culture</button>
-        <button class="drawer-tab" data-dtab="symbols">🏰 Symbols</button>
-        <button class="drawer-tab" data-dtab="sources">📚 Sources</button>
+      <!-- Category Tabs with Bespoke SVGs -->
+      <div class="drawer-tab-row" role="tablist">
+        <button class="dtab active" data-dtab="overview">
+          <svg class="icon icon-sm"><use href="#icon-shield"/></svg>
+          <span>Overview</span>
+        </button>
+        <button class="dtab" data-dtab="geography">
+          <svg class="icon icon-sm"><use href="#icon-compass"/></svg>
+          <span>Geography</span>
+        </button>
+        <button class="dtab" data-dtab="politics">
+          <svg class="icon icon-sm"><use href="#icon-scale"/></svg>
+          <span>Politics (2026)</span>
+        </button>
+        <button class="dtab" data-dtab="history">
+          <svg class="icon icon-sm"><use href="#icon-history"/></svg>
+          <span>History</span>
+        </button>
+        <button class="dtab" data-dtab="society">
+          <svg class="icon icon-sm"><use href="#icon-users"/></svg>
+          <span>Society</span>
+        </button>
+        <button class="dtab" data-dtab="economy">
+          <svg class="icon icon-sm"><use href="#icon-chart"/></svg>
+          <span>Economy</span>
+        </button>
+        <button class="dtab" data-dtab="culture">
+          <svg class="icon icon-sm"><use href="#icon-palette"/></svg>
+          <span>Culture</span>
+        </button>
+        <button class="dtab" data-dtab="symbols">
+          <svg class="icon icon-sm"><use href="#icon-map-pin"/></svg>
+          <span>Symbols</span>
+        </button>
+        <button class="dtab" data-dtab="sources">
+          <svg class="icon icon-sm"><use href="#icon-link"/></svg>
+          <span>Sources</span>
+        </button>
       </div>
 
-      <!-- Drawer Scrollable Content -->
-      <div class="drawer-body" id="drawerBody">
-        <!-- Rendered by JS -->
+      <!-- Drawer Body Content -->
+      <div class="drawer-scroll-body" id="drawerBody">
+        <!-- Injected dynamically -->
       </div>
     </div>
   </div>
 
-  <!-- Toast Notification System -->
-  <div class="toast-box" id="toastBox"></div>
+  <!-- Notification Toast Container -->
+  <div class="toast-tray" id="toastBox"></div>
 
   <script>
     (function() {
@@ -1255,7 +1510,7 @@
       const STORAGE_KEY = 'worldCountersAtlas_read_v1';
       let allCountries = [];
       let readSet = new Set();
-      let currentView = 'unread'; // 'unread' (default) | 'read' | 'all'
+      let currentView = 'unread'; // 'unread' | 'read' | 'all'
       let selectedContinent = 'all';
       let searchQuery = '';
       let currentSort = 'name-asc';
@@ -1264,7 +1519,7 @@
       let activeDrawerTab = 'overview';
       let lastToggledId = null;
 
-      // DOM Elements
+      // Elements
       const countriesContainer = document.getElementById('countriesContainer');
       const radialProgressFill = document.getElementById('radialProgressFill');
       const hudPctText = document.getElementById('hudPctText');
@@ -1288,24 +1543,24 @@
       const btnReset = document.getElementById('btnReset');
       const btnMarkAllVisible = document.getElementById('btnMarkAllVisible');
       const btnThemeToggle = document.getElementById('btnThemeToggle');
-      const themeEmoji = document.getElementById('themeEmoji');
+      const themeSvg = document.getElementById('themeSvg');
       const dossierDrawer = document.getElementById('dossierDrawer');
       const drawerCloseBtn = document.getElementById('drawerCloseBtn');
       const drawerBody = document.getElementById('drawerBody');
       const toastBox = document.getElementById('toastBox');
       const confettiCanvas = document.getElementById('confettiCanvas');
 
-      // Theme Management
+      // Theme
       const savedTheme = localStorage.getItem('worldAtlas_theme') || 'dark';
       document.documentElement.setAttribute('data-theme', savedTheme);
-      themeEmoji.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+      themeSvg.innerHTML = `<use href="#icon-${savedTheme === 'dark' ? 'sun' : 'moon'}"/>`;
 
       btnThemeToggle.addEventListener('click', () => {
         const cur = document.documentElement.getAttribute('data-theme') || 'dark';
         const next = cur === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('worldAtlas_theme', next);
-        themeEmoji.textContent = next === 'dark' ? '☀️' : '🌙';
+        themeSvg.innerHTML = `<use href="#icon-${next === 'dark' ? 'sun' : 'moon'}"/>`;
       });
 
       // Storage
@@ -1334,7 +1589,7 @@
         updateFilterCounters();
       }
 
-      // Fetch Dataset
+      // App Initialization
       async function initApp() {
         try {
           const res = await fetch('./countries.json');
@@ -1346,19 +1601,16 @@
           renderView();
         } catch (err) {
           countriesContainer.innerHTML = `
-            <div class="empty-state">
-              <div class="empty-icon">⚠️</div>
-              <div class="empty-title">Cannot Load countries.json</div>
-              <div class="empty-desc">
-                ${err.message}. If viewing locally via <code>file://</code>, please launch a web server:
-                <br><code>python3 -m http.server 8000</code> or deploy to GitHub Pages.
-              </div>
+            <div style="text-align:center; padding:4rem 1.5rem; background:var(--surface); border:1px dashed var(--border); border-radius:var(--radius-lg); max-width:600px; margin:2rem auto;">
+              <svg class="icon icon-lg" style="color:var(--danger); margin-bottom:1rem;"><use href="#icon-rotate"/></svg>
+              <h3 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:0.5rem;">Unable to load dataset</h3>
+              <p style="color:var(--text-secondary); font-size:0.88rem;">${err.message}. If launching locally via file://, run: <code>python3 -m http.server 8000</code> or deploy to GitHub Pages.</p>
             </div>
           `;
         }
       }
 
-      // Metrics Calculation
+      // Metrics calculation
       function updateGlobalMetrics() {
         const total = allCountries.length || 197;
         const readCount = readSet.size;
@@ -1373,9 +1625,8 @@
 
         // Explored Card
         statExploredCount.innerHTML = `${readCount} <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ ${total}</span>`;
-        statRemainingDesc.textContent = `${unreadCount} sovereign entities remaining`;
+        statRemainingDesc.textContent = `${unreadCount} sovereign entities awaiting discovery`;
 
-        // Population covered
         let totalPop = 0;
         let readPop = 0;
         let totalArea = 0;
@@ -1408,9 +1659,8 @@
         const areaTotalM = (totalArea / 1e6).toFixed(1);
         const areaPct = totalArea > 0 ? ((readArea / totalArea) * 100).toFixed(1) : 0;
         statAreaExplored.innerHTML = `${areaM}M <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ ${areaTotalM}M km²</span>`;
-        statAreaPct.textContent = `${areaPct}% of global land territory`;
+        statAreaPct.textContent = `${areaPct}% of terrestrial land territory`;
 
-        // Continents completed
         let completedContinents = 0;
         Object.values(continentStats).forEach(st => {
           if (st.total > 0 && st.read === st.total) completedContinents++;
@@ -1444,7 +1694,7 @@
         document.getElementById('pillCountOceania').textContent = counts.Oceania;
       }
 
-      // Filter & Sort Logic
+      // Filter & Sort visible list
       function getVisibleCountries() {
         return allCountries.filter(c => {
           const isRead = readSet.has(c.id);
@@ -1477,16 +1727,16 @@
         const visible = getVisibleCountries();
         if (visible.length === 0) {
           countriesContainer.innerHTML = `
-            <div class="empty-state">
-              <div class="empty-icon">${currentView === 'unread' ? '🎉' : '🔍'}</div>
-              <div class="empty-title">
-                ${currentView === 'unread' ? 'Unread Queue Cleared!' : 'No Matching Countries Found'}
-              </div>
-              <div class="empty-desc">
+            <div style="text-align:center; padding:4.5rem 1.5rem; background:var(--surface); border:1px dashed var(--border); border-radius:var(--radius-lg); max-width:600px; margin:2rem auto;">
+              <svg class="icon icon-lg" style="color:var(--primary); margin-bottom:1rem;"><use href="#icon-${currentView === 'unread' ? 'check-circle' : 'search'}"/></svg>
+              <h3 style="font-family:var(--font-display); font-size:1.35rem; font-weight:700; margin-bottom:0.5rem;">
+                ${currentView === 'unread' ? 'Unread Queue Cleared' : 'No Entities Found'}
+              </h3>
+              <p style="color:var(--text-secondary); font-size:0.88rem; line-height:1.5;">
                 ${currentView === 'unread' 
-                  ? 'Incredible! You have explored every country in this view. Switch to "Explored Nations" or "Complete Atlas" to review your knowledge.' 
-                  : 'Try adjusting your search criteria or continent filter.'}
-              </div>
+                  ? 'All sovereign entities in this segment have been explored. Switch tabs to review your knowledge directory.' 
+                  : 'Try adjusting your search query or continent filters.'}
+              </p>
             </div>
           `;
           return;
@@ -1499,10 +1749,10 @@
         }
       }
 
-      // Render Grid View
+      // Render Card Grid
       function renderGrid(countries) {
         countriesContainer.innerHTML = `
-          <div class="grid-view-layout">
+          <div class="atlas-grid">
             ${countries.map(c => {
               const isRead = readSet.has(c.id);
               const flagSrc = c.flagImage || `https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png`;
@@ -1510,65 +1760,71 @@
               const areaFormatted = (c.areaKm2 || 0).toLocaleString() + ' km²';
 
               return `
-                <article class="country-card ${isRead ? 'is-read' : ''}" id="card-${c.id}">
+                <article class="country-card ${isRead ? 'is-explored' : ''}" id="card-${c.id}">
                   <div class="card-banner">
                     <img 
-                      class="card-flag-img" 
                       src="${flagSrc}" 
                       alt="Flag of ${c.name}" 
                       loading="lazy" 
-                      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                      onerror="this.src='https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png'"
                     >
-                    <div class="card-flag-emoji-fallback" style="display:none;">${c.flagEmoji || '🏳️'}</div>
-                    <div class="card-badges-top">
-                      <span class="card-tag ${isRead ? 'tag-status-read' : 'tag-status-unread'}">
-                        ${isRead ? '✓ EXPLORED' : 'UNREAD'}
+                    <div class="card-overlay-pills">
+                      <span class="badge-status ${isRead ? 'read' : 'unread'}">
+                        ${isRead ? `
+                          <svg class="icon icon-sm"><use href="#icon-check-circle"/></svg>
+                          <span>EXPLORED</span>
+                        ` : `
+                          <span class="dot-pulse"></span>
+                          <span>UNREAD</span>
+                        `}
                       </span>
-                      <span class="card-tag card-cont-badge">${c.continent}</span>
+                      <span class="badge-continent">${c.continent}</span>
                     </div>
                   </div>
 
-                  <div class="card-body">
-                    <div class="card-header-row">
-                      <h3 class="card-title">${c.flagEmoji || ''} ${c.name}</h3>
-                      <span class="card-iso">${c.iso3 || ''}</span>
+                  <div class="card-interior">
+                    <div class="card-title-line">
+                      <h3 class="card-name">${c.name}</h3>
+                      <span class="card-iso-tag">${c.iso3 || ''}</span>
                     </div>
-                    <div class="card-official" title="${c.officialName || c.name}">${c.officialName || c.name}</div>
+                    <div class="card-subline" title="${c.officialName || c.name}">${c.officialName || c.name}</div>
 
-                    <div class="card-micro-stats">
-                      <div class="micro-item">
-                        <span class="micro-label">🏛️ Capital</span>
-                        <span class="micro-val">${c.capital || 'N/A'}</span>
+                    <div class="card-datapoints">
+                      <div class="data-item">
+                        <span class="data-key"><svg class="icon icon-sm"><use href="#icon-landmark"/></svg> Capital</span>
+                        <span class="data-val">${c.capital || 'N/A'}</span>
                       </div>
-                      <div class="micro-item">
-                        <span class="micro-label">👥 Population</span>
-                        <span class="micro-val">${popFormatted}</span>
+                      <div class="data-item">
+                        <span class="data-key"><svg class="icon icon-sm"><use href="#icon-users"/></svg> Population</span>
+                        <span class="data-val">${popFormatted}</span>
                       </div>
-                      <div class="micro-item">
-                        <span class="micro-label">📐 Area</span>
-                        <span class="micro-val">${areaFormatted}</span>
+                      <div class="data-item">
+                        <span class="data-key"><svg class="icon icon-sm"><use href="#icon-maximize"/></svg> Surface</span>
+                        <span class="data-val">${areaFormatted}</span>
                       </div>
-                      <div class="micro-item">
-                        <span class="micro-label">💰 Currency</span>
-                        <span class="micro-val">${c.currency || 'N/A'}</span>
+                      <div class="data-item">
+                        <span class="data-key"><svg class="icon icon-sm"><use href="#icon-coins"/></svg> Currency</span>
+                        <span class="data-val">${c.currency || 'N/A'}</span>
                       </div>
                     </div>
 
-                    <div class="card-footer">
+                    <div class="card-bottom-actions">
                       <button 
-                        class="btn btn-card-toggle ${isRead ? 'btn-danger-subtle' : 'btn-accent'}" 
+                        class="btn btn-toggle-explored ${isRead ? 'btn-danger-subtle' : 'btn-accent'}" 
                         data-action="toggle" 
                         data-id="${c.id}"
                       >
-                        ${isRead ? '✕ Mark Unread' : '✓ Mark Explored'}
+                        <svg class="icon icon-sm"><use href="#icon-${isRead ? 'x' : 'check-circle'}"/></svg>
+                        <span>${isRead ? 'Unmark' : 'Mark Explored'}</span>
                       </button>
                       <button 
-                        class="btn btn-card-details" 
+                        class="btn btn-open-dossier" 
                         data-action="details" 
                         data-id="${c.id}" 
-                        title="Open Deep Dossier"
+                        title="Open deep dossier"
                       >
-                        📖 Dossier
+                        <svg class="icon icon-sm"><use href="#icon-arrow-up-right"/></svg>
+                        <span>Dossier</span>
                       </button>
                     </div>
                   </div>
@@ -1580,11 +1836,11 @@
         bindCardActions();
       }
 
-      // Render Table View
+      // Render Matrix Table
       function renderTable(countries) {
         countriesContainer.innerHTML = `
-          <div class="table-view-layout">
-            <table class="data-table">
+          <div class="dense-table-tray">
+            <table class="matrix-table">
               <thead>
                 <tr>
                   <th>Entity</th>
@@ -1592,7 +1848,7 @@
                   <th>Region</th>
                   <th>Capital</th>
                   <th>2026 Population</th>
-                  <th>Area</th>
+                  <th>Surface</th>
                   <th>Currency</th>
                   <th style="text-align:right;">Actions</th>
                 </tr>
@@ -1607,11 +1863,11 @@
                         <div style="display:flex; align-items:center; gap:0.6rem;">
                           <img src="${flagSrc}" width="26" height="17" alt="${c.name}" style="border-radius:2px; object-fit:cover;">
                           <strong>${c.name}</strong>
-                          <span class="card-iso">${c.iso3 || ''}</span>
+                          <span class="card-iso-tag">${c.iso3 || ''}</span>
                         </div>
                       </td>
                       <td>
-                        <span class="card-tag ${isRead ? 'tag-status-read' : 'tag-status-unread'}" style="font-size:0.65rem;">
+                        <span class="badge-status ${isRead ? 'read' : 'unread'}" style="font-size:0.65rem;">
                           ${isRead ? 'EXPLORED' : 'UNREAD'}
                         </span>
                       </td>
@@ -1621,10 +1877,10 @@
                       <td>${(c.areaKm2 || 0).toLocaleString()} km²</td>
                       <td style="font-size:0.75rem; color:var(--text-muted);">${c.currency || 'N/A'}</td>
                       <td style="text-align:right;">
-                        <button class="btn btn-card-toggle ${isRead ? 'btn-danger-subtle' : 'btn-accent'}" data-action="toggle" data-id="${c.id}" style="padding:0.3rem 0.6rem; font-size:0.75rem;">
+                        <button class="btn ${isRead ? 'btn-danger-subtle' : 'btn-accent'}" data-action="toggle" data-id="${c.id}" style="padding:0.3rem 0.6rem; font-size:0.75rem;">
                           ${isRead ? 'Unmark' : 'Mark Read'}
                         </button>
-                        <button class="btn btn-card-details" data-action="details" data-id="${c.id}" style="padding:0.3rem 0.6rem; font-size:0.75rem;">
+                        <button class="btn" data-action="details" data-id="${c.id}" style="padding:0.3rem 0.6rem; font-size:0.75rem;">
                           Dossier
                         </button>
                       </td>
@@ -1638,12 +1894,11 @@
         bindCardActions();
       }
 
-      // Bind Card Actions
       function bindCardActions() {
         countriesContainer.querySelectorAll('[data-action="toggle"]').forEach(btn => {
           btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            toggleCountryRead(btn.dataset.id);
+            toggleCountryExplored(btn.dataset.id);
           });
         });
         countriesContainer.querySelectorAll('[data-action="details"]').forEach(btn => {
@@ -1654,8 +1909,8 @@
         });
       }
 
-      // Toggle Read Status with Animation
-      function toggleCountryRead(id) {
+      // Toggle Explored Status
+      function toggleCountryExplored(id) {
         const country = allCountries.find(c => c.id === id);
         if (!country) return;
 
@@ -1671,7 +1926,6 @@
           readSet.add(id);
           saveReadState();
 
-          // Check milestones for confetti
           const total = allCountries.length || 197;
           if (readSet.size === Math.floor(total * 0.25) || 
               readSet.size === Math.floor(total * 0.5) || 
@@ -1680,12 +1934,12 @@
             triggerConfetti();
           }
 
-          showToast(`Explored ${country.name}!`, true);
+          showToast(`Explored ${country.name}`, true);
 
           if (currentView === 'unread') {
             const el = document.getElementById(`card-${id}`) || document.getElementById(`row-${id}`);
             if (el) {
-              el.classList.add('animating-out');
+              el.classList.add('dismissing');
               setTimeout(() => renderView(), 220);
             } else {
               renderView();
@@ -1703,7 +1957,8 @@
         activeDrawerCountry = c;
         activeDrawerTab = 'overview';
 
-        document.getElementById('drawerFlagIcon').textContent = c.flagEmoji || '🌐';
+        const flagSrc = c.flagImage || `https://flagcdn.com/w320/${c.iso2.toLowerCase()}.png`;
+        document.getElementById('drawerFlagImg').src = flagSrc;
         document.getElementById('drawerCountryName').textContent = `${c.name} (${c.iso3 || ''})`;
         document.getElementById('drawerOfficialName').textContent = `${c.officialName || c.name} • ${c.nativeName || ''}`;
 
@@ -1721,9 +1976,9 @@
       });
 
       // Drawer Tab Switching
-      document.querySelectorAll('.drawer-tab').forEach(tab => {
+      document.querySelectorAll('.dtab').forEach(tab => {
         tab.addEventListener('click', () => {
-          document.querySelectorAll('.drawer-tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.dtab').forEach(t => t.classList.remove('active'));
           tab.classList.add('active');
           activeDrawerTab = tab.dataset.dtab;
           renderDrawerTabContent();
@@ -1743,85 +1998,98 @@
 
         if (activeDrawerTab === 'overview') {
           content = `
-            <div class="dossier-visuals">
-              <div class="dossier-media-card">
+            <div class="dossier-media-row">
+              <div class="media-card">
                 <img src="${flagSrc}" alt="Flag of ${c.name}">
-                <div class="dossier-media-tag">National Flag</div>
+                <div class="media-caption">Sovereign Flag</div>
               </div>
-              <div class="dossier-media-card">
+              <div class="media-card">
                 <img src="${mapSrc}" alt="Location of ${c.name}" onerror="this.parentElement.style.display='none'">
-                <div class="dossier-media-tag">Orthographic Map</div>
+                <div class="media-caption">Orthographic Map</div>
               </div>
               ${landmarkSrc && landmarkSrc !== flagSrc ? `
-              <div class="dossier-media-card">
+              <div class="media-card">
                 <img src="${landmarkSrc}" alt="Landmark of ${c.name}" onerror="this.parentElement.style.display='none'">
-                <div class="dossier-media-tag">Iconic Landmark</div>
+                <div class="media-caption">Iconic Landmark</div>
               </div>` : ''}
             </div>
 
             <div style="display:flex; justify-content:space-between; align-items:center; background:var(--surface-elevated); padding:0.85rem 1.25rem; border-radius:var(--radius); border:1px solid var(--border);">
-              <div>Exploration Status: <strong style="color:${isRead ? 'var(--accent)' : 'var(--primary)'}">${isRead ? '✓ Explored' : '📖 Unread Queue'}</strong></div>
+              <div>Status: <strong style="color:${isRead ? 'var(--accent)' : 'var(--primary)'}">${isRead ? '✓ Explored' : 'Unread in Queue'}</strong></div>
               <button class="btn ${isRead ? 'btn-danger-subtle' : 'btn-accent'}" id="drawerActionBtn">
-                ${isRead ? '✕ Mark as Unread' : '✓ Mark as Explored'}
+                <svg class="icon icon-sm"><use href="#icon-${isRead ? 'x' : 'check-circle'}"/></svg>
+                <span>${isRead ? 'Mark as Unread' : 'Mark as Explored'}</span>
               </button>
             </div>
 
-            <div class="dossier-section">
-              <div class="dossier-section-header">🏛️ Core Identity</div>
-              <table class="dossier-table">
-                <tr><td class="prop">Official Title</td><td class="val">${c.officialName || 'N/A'}</td></tr>
-                <tr><td class="prop">Native Script</td><td class="val">${c.nativeName || 'N/A'}</td></tr>
-                <tr><td class="prop">Geopolitical Status</td><td class="val">${c.status || 'UN Member State'}</td></tr>
-                <tr><td class="prop">Demonym</td><td class="val">${c.demonym || 'N/A'}</td></tr>
-                <tr><td class="prop">ISO Identifiers</td><td class="val"><code>${c.iso2}</code> / <code>${c.iso3}</code> (Numeric: <code>${c.isoNumeric}</code>)</td></tr>
-                <tr><td class="prop">Capital City</td><td class="val">${c.capital || 'N/A'}</td></tr>
-                <tr><td class="prop">Largest Metropolis</td><td class="val">${c.largestCity || c.capital || 'N/A'}</td></tr>
-                <tr><td class="prop">National Day</td><td class="val">${c.nationalDay || 'N/A'}</td></tr>
-                <tr><td class="prop">National Anthem</td><td class="val"><em>${c.nationalAnthem || 'N/A'}</em></td></tr>
-                <tr><td class="prop">National Motto</td><td class="val"><em>"${c.motto || 'None'}"</em></td></tr>
+            <div class="dossier-card">
+              <div class="dossier-header-title">
+                <svg class="icon"><use href="#icon-shield"/></svg>
+                <span>Core Sovereignty & Identity</span>
+              </div>
+              <table class="dossier-matrix">
+                <tr><td class="spec-key">Official Title</td><td class="spec-val">${c.officialName || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Native Script</td><td class="spec-val">${c.nativeName || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Geopolitical Status</td><td class="spec-val">${c.status || 'UN Member State'}</td></tr>
+                <tr><td class="spec-key">Demonym</td><td class="spec-val">${c.demonym || 'N/A'}</td></tr>
+                <tr><td class="spec-key">ISO Codes</td><td class="spec-val"><code>${c.iso2}</code> / <code>${c.iso3}</code> (Numeric: <code>${c.isoNumeric}</code>)</td></tr>
+                <tr><td class="spec-key">Capital City</td><td class="spec-val">${c.capital || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Largest Metropolis</td><td class="spec-val">${c.largestCity || c.capital || 'N/A'}</td></tr>
+                <tr><td class="spec-key">National Day</td><td class="spec-val">${c.nationalDay || 'N/A'}</td></tr>
+                <tr><td class="spec-key">National Anthem</td><td class="spec-val"><em>${c.nationalAnthem || 'N/A'}</em></td></tr>
+                <tr><td class="spec-key">National Motto</td><td class="spec-val"><em>"${c.motto || 'None'}"</em></td></tr>
               </table>
             </div>
           `;
         } else if (activeDrawerTab === 'geography') {
           content = `
-            <div class="dossier-section">
-              <div class="dossier-section-header">🗺️ Physical Geography & Climate</div>
+            <div class="dossier-card">
+              <div class="dossier-header-title">
+                <svg class="icon"><use href="#icon-compass"/></svg>
+                <span>Physical Geography & Terrain</span>
+              </div>
               <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1rem;">${c.geography || ''}</p>
-              <table class="dossier-table">
-                <tr><td class="prop">Total Surface Area</td><td class="val">${(c.areaKm2 || 0).toLocaleString()} km² (Global Rank: #${c.areaRank || 'N/A'})</td></tr>
-                <tr><td class="prop">Population Density</td><td class="val">${c.populationDensity || 'N/A'}</td></tr>
-                <tr><td class="prop">Borders</td><td class="val">${Array.isArray(c.borders) ? (c.borders.length ? c.borders.join(', ') : 'None (Island state)') : (c.borders || 'None')}</td></tr>
-                <tr><td class="prop">Coastline</td><td class="val">${c.coastline || 'N/A'} ${c.landlocked ? '(Landlocked)' : ''}</td></tr>
-                <tr><td class="prop">Elevation Extremes</td><td class="val">Highest: ${c.highestPoint || 'N/A'} • Lowest: ${c.lowestPoint || 'N/A'}</td></tr>
-                <tr><td class="prop">Longest River & Lakes</td><td class="val">${c.longestRiver || 'N/A'} • Lakes: ${Array.isArray(c.majorLakes) ? c.majorLakes.join(', ') : (c.majorLakes || 'None')}</td></tr>
-                <tr><td class="prop">Climate Profile</td><td class="val">${c.climate || 'N/A'}</td></tr>
-                <tr><td class="prop">Natural Hazards</td><td class="val">${Array.isArray(c.naturalHazards) ? c.naturalHazards.join(', ') : (c.naturalHazards || 'None')}</td></tr>
-                <tr><td class="prop">Biodiversity Reserve</td><td class="val">${c.biodiversity || 'N/A'}</td></tr>
-                <tr><td class="prop">Time Zone & Driving</td><td class="val">${c.timeZone || 'N/A'} • Driving: ${(c.drivingSide || 'right').toUpperCase()}</td></tr>
+              <table class="dossier-matrix">
+                <tr><td class="spec-key">Total Surface Area</td><td class="spec-val">${(c.areaKm2 || 0).toLocaleString()} km² (Global Rank: #${c.areaRank || 'N/A'})</td></tr>
+                <tr><td class="spec-key">Population Density</td><td class="spec-val">${c.populationDensity || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Borders</td><td class="spec-val">${Array.isArray(c.borders) ? (c.borders.length ? c.borders.join(', ') : 'None (Island state)') : (c.borders || 'None')}</td></tr>
+                <tr><td class="spec-key">Coastline</td><td class="spec-val">${c.coastline || 'N/A'} ${c.landlocked ? '(Landlocked)' : ''}</td></tr>
+                <tr><td class="spec-key">Elevation Extremes</td><td class="spec-val">Highest: ${c.highestPoint || 'N/A'} • Lowest: ${c.lowestPoint || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Longest River & Lakes</td><td class="spec-val">${c.longestRiver || 'N/A'} • Lakes: ${Array.isArray(c.majorLakes) ? c.majorLakes.join(', ') : (c.majorLakes || 'None')}</td></tr>
+                <tr><td class="spec-key">Climate Profile</td><td class="spec-val">${c.climate || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Natural Hazards</td><td class="spec-val">${Array.isArray(c.naturalHazards) ? c.naturalHazards.join(', ') : (c.naturalHazards || 'None')}</td></tr>
+                <tr><td class="spec-key">Biodiversity Reserve</td><td class="spec-val">${c.biodiversity || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Time Zone & Driving</td><td class="spec-val">${c.timeZone || 'N/A'} • Driving: ${(c.drivingSide || 'right').toUpperCase()}</td></tr>
               </table>
             </div>
           `;
         } else if (activeDrawerTab === 'politics') {
           content = `
-            <div class="dossier-section">
-              <div class="dossier-section-header">⚖️ Government & Geopolitical Context (2026)</div>
-              <table class="dossier-table">
-                <tr><td class="prop">Government Type</td><td class="val">${c.government || 'N/A'}</td></tr>
-                <tr><td class="prop">Head of State</td><td class="val">${c.headOfState || 'N/A'}</td></tr>
-                <tr><td class="prop">Head of Government</td><td class="val">${c.headOfGovernment || 'N/A'}</td></tr>
-                <tr><td class="prop">Legislature</td><td class="val">${c.legislature || 'N/A'}</td></tr>
-                <tr><td class="prop">Constitution</td><td class="val">${c.constitution || 'N/A'}</td></tr>
-                <tr><td class="prop">Latest Elections (2024–2026)</td><td class="val">${c.latestElections || 'N/A'}</td></tr>
-                <tr><td class="prop">Current Situation</td><td class="val" style="line-height:1.5;">${c.politicalSituation || 'N/A'}</td></tr>
-                <tr><td class="prop">Defense Forces</td><td class="val">${c.military || 'N/A'}</td></tr>
-                <tr><td class="prop">International Alliances</td><td class="val">${Array.isArray(c.internationalOrgs) ? c.internationalOrgs.join(', ') : (c.internationalOrgs || 'N/A')}</td></tr>
+            <div class="dossier-card">
+              <div class="dossier-header-title">
+                <svg class="icon"><use href="#icon-scale"/></svg>
+                <span>Governance & Geopolitics (2026)</span>
+              </div>
+              <table class="dossier-matrix">
+                <tr><td class="spec-key">Government Type</td><td class="spec-val">${c.government || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Head of State</td><td class="spec-val">${c.headOfState || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Head of Government</td><td class="spec-val">${c.headOfGovernment || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Legislative Branch</td><td class="spec-val">${c.legislature || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Constitution</td><td class="spec-val">${c.constitution || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Recent Elections (2024–2026)</td><td class="spec-val">${c.latestElections || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Current Political Situation</td><td class="spec-val" style="line-height:1.5;">${c.politicalSituation || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Defense Forces</td><td class="spec-val">${c.military || 'N/A'}</td></tr>
+                <tr><td class="spec-key">International Alliances</td><td class="spec-val">${Array.isArray(c.internationalOrgs) ? c.internationalOrgs.join(', ') : (c.internationalOrgs || 'N/A')}</td></tr>
               </table>
             </div>
           `;
         } else if (activeDrawerTab === 'history') {
           content = `
-            <div class="dossier-section">
-              <div class="dossier-section-header">📜 Historical Epochs & Trajectory</div>
+            <div class="dossier-card">
+              <div class="dossier-header-title">
+                <svg class="icon"><use href="#icon-history"/></svg>
+                <span>Historical Epochs & Evolution</span>
+              </div>
               <p style="font-size:0.88rem; line-height:1.65; margin-bottom:1rem;">${c.history || 'N/A'}</p>
               ${c.recentEvents2020_2026 ? `
                 <div style="background:var(--bg-subtle); padding:0.95rem; border-radius:var(--radius-sm); border-left:3px solid var(--primary); font-size:0.85rem; line-height:1.5; margin-bottom:1rem;">
@@ -1835,79 +2103,98 @@
           `;
         } else if (activeDrawerTab === 'society') {
           content = `
-            <div class="dossier-section">
-              <div class="dossier-section-header">👥 Demographics & Social Fabric</div>
-              <table class="dossier-table">
-                <tr><td class="prop">2026 Population</td><td class="val">${(c.population2026 || 0).toLocaleString()} (Rank: #${c.populationRank || 'N/A'})</td></tr>
-                <tr><td class="prop">Official Languages</td><td class="val">${Array.isArray(c.languages) ? c.languages.join(', ') : (c.languages || 'N/A')}</td></tr>
-                <tr><td class="prop">Ethnic Composition</td><td class="val">${Array.isArray(c.ethnicGroups) ? c.ethnicGroups.join(', ') : (c.ethnicGroups || 'N/A')}</td></tr>
-                <tr><td class="prop">Religious Breakdown</td><td class="val">${Array.isArray(c.religions) ? c.religions.join(', ') : (c.religions || 'N/A')}</td></tr>
-                <tr><td class="prop">Adult Literacy</td><td class="val">${c.literacyRate || 'N/A'}</td></tr>
-                <tr><td class="prop">Life Expectancy</td><td class="val">${c.lifeExpectancy || 'N/A'}</td></tr>
-                <tr><td class="prop">Human Development (HDI)</td><td class="val">${c.hdi || 'N/A'}</td></tr>
-                <tr><td class="prop">Urbanization</td><td class="val">${c.urbanization || 'N/A'}</td></tr>
-                <tr><td class="prop">Etiquette & Customs</td><td class="val">${c.socialCustoms || ''} ${c.etiquette ? `(${c.etiquette})` : ''}</td></tr>
+            <div class="dossier-card">
+              <div class="dossier-header-title">
+                <svg class="icon"><use href="#icon-users"/></svg>
+                <span>Demographics & Social Fabric</span>
+              </div>
+              <table class="dossier-matrix">
+                <tr><td class="spec-key">2026 Population</td><td class="spec-val">${(c.population2026 || 0).toLocaleString()} (Rank: #${c.populationRank || 'N/A'})</td></tr>
+                <tr><td class="spec-key">Official Languages</td><td class="spec-val">${Array.isArray(c.languages) ? c.languages.join(', ') : (c.languages || 'N/A')}</td></tr>
+                <tr><td class="spec-key">Ethnic Composition</td><td class="spec-val">${Array.isArray(c.ethnicGroups) ? c.ethnicGroups.join(', ') : (c.ethnicGroups || 'N/A')}</td></tr>
+                <tr><td class="spec-key">Religious Affiliations</td><td class="spec-val">${Array.isArray(c.religions) ? c.religions.join(', ') : (c.religions || 'N/A')}</td></tr>
+                <tr><td class="spec-key">Adult Literacy</td><td class="spec-val">${c.literacyRate || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Life Expectancy</td><td class="spec-val">${c.lifeExpectancy || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Human Development Index</td><td class="spec-val">${c.hdi || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Urbanization Rate</td><td class="spec-val">${c.urbanization || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Etiquette & Customs</td><td class="spec-val">${c.socialCustoms || ''} ${c.etiquette ? `(${c.etiquette})` : ''}</td></tr>
               </table>
             </div>
           `;
         } else if (activeDrawerTab === 'economy') {
           content = `
-            <div class="dossier-section">
-              <div class="dossier-section-header">💼 Economy, Trade & Infrastructure</div>
+            <div class="dossier-card">
+              <div class="dossier-header-title">
+                <svg class="icon"><use href="#icon-chart"/></svg>
+                <span>Economy, Trade & Infrastructure</span>
+              </div>
               <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1rem;">${c.economy || ''}</p>
-              <table class="dossier-table">
-                <tr><td class="prop">GDP (Nominal)</td><td class="val">${c.gdpNominal || 'N/A'}</td></tr>
-                <tr><td class="prop">GDP (PPP)</td><td class="val">${c.gdpPpp || 'N/A'}</td></tr>
-                <tr><td class="prop">GDP Per Capita</td><td class="val">${c.gdpPerCapita || 'N/A'}</td></tr>
-                <tr><td class="prop">Currency</td><td class="val">${c.currency || 'N/A'}</td></tr>
-                <tr><td class="prop">Key Industries</td><td class="val">${Array.isArray(c.industries) ? c.industries.join(', ') : (c.industries || 'N/A')}</td></tr>
-                <tr><td class="prop">Primary Exports</td><td class="val">${Array.isArray(c.exports) ? c.exports.join(', ') : (c.exports || 'N/A')}</td></tr>
-                <tr><td class="prop">Primary Imports</td><td class="val">${Array.isArray(c.imports) ? c.imports.join(', ') : (c.imports || 'N/A')}</td></tr>
-                <tr><td class="prop">Trade Partners</td><td class="val">${Array.isArray(c.tradePartners) ? c.tradePartners.join(', ') : (c.tradePartners || 'N/A')}</td></tr>
+              <table class="dossier-matrix">
+                <tr><td class="spec-key">GDP (Nominal)</td><td class="spec-val">${c.gdpNominal || 'N/A'}</td></tr>
+                <tr><td class="spec-key">GDP (PPP)</td><td class="spec-val">${c.gdpPpp || 'N/A'}</td></tr>
+                <tr><td class="spec-key">GDP Per Capita</td><td class="spec-val">${c.gdpPerCapita || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Currency</td><td class="spec-val">${c.currency || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Key Industries</td><td class="spec-val">${Array.isArray(c.industries) ? c.industries.join(', ') : (c.industries || 'N/A')}</td></tr>
+                <tr><td class="spec-key">Primary Exports</td><td class="spec-val">${Array.isArray(c.exports) ? c.exports.join(', ') : (c.exports || 'N/A')}</td></tr>
+                <tr><td class="spec-key">Primary Imports</td><td class="spec-val">${Array.isArray(c.imports) ? c.imports.join(', ') : (c.imports || 'N/A')}</td></tr>
+                <tr><td class="spec-key">Trade Partners</td><td class="spec-val">${Array.isArray(c.tradePartners) ? c.tradePartners.join(', ') : (c.tradePartners || 'N/A')}</td></tr>
               </table>
             </div>
           `;
         } else if (activeDrawerTab === 'culture') {
           content = `
-            <div class="dossier-section">
-              <div class="dossier-section-header">🎭 Cultural Heritage & Living Arts</div>
+            <div class="dossier-card">
+              <div class="dossier-header-title">
+                <svg class="icon"><use href="#icon-palette"/></svg>
+                <span>Living Culture & Heritage</span>
+              </div>
               <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1rem;">${c.culture || ''}</p>
-              <table class="dossier-table">
-                <tr><td class="prop">Gastronomy & Dishes</td><td class="val">${c.cuisine || 'N/A'}</td></tr>
-                <tr><td class="prop">Festivals & Celebrations</td><td class="val">${Array.isArray(c.festivals) ? c.festivals.join(', ') : (c.festivals || 'N/A')}</td></tr>
-                <tr><td class="prop">Music & Performing Arts</td><td class="val">${c.music || 'N/A'} • ${c.dance || 'N/A'}</td></tr>
-                <tr><td class="prop">Sports Culture</td><td class="val">${c.sports || 'N/A'}</td></tr>
-                <tr><td class="prop">UNESCO World Heritage</td><td class="val">${Array.isArray(c.worldHeritageSites) ? c.worldHeritageSites.join(', ') : (c.worldHeritageSites || 'None')}</td></tr>
+              <table class="dossier-matrix">
+                <tr><td class="spec-key">National Gastronomy</td><td class="spec-val">${c.cuisine || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Festivals & Celebrations</td><td class="spec-val">${Array.isArray(c.festivals) ? c.festivals.join(', ') : (c.festivals || 'N/A')}</td></tr>
+                <tr><td class="spec-key">Performing Arts</td><td class="spec-val">${c.music || 'N/A'} • ${c.dance || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Sports Traditions</td><td class="spec-val">${c.sports || 'N/A'}</td></tr>
+                <tr><td class="spec-key">UNESCO World Heritage</td><td class="spec-val">${Array.isArray(c.worldHeritageSites) ? c.worldHeritageSites.join(', ') : (c.worldHeritageSites || 'None')}</td></tr>
               </table>
             </div>
           `;
         } else if (activeDrawerTab === 'symbols') {
           content = `
-            <div class="dossier-section">
-              <div class="dossier-section-header">🏰 State Emblems & Landmarks</div>
-              <table class="dossier-table">
-                <tr><td class="prop">Iconic Landmarks</td><td class="val">${Array.isArray(c.landmarks) ? c.landmarks.join(', ') : (c.landmarks || 'N/A')}</td></tr>
-                <tr><td class="prop">Flag Symbolism</td><td class="val">${c.flagDescription || 'N/A'}</td></tr>
-                <tr><td class="prop">Coat of Arms</td><td class="val">${c.coatOfArmsDescription || 'N/A'}</td></tr>
-                <tr><td class="prop">National Emblems</td><td class="val">${c.symbols ? (typeof c.symbols === 'object' ? Object.entries(c.symbols).map(([k,v])=>`${k}: ${v}`).join('; ') : c.symbols) : 'N/A'}</td></tr>
-                <tr><td class="prop">Travel & Advisory</td><td class="val">${c.travelNotes || 'Standard travel precautions apply.'}</td></tr>
+            <div class="dossier-card">
+              <div class="dossier-header-title">
+                <svg class="icon"><use href="#icon-map-pin"/></svg>
+                <span>State Emblems & Famous Landmarks</span>
+              </div>
+              <table class="dossier-matrix">
+                <tr><td class="spec-key">Prominent Landmarks</td><td class="spec-val">${Array.isArray(c.landmarks) ? c.landmarks.join(', ') : (c.landmarks || 'N/A')}</td></tr>
+                <tr><td class="spec-key">Flag Symbolism</td><td class="spec-val">${c.flagDescription || 'N/A'}</td></tr>
+                <tr><td class="spec-key">Coat of Arms</td><td class="spec-val">${c.coatOfArmsDescription || 'N/A'}</td></tr>
+                <tr><td class="spec-key">National Emblems</td><td class="spec-val">${c.symbols ? (typeof c.symbols === 'object' ? Object.entries(c.symbols).map(([k,v])=>`${k}: ${v}`).join('; ') : c.symbols) : 'N/A'}</td></tr>
+                <tr><td class="spec-key">Travel Advisory</td><td class="spec-val">${c.travelNotes || 'Standard international precautions apply.'}</td></tr>
               </table>
             </div>
           `;
         } else if (activeDrawerTab === 'sources') {
           content = `
-            <div class="dossier-section">
-              <div class="dossier-section-header">📚 Verification Metadata & Sources</div>
+            <div class="dossier-card">
+              <div class="dossier-header-title">
+                <svg class="icon"><use href="#icon-link"/></svg>
+                <span>Certified References & Data Citations</span>
+              </div>
               <div style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">
-                Dossier certified and updated through: <strong>${c.lastUpdated || '2026-11-24'}</strong>
+                Dataset verified and certified through: <strong>${c.lastUpdated || '2026-11-24'}</strong>
               </div>
               <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.5rem;">
                 ${(c.sources || ["CIA World Factbook", "United Nations", "World Bank", "IMF", "UNESCO"]).map(s => `
-                  <span class="cont-pill" style="font-size:0.75rem;">🔗 ${s}</span>
+                  <span class="chip" style="font-size:0.75rem;">
+                    <svg class="icon icon-sm"><use href="#icon-link"/></svg>
+                    <span>${s}</span>
+                  </span>
                 `).join('')}
               </div>
-              <a href="https://commons.wikimedia.org/wiki/Category:${c.name.replace(/\s+/g, '_')}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size:0.8rem;">
-                Explore ${c.name} Media on Wikimedia Commons ↗
+              <a href="https://commons.wikimedia.org/wiki/Category:${c.name.replace(/\s+/g, '_')}" target="_blank" rel="noopener noreferrer" class="btn btn-subtle" style="font-size:0.8rem;">
+                <svg class="icon icon-sm"><use href="#icon-arrow-up-right"/></svg>
+                <span>Explore ${c.name} on Wikimedia Commons</span>
               </a>
             </div>
           `;
@@ -1918,31 +2205,31 @@
         const actionBtn = document.getElementById('drawerActionBtn');
         if (actionBtn) {
           actionBtn.addEventListener('click', () => {
-            toggleCountryRead(c.id);
+            toggleCountryExplored(c.id);
             renderDrawerTabContent();
           });
         }
       }
 
-      // Confetti Animation Effect
+      // Confetti Effect
       function triggerConfetti() {
         const ctx = confettiCanvas.getContext('2d');
         confettiCanvas.width = window.innerWidth;
         confettiCanvas.height = window.innerHeight;
 
         const particles = [];
-        const colors = ['#00f0ff', '#10b981', '#f59e0b', '#a855f7', '#ec4899'];
+        const colors = ['#22d3ee', '#10b981', '#f59e0b', '#818cf8', '#ec4899'];
 
-        for (let i = 0; i < 80; i++) {
+        for (let i = 0; i < 75; i++) {
           particles.push({
             x: window.innerWidth / 2,
             y: window.innerHeight / 2,
-            vx: (Math.random() - 0.5) * 16,
-            vy: (Math.random() - 0.5) * 16 - 3,
-            size: Math.random() * 7 + 4,
+            vx: (Math.random() - 0.5) * 15,
+            vy: (Math.random() - 0.5) * 15 - 3,
+            size: Math.random() * 6 + 4,
             color: colors[Math.floor(Math.random() * colors.length)],
             rotation: Math.random() * 360,
-            dr: (Math.random() - 0.5) * 10,
+            dr: (Math.random() - 0.5) * 8,
             life: 1
           });
         }
@@ -1953,9 +2240,9 @@
           particles.forEach(p => {
             p.x += p.vx;
             p.y += p.vy;
-            p.vy += 0.35; // gravity
+            p.vy += 0.35;
             p.rotation += p.dr;
-            p.life -= 0.015;
+            p.life -= 0.016;
 
             if (p.life > 0) {
               alive = true;
@@ -1978,14 +2265,14 @@
         requestAnimationFrame(step);
       }
 
-      // Toast Notifications with Undo
+      // Toast Notifications
       function showToast(message, showUndo = false) {
         const toast = document.createElement('div');
-        toast.className = 'toast-item';
+        toast.className = 'toast-pill';
         toast.innerHTML = `
-          <span>🌐</span>
+          <svg class="icon icon-sm" style="color:var(--primary);"><use href="#icon-globe"/></svg>
           <span>${message}</span>
-          ${showUndo ? `<button class="btn-undo" id="toastUndoBtn">Undo</button>` : ''}
+          ${showUndo ? `<button class="btn-undo-pill" id="toastUndoBtn">Undo</button>` : ''}
         `;
         toastBox.appendChild(toast);
 
@@ -2008,34 +2295,33 @@
         }, 3500);
       }
 
-      // Event Listeners
-      // View Mode Tabs
-      document.querySelectorAll('.mode-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-          document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          currentView = tab.dataset.view;
+      // Event Listeners: Segmented Controls
+      document.querySelectorAll('.segment-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.segment-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentView = btn.dataset.view;
           updateFilterCounters();
           renderView();
         });
       });
 
-      // Layout Switcher
-      document.querySelectorAll('.layout-btn').forEach(btn => {
+      // View Layout Switcher
+      document.querySelectorAll('.view-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          document.querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           currentLayout = btn.dataset.layout;
           renderView();
         });
       });
 
-      // Continent Pills
-      document.querySelectorAll('.cont-pill').forEach(pill => {
-        pill.addEventListener('click', () => {
-          document.querySelectorAll('.cont-pill').forEach(p => p.classList.remove('active'));
-          pill.classList.add('active');
-          selectedContinent = pill.dataset.continent;
+      // Continent Chips
+      document.querySelectorAll('.chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          selectedContinent = chip.dataset.continent;
           renderView();
         });
       });
@@ -2061,20 +2347,20 @@
         renderView();
       });
 
-      // Surprise Discovery Button (R)
-      function triggerSurprise() {
+      // Surprise Discovery Trigger
+      function triggerSurpriseDiscovery() {
         const unread = allCountries.filter(c => !readSet.has(c.id));
         if (unread.length === 0) {
-          showToast('🎉 All 197 countries explored!');
+          showToast('All 197 countries explored!');
           return;
         }
         const pick = unread[Math.floor(Math.random() * unread.length)];
         openDossierDrawer(pick.id);
       }
 
-      btnSurprise.addEventListener('click', triggerSurprise);
+      btnSurprise.addEventListener('click', triggerSurpriseDiscovery);
 
-      // Keyboard Shortcuts
+      // Keyboard Navigation
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
           closeDossierDrawer();
@@ -2085,28 +2371,28 @@
         }
         if ((e.key === 'r' || e.key === 'R') && document.activeElement !== searchInput && !dossierDrawer.classList.contains('open')) {
           e.preventDefault();
-          triggerSurprise();
+          triggerSurpriseDiscovery();
         }
       });
 
-      // Mark Visible as Read
+      // Mark All Visible
       btnMarkAllVisible.addEventListener('click', () => {
         const visible = getVisibleCountries();
         if (visible.length === 0) return;
         if (confirm(`Mark all ${visible.length} currently visible countries as explored?`)) {
           visible.forEach(c => readSet.add(c.id));
           saveReadState();
-          showToast(`Marked ${visible.length} nations as explored!`);
+          showToast(`Marked ${visible.length} countries as explored`);
           renderView();
         }
       });
 
       // Reset
       btnReset.addEventListener('click', () => {
-        if (confirm('Reset all reading progress? This action will clear all local tracking data.')) {
+        if (confirm('Reset all reading progress? This will clear local tracker data.')) {
           readSet.clear();
           saveReadState();
-          showToast('Progress has been reset.');
+          showToast('Progress has been reset');
           renderView();
         }
       });
@@ -2115,7 +2401,7 @@
       btnExport.addEventListener('click', () => {
         const data = {
           exportDate: new Date().toISOString(),
-          app: 'worldCountersAtlas_read_v1',
+          version: 'worldCountersAtlas_read_v1',
           readCount: readSet.size,
           total: allCountries.length,
           readIds: Array.from(readSet)
@@ -2129,7 +2415,7 @@
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-        showToast('Exploration progress exported!');
+        showToast('Exploration progress exported');
       });
 
       // Import
@@ -2145,7 +2431,7 @@
             if (Array.isArray(ids)) {
               readSet = new Set(ids);
               saveReadState();
-              showToast(`Imported ${readSet.size} explored countries!`);
+              showToast(`Imported ${readSet.size} explored countries`);
               renderView();
             } else {
               alert('Invalid backup format.');
@@ -2157,7 +2443,7 @@
         reader.readAsText(file);
       });
 
-      // Initialize
+      // Launch
       initApp();
     })();
   </script>
